@@ -1,10 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://1xl30wvphtcb"]
+[gd_scene load_steps=2 format=3 uid="uid://c8vbelhvjj5qg"]
 
-[ext_resource type="Texture2D" uid="uid://cvl7tp85ujibd" path="res://assets/bnuui/2.webp" id="1_ccxxu"]
+[ext_resource type="Texture2D" uid="uid://b1px8d2mfs6ps" path="res://assets/bnuui/2.webp" id="1_d1hvj"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="2" type="Sprite2D" parent="."]
-position = Vector2(319.5, 318)
-scale = Vector2(1.23633, 1.23828)
-texture = ExtResource("1_ccxxu")
+position = Vector2(264, 269)
+texture = ExtResource("1_d1hvj")
