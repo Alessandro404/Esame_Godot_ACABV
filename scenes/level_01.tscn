@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxj5s7fgm2423"]
+[gd_scene load_steps=9 format=3 uid="uid://bxj5s7fgm2423"]
 
 [ext_resource type="PackedScene" uid="uid://bjr0hsuws36lb" path="res://blender/blockout1.blend" id="1_eqgqc"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_dyu0s"]
@@ -31,6 +31,10 @@ radius = 0.4
 height = 1.6
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jpp83"]
+size = Vector3(500, 1, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmuek"]
+size = Vector3(28.3414, 78.2579, 1)
 
 [node name="Level01" type="Node3D"]
 
@@ -54,6 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.56987)
 [node name="Terrain" type="Node3D" parent="Assets"]
 
 [node name="blockout1" parent="Assets/Terrain" instance=ExtResource("1_eqgqc")]
+physics_interpolation_mode = 2
 
 [node name="Varie" type="Node3D" parent="Assets/Terrain"]
 
@@ -71,32 +76,42 @@ skeleton = NodePath("../../../..")
 
 [node name="Area_01" type="Node3D" parent="Assets/Terrain/Areas"]
 
-[node name="RigidBody3D2" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367564, 0.520301, 6.0769)
+[node name="StaticBody3D3" type="StaticBody3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.456391, 0)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/RigidBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D3"]
 shape = SubResource("BoxShape3D_jpp83")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Assets/RigidBody3D2"]
-
-[node name="RigidBody3D3" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, -0.51, 0)
+[node name="StaticBody3D6" type="StaticBody3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.3671, 490.327)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/RigidBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D6"]
 shape = SubResource("BoxShape3D_jpp83")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Assets/RigidBody3D3"]
-
-[node name="RigidBody3D" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15139, 5.81409)
+[node name="StaticBody3D7" type="StaticBody3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.8436, 564.298)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D7"]
 shape = SubResource("BoxShape3D_jpp83")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Assets/RigidBody3D"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 0.48481, -0.87462, 0, 0.87462, 0.48481, 0, 16.6337, 212.259)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 0.998365, -0.0571633, 0, 0.0571633, 0.998365, -5.43137, -8.14598, 1.53579)
+shape = SubResource("BoxShape3D_kmuek")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 0.48481, -0.87462, 0, 0.87462, 0.48481, -0.625349, 43.7726, 286.195)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 0.998365, -0.0571633, 0, 0.0571633, 0.998365, -5.43137, -8.14598, 1.53579)
+shape = SubResource("BoxShape3D_kmuek")
 
 [node name="Player" parent="." instance=ExtResource("2_dyu0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0988531, -0.0298557, 3.37955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0988531, -0.0298557, 157.451)
