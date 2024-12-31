@@ -18,6 +18,7 @@ sky_material = SubResource("ProceduralSkyMaterial_fxc33")
 [sub_resource type="Environment" id="Environment_guix8"]
 background_mode = 2
 sky = SubResource("Sky_fd2g2")
+ambient_light_energy = 3.52
 reflected_light_source = 2
 tonemap_mode = 3
 glow_intensity = 0.1
@@ -29,7 +30,11 @@ fog_height_density = 1.0
 
 [node name="Level01" type="Node3D"]
 
-[node name="blockout1" parent="." instance=ExtResource("1_eqgqc")]
+[node name="Assets" type="Node" parent="."]
+
+[node name="Terrain" type="Node" parent="Assets"]
+
+[node name="blockout1" parent="Assets/Terrain" instance=ExtResource("1_eqgqc")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.0139, 96.8337)
