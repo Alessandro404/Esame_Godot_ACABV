@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0nu7autumvb"]
+
+[ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="1_0if4l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyt3f"]
+size = Vector3(8.58862, 0.234375, 11)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_0if4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889768, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.944531, 0.328422, 0, -0.328422, 0.944531, 0, 1.15138, 2.2324)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, -0.000366448, 8.92351e-05, 0.000366476, 1, -0.000337529, -8.912e-05, 0.00033756, 1, -1.26097, -0.382424, -2.78896)
+shape = SubResource("BoxShape3D_nyt3f")

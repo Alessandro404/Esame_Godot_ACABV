@@ -18,9 +18,9 @@ sky_material = SubResource("ProceduralSkyMaterial_fxc33")
 [sub_resource type="Environment" id="Environment_guix8"]
 background_mode = 2
 sky = SubResource("Sky_fd2g2")
-ambient_light_energy = 3.52
 reflected_light_source = 2
 tonemap_mode = 3
+ssao_enabled = true
 glow_intensity = 0.1
 glow_strength = 0.1
 fog_density = 0.0
@@ -32,17 +32,30 @@ fog_height_density = 1.0
 
 [node name="Assets" type="Node" parent="."]
 
-[node name="Terrain" type="Node" parent="Assets"]
+[node name="Terrain" type="Node3D" parent="Assets"]
 
 [node name="blockout1" parent="Assets/Terrain" instance=ExtResource("1_eqgqc")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.0139, 96.8337)
-far = 8000.0
+[node name="Varie" type="Node3D" parent="Assets/Terrain"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets/Terrain/Varie"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 533.388, 56.5382, 374.151)
+mesh = SubResource("CapsuleMesh_gsjgr")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets/Terrain/Varie"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.683843, 0.931992)
 mesh = SubResource("CapsuleMesh_gsjgr")
+skeleton = NodePath("../../../..")
+
+[node name="Areas" type="Node3D" parent="Assets/Terrain"]
+
+[node name="Area_01" type="Node3D" parent="Assets/Terrain/Areas"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.0139, 96.8337)
+visible = false
+far = 8000.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_guix8")
