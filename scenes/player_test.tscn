@@ -23,12 +23,6 @@ size = Vector3(10, 1, 10)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aw2ob")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_0if4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88977, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.944531, 0.328422, 0, -0.328422, 0.944531, 0, 3.15138, 2.2324)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -57,3 +51,6 @@ shape = SubResource("BoxShape3D_nyt3f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D3"]
 size = Vector3(10, 1, 10)
+
+[node name="Player" parent="." instance=ExtResource("1_0if4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699024, 0.499941, 0.933143)
