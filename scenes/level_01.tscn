@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxj5s7fgm2423"]
+[gd_scene load_steps=11 format=3 uid="uid://bxj5s7fgm2423"]
 
 [ext_resource type="PackedScene" uid="uid://bjr0hsuws36lb" path="res://blender/blockout1.blend" id="1_eqgqc"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_dyu0s"]
+[ext_resource type="PackedScene" uid="uid://ccuej4sc5msgf" path="res://scenes/area_01.tscn" id="3_rvhgh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxc33"]
 sky_top_color = Color(0.0874599, 0.134676, 0.23013, 1)
@@ -36,6 +37,11 @@ size = Vector3(500, 1, 500)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kmuek"]
 size = Vector3(28.3414, 78.2579, 1)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_si0g2"]
+radius = 0.4
+height = 1.6
+radial_segments = 32
+
 [node name="Level01" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -49,9 +55,6 @@ directional_shadow_pancake_size = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_guix8")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.56987)
 
 [node name="Assets" type="Node" parent="."]
 
@@ -114,4 +117,15 @@ transform = Transform3D(1, 0, 0, 0, 0.998365, -0.0571633, 0, 0.0571633, 0.998365
 shape = SubResource("BoxShape3D_kmuek")
 
 [node name="Player" parent="." instance=ExtResource("2_dyu0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0988531, -0.0298557, 157.451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4933, -0.0274456, 196.033)
+
+[node name="Areas" type="Node3D" parent="."]
+
+[node name="RootArea1" type="Node3D" parent="Areas"]
+transform = Transform3D(-0.999995, 0, 0.00305417, 0, 1, 0, -0.00305417, 0, -0.999995, 506.245, 55.9524, 365.104)
+
+[node name="Pawnexample" type="MeshInstance3D" parent="Areas/RootArea1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("CapsuleMesh_si0g2")
+
+[node name="Area_01" parent="Areas/RootArea1" instance=ExtResource("3_rvhgh")]

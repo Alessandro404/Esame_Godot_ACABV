@@ -1,10 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://di0nu7autumvb"]
 
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="1_0if4l"]
+[ext_resource type="PackedScene" uid="uid://8xpos2les2ut" path="res://blender/blockout_area01.blend" id="2_itm7q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dqbc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_bottom_color = Color(0.119173, 0.178069, 0.255918, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sun_curve = 0.791704
 
 [sub_resource type="Sky" id="Sky_f06s5"]
 sky_material = SubResource("ProceduralSkyMaterial_7dqbc")
@@ -12,45 +15,21 @@ sky_material = SubResource("ProceduralSkyMaterial_7dqbc")
 [sub_resource type="Environment" id="Environment_aw2ob"]
 background_mode = 2
 sky = SubResource("Sky_f06s5")
-tonemap_mode = 2
+tonemap_mode = 3
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nyt3f"]
-size = Vector3(10, 1, 10)
-
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.698355, -0.0534925, 0.71375, 0.512149, 0.659272, 0.550512, -0.500003, 0.749999, -0.43301, 0, 2.79056, 0)
+shadow_enabled = true
+directional_shadow_pancake_size = 2.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aw2ob")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, -0.000366448, 8.92351e-05, 0.000366476, 1, -0.000337529, -8.912e-05, 0.00033756, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_nyt3f")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-size = Vector3(10, 1, 10)
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-transform = Transform3D(1, -0.000366448, 8.92351e-05, 0.000366476, 1, -0.000337529, -8.912e-05, 0.00033756, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_nyt3f")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D2"]
-size = Vector3(10, 1, 10)
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, -0.000366448, 8.92351e-05, 0.000366476, 1, -0.000337529, -8.912e-05, 0.00033756, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_nyt3f")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D3"]
-size = Vector3(10, 1, 10)
-
 [node name="Player" parent="." instance=ExtResource("1_0if4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699024, 0.499941, 0.933143)
+
+[node name="blockout_area01" parent="." instance=ExtResource("2_itm7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92673, -0.0217075, 6.46863)
