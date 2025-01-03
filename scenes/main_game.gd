@@ -9,6 +9,7 @@ var old_room_path: NodePath
 var old_loaded_rooms: Array[Node3D]
 
 
+
 func _ready() -> void:
 	current_room_path = starting_room_path
 	change_room_state(current_room_path)
@@ -41,6 +42,6 @@ func change_room_state(new_room_path : NodePath) -> void:
 	
 	for item in old_loaded_rooms:
 		if !current_loaded_rooms.has(item):
-			print("elimina " + item.name)
+			#print("elimina " + item.name)
 			item.unload_room()
 	load_rooms()

@@ -19,3 +19,8 @@ func unload_room():  #move_child assicura che sia sempre a 0
 		get_child(0).queue_free()
 		#remove_child(get_child(0))
 		loaded = false
+		var room = false
+
+func preload_room():
+	if !loaded:
+		ResourceLoader.load_threaded_request(res_room)
