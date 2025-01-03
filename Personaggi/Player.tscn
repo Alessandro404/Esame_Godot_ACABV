@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dq0ktqp4py7l"]
+[gd_scene load_steps=7 format=3 uid="uid://dq0ktqp4py7l"]
 
 [ext_resource type="Script" path="res://Personaggi/player.gd" id="1_sc474"]
 [ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://addons/gdquest_sophia/sophia_skin.tscn" id="2_v0hmw"]
@@ -13,7 +13,10 @@ height = 1.6
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gr36u"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_5hguc"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_layer = 3
 script = ExtResource("1_sc474")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -39,3 +42,12 @@ spring_length = 8.0
 
 [node name="playerCamera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
 unique_name_in_owner = true
+visible = false
+
+[node name="ActionableFinder" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.848179)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
+shape = SubResource("SphereShape3D_5hguc")

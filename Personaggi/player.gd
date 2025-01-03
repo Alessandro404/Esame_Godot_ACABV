@@ -17,20 +17,30 @@ var _gravity := -30
 @onready var _camera: Camera3D = %playerCamera3D
 @onready var _skin = %SophiaSkin
 
+@onready var actionable_finder: Area3D = $ActionableFinder
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+	if Input.is_action_just_pressed("talk"):
+		print("test")
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() >0:
+			
+			actionables[0].action()
+			return
 
 func _unhandled_input(event:InputEvent) -> void:
 	var is_camera_motion := (
 		event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
-
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
 		
+	
 
 func _physics_process(delta: float) -> void:
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
