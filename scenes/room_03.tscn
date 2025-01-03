@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724696, 0.5, 6.23079)
 mesh = SubResource("BoxMesh_q1dd7")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_41v43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.43585)
+transform = Transform3D(0.0640098, 0, -0.997949, 0, 1, 0, 0.997949, 0, 0.0640098, 7.26202, 0, -0.0992661)
 destination_room_id = 2
 destination_portal_id = 1
 

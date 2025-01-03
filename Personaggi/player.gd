@@ -20,6 +20,7 @@ var _gravity := -30
 @onready var actionable_finder: Area3D = $ActionableFinder
 
 @onready var fade = $Fade
+var teleporting: bool = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -49,7 +50,9 @@ func _physics_process(delta: float) -> void:
 	_camera_pivot.rotation.x = clamp( _camera_pivot.rotation.x, -PI / 6.0, PI / 3.0 )
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 	
+
 	_camera_input_direction = Vector2.ZERO
+	
 	
 	var raw_input := Input.get_vector("move_left", "move_right", "move_foward", "move_backward")
 	var forward := _camera.global_basis.z
@@ -61,16 +64,16 @@ func _physics_process(delta: float) -> void:
 	
 	var y_velocity := velocity.y
 	move_direction.y = 0.0
-	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
-	velocity.y = y_velocity + _gravity * delta
+	if !teleporting:
+		velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+		velocity.y = y_velocity + _gravity * delta
 	
 	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
 	if is_starting_jump:
 		velocity.y += jump_impulse
 		
-	
 	move_and_slide()
-
+	
 	if move_direction.length() > 0.2:
 		_last_movement_direction = move_direction
 	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)

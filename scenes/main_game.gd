@@ -27,7 +27,7 @@ func _ready() -> void:
 
 func _process(delta):
 	if fading_out:
-		player.fade.Visible = false
+		player.fade.visible = true
 		fade_out_timer -= delta*fade_speed
 		player.fade.color = Color(0,0,0,1.0-fade_out_timer)
 		if fade_out_timer <= 0.0:
@@ -35,7 +35,7 @@ func _process(delta):
 			fade_out_timer = fade_speed
 
 	if fading_in:
-		player.fade.Visible = true
+		player.fade.visible = false
 		player.fade.color = Color(0,0,0,fade_in_timer)
 		fade_in_timer -= delta*fade_speed
 		if fade_in_timer <= 0.0:
@@ -69,6 +69,7 @@ func change_room_state(new_room_path : NodePath) -> void:
 	fading_in = true
 
 func teleport(room_id : int, portal_id : int):
+	player.teleporting = true
 	fading_out = true
 	await get_tree().create_timer(fade_speed).timeout
 	var teleport_coordinates: Array
@@ -77,6 +78,7 @@ func teleport(room_id : int, portal_id : int):
 	print(teleport_coordinates)
 	change_room_state(teleport_coordinates[0])
 	player.position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
+	player.teleporting = false
 	
 
 func get_room_from_id(room_id: int):
