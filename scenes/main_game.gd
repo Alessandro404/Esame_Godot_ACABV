@@ -69,6 +69,7 @@ func teleport(room_id : int, portal_id : int):
 	teleport_coordinates.insert(0, get_room_from_id(room_id))
 	teleport_coordinates.append(get_portal_from_id(teleport_coordinates[0], portal_id))
 	print(teleport_coordinates)
+	change_room_state(teleport_coordinates[0])
 	player.position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
 
 func get_room_from_id(room_id: int):

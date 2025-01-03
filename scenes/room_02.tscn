@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpff0jlrw6veo"]
+[gd_scene load_steps=5 format=3 uid="uid://dpff0jlrw6veo"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_tp1q4"]
+[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_c0p5g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iosjb"]
 albedo_color = Color(1, 0.407843, 1, 1)
@@ -13,3 +14,22 @@ material = SubResource("StandardMaterial3D_iosjb")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20747, 0.5, 1.82051)
 mesh = SubResource("BoxMesh_erjwh")
+
+[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_c0p5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.37001)
+destination_room_id = 1
+destination_portal_id = 1
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
+
+[node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_c0p5g")]
+transform = Transform3D(0.0208203, 0, 0.999783, 0, 1, 0, -0.999783, 0, 0.0208203, -7.95898, 0, 0)
+local_id = 1
+destination_room_id = 3
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0248271, 0, 1.64388)
+
+[editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal2"]
