@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvwvevq7y7m7d"]
+[gd_scene load_steps=4 format=3 uid="uid://bvwvevq7y7m7d"]
 
-[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="1_4fx5p"]
+[ext_resource type="Script" path="res://scenes/room_template.gd" id="1_vfbr6"]
+[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="2_skilm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_s0e73"]
 radius = 0.4
@@ -8,7 +9,8 @@ height = 1.6
 radial_segments = 16
 rings = 4
 
-[node name="AreaTemplate" type="Node3D"]
+[node name="RoomTemplate" type="Node3D"]
+script = ExtResource("1_vfbr6")
 
 [node name="Cameras" type="Node3D" parent="."]
 
@@ -20,7 +22,7 @@ rings = 4
 
 [node name="Assets" type="Node3D" parent="."]
 
-[node name="scene_template01" parent="Assets" instance=ExtResource("1_4fx5p")]
+[node name="scene_template01" parent="Assets" instance=ExtResource("2_skilm")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Assets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)

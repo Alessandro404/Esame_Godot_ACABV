@@ -44,10 +44,8 @@ neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.7552)
 id = 1
 res_room = ExtResource("1_wxhj1")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner02"), NodePath("../RoomSpawner00")])
 
 [node name="RoomSpawner02" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.3778)
 id = 2
 res_room = ExtResource("4_4inqe")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])

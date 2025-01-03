@@ -1,6 +1,6 @@
 extends Node
 
-var stages = [preload("res://scenes/area_01.tscn"), preload("res://scenes/area_02.tscn")]
+var stages = [preload("res://scenes/old_area_01.tscn")]
 #[preload("res://scenes/world.tscn"),preload("res://scenes/world_2.tscn"),preload("res://scenes/world_3.tscn")]
 
 var current_stage_id = 0
@@ -10,7 +10,6 @@ var next_portal_id = 0
 var player:CharacterBody3D
 
 func teleport(stage_id,portal_id):
-	print(stage_id)
 	next_stage_id = stage_id
 	next_portal_id = portal_id
 	get_tree().change_scene_to_packed(stages[next_stage_id])

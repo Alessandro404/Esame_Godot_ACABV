@@ -24,6 +24,7 @@ glow_enabled = true
 
 [node name="MainGame" type="Node3D"]
 script = ExtResource("1_24h1i")
+starting_room_path = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y2466")
@@ -38,16 +39,15 @@ shadow_enabled = true
 
 [node name="RoomSpawner00" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 res_room = ExtResource("4_ad6s8")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
+neighbors = Array[NodePath]([NodePath("../RoomSpawner01"), NodePath("../RoomSpawner02")])
 
 [node name="RoomSpawner01" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.7552)
 id = 1
 res_room = ExtResource("1_wxhj1")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner02"), NodePath("../RoomSpawner00")])
+neighbors = Array[NodePath]([NodePath("../RoomSpawner00")])
 
 [node name="RoomSpawner02" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.3778)
 id = 2
 res_room = ExtResource("4_4inqe")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])

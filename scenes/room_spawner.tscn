@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://1864syomw8qy"]
+
+[ext_resource type="Script" path="res://scenes/room_spawner.gd" id="1_vx2gw"]
+
+[node name="RoomSpawner" type="Node3D"]
+script = ExtResource("1_vx2gw")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+gizmo_extents = 5.0

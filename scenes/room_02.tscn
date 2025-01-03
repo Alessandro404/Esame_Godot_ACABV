@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpff0jlrw6veo"]
+
+[ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_tp1q4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iosjb"]
+albedo_color = Color(1, 0.407843, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_erjwh"]
+material = SubResource("StandardMaterial3D_iosjb")
+
+[node name="Room02" instance=ExtResource("1_tp1q4")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20747, 0.5, 1.82051)
+mesh = SubResource("BoxMesh_erjwh")
