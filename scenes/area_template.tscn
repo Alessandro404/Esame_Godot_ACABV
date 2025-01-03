@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvwvevq7y7m7d"]
+
+[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="1_4fx5p"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_s0e73"]
+radius = 0.4
+height = 1.6
+radial_segments = 16
+rings = 4
+
+[node name="AreaTemplate" type="Node3D"]
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="CameraRootA" type="Node3D" parent="Cameras"]
+
+[node name="CameraRootB" type="Node3D" parent="Cameras"]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Assets" type="Node3D" parent="."]
+
+[node name="scene_template01" parent="Assets" instance=ExtResource("1_4fx5p")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)
+mesh = SubResource("CapsuleMesh_s0e73")
+
+[node name="Interactive" type="Node3D" parent="."]
+
+[node name="Actionables" type="Node3D" parent="Interactive"]
+
+[node name="Portals" type="Node3D" parent="Interactive"]
+
+[node name="CameraTriggers" type="Node3D" parent="Interactive"]

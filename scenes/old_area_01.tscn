@@ -1,29 +1,31 @@
 [gd_scene load_steps=10 format=3 uid="uid://ccuej4sc5msgf"]
 
-[ext_resource type="PackedScene" uid="uid://8xpos2les2ut" path="res://blender/blockout_area01.blend" id="1_apbxw"]
-[ext_resource type="Script" path="res://scenes/area_01.gd" id="1_tqg3n"]
-[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_awgrv"]
-[ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_ckgo5"]
-[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="4_8vnho"]
-[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://scenes/cambiocamera.tscn" id="6_anqay"]
-[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="7_jdv4j"]
-[ext_resource type="Resource" uid="uid://bb6aff3ev2uji" path="res://dialogues/test.dialogue" id="8_lyrrf"]
+[ext_resource type="Script" path="res://scenes/old_area_01.gd" id="1_lljq6"]
+[ext_resource type="PackedScene" uid="uid://8xpos2les2ut" path="res://blender/blockout_area01.blend" id="2_lyxvy"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_k0img"]
+[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="4_y1jh4"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://scenes/cambiocamera.tscn" id="5_dcqdb"]
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="6_ddo3n"]
+[ext_resource type="Resource" uid="uid://bb6aff3ev2uji" path="res://dialogues/test.dialogue" id="7_w12ln"]
+[ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="8_qc5b3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_us00v"]
 
 [node name="Area_01" type="Node3D" node_paths=PackedStringArray("portals", "player")]
-script = ExtResource("1_tqg3n")
+script = ExtResource("1_lljq6")
 portals = [NodePath("Portal")]
 player = NodePath("Player")
 
-[node name="blockout_area01" parent="." instance=ExtResource("1_apbxw")]
+[node name="blockout_area01" parent="." instance=ExtResource("2_lyxvy")]
 
-[node name="Cameras" type="Node" parent="."]
+[node name="Actionables" type="Node3D" parent="."]
+
+[node name="Cameras" type="Node3D" parent="."]
 
 [node name="CameraRootA" type="Node3D" parent="Cameras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.962116, 0.0311227, 2.09716)
 
-[node name="Camera_area01_A" parent="Cameras/CameraRootA" node_paths=PackedStringArray("player") instance=ExtResource("2_awgrv")]
+[node name="Camera_area01_A" parent="Cameras/CameraRootA" node_paths=PackedStringArray("player") instance=ExtResource("3_k0img")]
 player = NodePath("../../../Player")
 stage_dimentions = Vector2(16, 16)
 
@@ -40,7 +42,7 @@ visible = false
 [node name="CameraRootA2" type="Node3D" parent="Cameras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0507, 0.0311227, 30.8803)
 
-[node name="Camera_area01_A2" parent="Cameras/CameraRootA2" node_paths=PackedStringArray("player") instance=ExtResource("2_awgrv")]
+[node name="Camera_area01_A2" parent="Cameras/CameraRootA2" node_paths=PackedStringArray("player") instance=ExtResource("3_k0img")]
 player = NodePath("../../../Player")
 stage_dimentions = Vector2(4, 4)
 
@@ -98,7 +100,9 @@ shadow_enabled = true
 spot_range = 63.078
 spot_angle_attenuation = 0.217638
 
-[node name="Portal" parent="." instance=ExtResource("4_8vnho")]
+[node name="Portals" type="Node3D" parent="."]
+
+[node name="Portal" parent="." instance=ExtResource("4_y1jh4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8755, 0, 0)
 stage_id = 1
 
@@ -108,30 +112,30 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 3.19033, 0, 3.49796)
 [node name="Node3D" parent="Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53307, 0, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_ckgo5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4819, 8.20536, -5.13403)
-
-[node name="Cambiocamera" parent="." node_paths=PackedStringArray("camera_3d") instance=ExtResource("6_anqay")]
+[node name="Cambiocamera" parent="." node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_dcqdb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 18)
 camera_3d = NodePath("../Cameras/CameraRootA2/Camera_area01_A2")
 
 [node name="CollisionShape3D" parent="Cambiocamera/Area3D" index="0"]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 4)
 
-[node name="Cambiocamera2" parent="." node_paths=PackedStringArray("camera_3d") instance=ExtResource("6_anqay")]
+[node name="Cambiocamera2" parent="." node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_dcqdb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 14.603)
 camera_3d = NodePath("../Cameras/CameraRootA/Camera_area01_A")
 
 [node name="CollisionShape3D" parent="Cambiocamera2/Area3D" index="0"]
 transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 0, 0, 4)
 
-[node name="Actionable" parent="." instance=ExtResource("7_jdv4j")]
+[node name="Actionable" parent="." instance=ExtResource("6_ddo3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4871, 0, 30.0135)
-dialogue_resource = ExtResource("8_lyrrf")
+dialogue_resource = ExtResource("7_w12ln")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -0.997145)
 shape = SubResource("SphereShape3D_us00v")
+
+[node name="Player" parent="." instance=ExtResource("8_qc5b3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.717, 0, -8.09936)
 
 [editable path="Cameras/CameraRootA/Camera_area01_A"]
 [editable path="Cameras/CameraRootA2/Camera_area01_A2"]
