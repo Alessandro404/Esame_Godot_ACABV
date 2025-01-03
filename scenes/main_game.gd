@@ -42,7 +42,7 @@ func _process(delta):
 		fade_in_timer -= delta
 		if fade_in_timer <= 0.0:
 			fading_in = false
-			fade_in_timer = fade_in_durata
+			fade_in_timer = 1.2
 
 func load_rooms():
 	for i in current_loaded_rooms.size():
@@ -68,3 +68,9 @@ func change_room_state(new_room_path : NodePath) -> void:
 			#print("elimina " + item.name)
 			item.unload_room()
 	load_rooms()
+
+func teleport(room_id : int, portal_id : int):
+	print(build_room_from_id(room_id))
+
+func build_room_from_id(room_id: int):
+	pass

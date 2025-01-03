@@ -12,7 +12,7 @@ var player:CharacterBody3D
 func teleport(stage_id,portal_id):
 	next_stage_id = stage_id
 	next_portal_id = portal_id
-	get_tree().change_scene_to_packed(stages[next_stage_id])
+	#get_tree().change_scene_to_packed(stages[next_stage_id])
 
 func new_scene_loaded(portals,current_player):
 	player = current_player;

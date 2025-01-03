@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2t7h4xroxfjx"]
+[gd_scene load_steps=5 format=3 uid="uid://2t7h4xroxfjx"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_p1x8e"]
+[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_y1ug0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -15,3 +16,18 @@ rings = 16
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491, 0.5, 2.094)
 mesh = SubResource("SphereMesh_k4crk")
+
+[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_y1ug0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1495, 0, 8.22498)
+destination_room_id = 1
+
+[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.24098)
+
+[editable path="Interactive/Portals/Portal"]

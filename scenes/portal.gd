@@ -1,11 +1,11 @@
 extends Node3D
 
-@export var id:int
-@export var stage_id:int
-@export var stage_portal_id:int
+@export var local_id:int
+@export var destination_room_id: int
+@export var destination_portal_id:int
 
 @export var spawn_point:Node3D
 
+
 func _on_area_3d_body_entered(_body):
-	SceneManager.teleport(stage_id,stage_portal_id)
-	#body.lock_direction()
+	get_tree().current_scene.teleport(destination_room_id,destination_portal_id)
