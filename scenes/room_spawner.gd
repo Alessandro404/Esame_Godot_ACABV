@@ -20,6 +20,7 @@ func unload_room():  #move_child assicura che sia sempre a 0
 		#remove_child(get_child(0))
 		loaded = false
 
+#TODO Ottimizzare il preload, facendo precaricare i vicini e costringendo il load solo al tp
 func preload_room():
 	if !loaded:
 		ResourceLoader.load_threaded_request(res_room)
