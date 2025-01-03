@@ -51,3 +51,11 @@ collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActionableFinder"]
 shape = SubResource("SphereShape3D_5hguc")
+
+[node name="Fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
