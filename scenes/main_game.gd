@@ -16,6 +16,8 @@ func _ready() -> void:
 	change_room_state("LevelsRoot/RoomSpawner01")
 	await get_tree().create_timer(4).timeout 
 	change_room_state("LevelsRoot/RoomSpawner02")
+	await get_tree().create_timer(4).timeout 
+	change_room_state("LevelsRoot/RoomSpawner03")
 
 
 func load_rooms():

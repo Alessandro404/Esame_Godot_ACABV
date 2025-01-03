@@ -1,14 +1,15 @@
 extends Node3D
 
 @export var id : int
-@export var res_room: Resource
+@export var res_room: String
 @export var neighbors:Array[NodePath] = []
 
 var loaded : bool = false
 
 func spawn_room():
 	if !loaded :
-		var room = res_room.instantiate()
+		ResourceLoader.load_threaded_request(res_room)
+		var room = ResourceLoader.load_threaded_get(res_room).instantiate()
 		add_child(room)
 		move_child(room, 0)
 		loaded = true

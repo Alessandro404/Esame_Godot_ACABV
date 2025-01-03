@@ -1,11 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgt3fwvn8ru0o"]
+[gd_scene load_steps=7 format=3 uid="uid://cgt3fwvn8ru0o"]
 
 [ext_resource type="Script" path="res://scenes/main_game.gd" id="1_24h1i"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="1_dnq5r"]
-[ext_resource type="PackedScene" uid="uid://bb5oopo8m36ch" path="res://scenes/room_01.tscn" id="1_wxhj1"]
-[ext_resource type="PackedScene" uid="uid://dpff0jlrw6veo" path="res://scenes/room_02.tscn" id="4_4inqe"]
-[ext_resource type="PackedScene" uid="uid://2t7h4xroxfjx" path="res://scenes/room_00.tscn" id="4_ad6s8"]
-[ext_resource type="PackedScene" uid="uid://1864syomw8qy" path="res://scenes/room_spawner.tscn" id="6_xos5l"]
+[ext_resource type="PackedScene" uid="uid://dj7m02njp2sdi" path="res://scenes/room_spawner.tscn" id="6_xos5l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pg0tp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,17 +34,16 @@ shadow_enabled = true
 [node name="LevelsRoot" type="Node" parent="."]
 
 [node name="RoomSpawner00" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
-res_room = ExtResource("4_ad6s8")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
+res_room = "res://scenes/room_00.tscn"
 
 [node name="RoomSpawner01" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.7552)
-id = 1
-res_room = ExtResource("1_wxhj1")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner02"), NodePath("../RoomSpawner00")])
+res_room = "res://scenes/room_01.tscn"
 
 [node name="RoomSpawner02" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 38.3778)
-id = 2
-res_room = ExtResource("4_4inqe")
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
+res_room = "res://scenes/room_02.tscn"
+
+[node name="RoomSpawner03" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9748, 0, 38.3778)
+res_room = "res://scenes/room_03.tscn"
