@@ -15,13 +15,24 @@ material = SubResource("StandardMaterial3D_fkmva")
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
 mesh = SubResource("BoxMesh_mmlno")
 
-[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_ouv8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.99154)
+[node name="Portal2" parent="Interactive/Portals" index="0" instance=ExtResource("2_ouv8e")]
+transform = Transform3D(-0.999878, 0, 0.01562, 0, 1, 0, -0.01562, 0, -0.999878, 0, 0, 7.54381)
+local_id = 1
+
+[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
+
+[node name="Portal" parent="Interactive/Portals" index="1" instance=ExtResource("2_ouv8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.47136)
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, -1.74023)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
+[editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal"]

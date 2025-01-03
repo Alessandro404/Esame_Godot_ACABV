@@ -7,7 +7,7 @@ var current_loaded_rooms: Array[Node3D]
 var old_room_path: NodePath
 var old_loaded_rooms: Array[Node3D]
 
-var player= Global.player
+@onready var player= Global.player
 
 @export_group("Level Fade")
 @export var fade_speed :float = 2.0
@@ -22,12 +22,7 @@ var fading_in = false
 func _ready() -> void:
 	current_room_path = starting_room_path
 	change_room_state(current_room_path)
-	await get_tree().create_timer(4).timeout 
-	change_room_state("LevelsRoot/RoomSpawner01")
-	await get_tree().create_timer(4).timeout 
-	change_room_state("LevelsRoot/RoomSpawner02")
-	await get_tree().create_timer(4).timeout 
-	change_room_state("LevelsRoot/RoomSpawner03")
+
 
 func _process(delta):
 	if fading_out:
@@ -70,7 +65,25 @@ func change_room_state(new_room_path : NodePath) -> void:
 	load_rooms()
 
 func teleport(room_id : int, portal_id : int):
-	print(build_room_from_id(room_id))
+	var teleport_coordinates: Array
+	teleport_coordinates.insert(0, get_room_from_id(room_id))
+	teleport_coordinates.append(get_portal_from_id(teleport_coordinates[0], portal_id))
+	print(teleport_coordinates)
+	player.position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
 
-func build_room_from_id(room_id: int):
-	pass
+func get_room_from_id(room_id: int):
+	var id : String = "LevelsRoot/RoomSpawner"
+	if room_id < 10:
+		id = id + "0" + str(room_id)
+	else:
+		id = id + str(room_id)
+	#print(id)
+	return id
+
+func get_portal_from_id(room_id: String, portal_id: int):
+	var available_portals = get_node(room_id).get_child(0).portals
+	for i in available_portals.size():
+		if available_portals[i].local_id == portal_id:
+			print("agganciato")
+			return available_portals[i]
+	print("Non trovato portali")

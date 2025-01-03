@@ -3,16 +3,18 @@
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_unklt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynul5"]
-size = Vector3(2, 2, 2)
+size = Vector3(5.15515, 2, 0.569641)
 
 [node name="Portal" type="Node3D" node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_unklt")
 spawn_point = NodePath("PlayerSpawn")
+metadata/_edit_group_ = true
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10352e-05, 0, -0.0466003)
 shape = SubResource("BoxShape3D_ynul5")
 
 [node name="PlayerSpawn" type="Node3D" parent="."]
