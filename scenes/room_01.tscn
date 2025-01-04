@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=9 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_k7rch"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_8pmjc"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_ouv8e"]
+[ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="3_p7uyx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
 albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mmlno"]
 material = SubResource("StandardMaterial3D_fkmva")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oatt6"]
+albedo_texture = ExtResource("3_p7uyx")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vs5dr"]
+material = SubResource("StandardMaterial3D_oatt6")
 
 [node name="Room01" instance=ExtResource("1_k7rch")]
 
@@ -28,6 +35,10 @@ transform = Transform3D(-0.297193, 0.414096, -0.860349, -0.0324325, 0.896164, 0.
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
 mesh = SubResource("BoxMesh_mmlno")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Assets" index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, -2, 0)
+mesh = SubResource("QuadMesh_vs5dr")
 
 [node name="Portal2" parent="Interactive/Portals" index="0" instance=ExtResource("2_ouv8e")]
 transform = Transform3D(-0.999878, 0, 0.01562, 0, 1, 0, -0.01562, 0, -0.999878, 0, 0, 7.54381)
