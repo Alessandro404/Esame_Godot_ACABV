@@ -17,7 +17,7 @@ func spawn_room():
 
 func make_main():
 	get_child(0).stanza_attuale = true
-	print("resa main la room " + str(get_child(0)) + ", " + str(get_child(0).stanza_attuale) )
+	#print("resa main la room " + str(get_child(0)) + ", " + str(get_child(0).stanza_attuale) )
 
 func make_neighbour():
 	if loaded:

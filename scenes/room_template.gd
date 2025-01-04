@@ -19,12 +19,12 @@ func _ready():
 
 
 func _on_player_changed_room() -> void:
-	print("cambiato stato della stanza " + str(self) + ". orea è " + str(stanza_attuale))
+	#print("cambiato stato della stanza " + str(self) + ". orea è " + str(stanza_attuale))
 	await get_tree().process_frame
 	if stanza_attuale:
 		print(camera.get_child_count())
 		if camera.get_child_count() != 0:
 			camera.get_child(0).camera_3d.current = true 
 		else:
-			print("no camera, giocatore")
+			#no camera, giocatore
 			player.own_camera.current = true

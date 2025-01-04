@@ -17,6 +17,14 @@ material = SubResource("StandardMaterial3D_fkmva")
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
 transform = Transform3D(-3.0244e-08, -0.53326, 0.845951, -4.66191e-08, 0.845951, 0.53326, -1, -2.33095e-08, -5.04451e-08, 5, 2.93859, -2.98297)
 
+[node name="CameraRoot2" type="Node3D" parent="Cameras" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09185, 0, 0)
+
+[node name="Camera_rig" parent="Cameras/CameraRoot2" index="0" instance=ExtResource("2_8pmjc")]
+
+[node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
+transform = Transform3D(-0.297193, 0.414096, -0.860349, -0.0324325, 0.896164, 0.442537, 0.954266, 0.159422, -0.252903, -6.30965, 2.93859, -1.49262)
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
 mesh = SubResource("BoxMesh_mmlno")
@@ -42,5 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal"]
