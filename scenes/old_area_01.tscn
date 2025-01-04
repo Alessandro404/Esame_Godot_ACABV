@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://8xpos2les2ut" path="res://blender/blockout_area01.blend" id="2_lyxvy"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_k0img"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="4_y1jh4"]
-[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://scenes/cambiocamera.tscn" id="5_dcqdb"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="5_dcqdb"]
 [ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="6_ddo3n"]
 [ext_resource type="Resource" uid="uid://bb6aff3ev2uji" path="res://dialogues/test.dialogue" id="7_w12ln"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="8_qc5b3"]

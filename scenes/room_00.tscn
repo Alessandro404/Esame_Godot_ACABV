@@ -13,8 +13,11 @@ rings = 16
 
 [node name="Room00" instance=ExtResource("1_p1x8e")]
 
+[node name="MeshInstance3D" parent="Assets" index="1"]
+visible = false
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.491, 0.5, 2.094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
 mesh = SubResource("SphereMesh_k4crk")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_y1ug0")]

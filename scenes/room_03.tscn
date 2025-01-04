@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=11 format=3 uid="uid://tmcb5337qjau"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_14pt0"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_41v43"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_ie8n1"]
+[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="3_g6px7"]
+[ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="4_b02gk"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="5_h4wvk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3i07"]
 albedo_color = Color(0, 1, 0, 1)
@@ -10,16 +13,41 @@ albedo_color = Color(0, 1, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_q1dd7"]
 material = SubResource("StandardMaterial3D_p3i07")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8ojx"]
+albedo_texture = ExtResource("4_b02gk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s8kx1"]
+material = SubResource("StandardMaterial3D_s8ojx")
+
 [node name="Room03" instance=ExtResource("1_14pt0")]
+
+[node name="CameraRoot2" type="Node3D" parent="Cameras" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96341, 0, 0)
+
+[node name="Camera_rig" parent="Cameras/CameraRoot2" index="0" instance=ExtResource("2_ie8n1")]
+stage_dimentions = Vector2(8, 64)
+
+[node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
+transform = Transform3D(0.9996, 0, 0.0282882, 0, 1, 0, -0.0282882, 0, 0.9996, 0, 3.28722, 7.78755)
+
+[node name="CameraRoot" parent="Cameras" index="1"]
+transform = Transform3D(-0.998726, 0, -0.0504536, 0, 1, 0, 0.0504536, 0, -0.998726, -15.0475, 0, 0)
 
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_ie8n1")]
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -12)
+transform = Transform3D(0.259475, -0.156803, 0.952935, -0.00831336, 0.986332, 0.164562, -0.965714, -0.0506219, 0.254625, 6.68837, 1, -5.65447)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
+[node name="scene_template02" parent="Assets" index="1" instance=ExtResource("3_g6px7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8515, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724696, 0.5, 6.23079)
 mesh = SubResource("BoxMesh_q1dd7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Assets" index="4"]
+transform = Transform3D(0.139674, -0.990198, 1.49012e-08, -3.58928e-09, 4.47227e-08, -1, 0.990198, 0.139674, 8.7018e-10, -16.0384, -2, 5.65464)
+mesh = SubResource("PlaneMesh_s8kx1")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_41v43")]
 transform = Transform3D(0.0640098, 0, -0.997949, 0, 1, 0, 0.997949, 0, 0.0640098, 7.26202, 0, -0.0992661)
@@ -29,5 +57,23 @@ destination_portal_id = 1
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
+[node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_41v43")]
+transform = Transform3D(0.999799, 0, 0.0200525, 0, 1, 0, -0.0200525, 0, 0.999799, -15.2214, 0, -7.43958)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 5.00326)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
+[node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 3.26876)
+camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
+
+[editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal2"]

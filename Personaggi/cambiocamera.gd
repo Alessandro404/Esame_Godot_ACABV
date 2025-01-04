@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var camera_3d : Node3D
+@export var camera_rig : Node3D
 
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
-	camera_3d.activate()
+	camera_rig.activate()

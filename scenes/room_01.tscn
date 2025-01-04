@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=6 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_k7rch"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_8pmjc"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_ouv8e"]
-[ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="3_p7uyx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
 albedo_color = Color(0, 0, 1, 1)
@@ -11,34 +10,20 @@ albedo_color = Color(0, 0, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_mmlno"]
 material = SubResource("StandardMaterial3D_fkmva")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oatt6"]
-albedo_texture = ExtResource("3_p7uyx")
-
-[sub_resource type="QuadMesh" id="QuadMesh_vs5dr"]
-material = SubResource("StandardMaterial3D_oatt6")
-
 [node name="Room01" instance=ExtResource("1_k7rch")]
 
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_8pmjc")]
+stage_dimentions = Vector2(4, 4)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(-3.0244e-08, -0.53326, 0.845951, -4.66191e-08, 0.845951, 0.53326, -1, -2.33095e-08, -5.04451e-08, 5, 2.93859, -2.98297)
+transform = Transform3D(-4.15664e-08, -0.288731, 0.95741, -3.68819e-08, 0.95741, 0.288731, -1, -2.33096e-08, -5.04451e-08, 9.3217, 5.39586, 0)
 
-[node name="CameraRoot2" type="Node3D" parent="Cameras" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09185, 0, 0)
-
-[node name="Camera_rig" parent="Cameras/CameraRoot2" index="0" instance=ExtResource("2_8pmjc")]
-
-[node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
-transform = Transform3D(-0.297193, 0.414096, -0.860349, -0.0324325, 0.896164, 0.442537, 0.954266, 0.159422, -0.252903, -6.30965, 2.93859, -1.49262)
+[node name="MeshInstance3D" parent="Assets" index="1"]
+visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
 mesh = SubResource("BoxMesh_mmlno")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Assets" index="3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, -2, 0)
-mesh = SubResource("QuadMesh_vs5dr")
 
 [node name="Portal2" parent="Interactive/Portals" index="0" instance=ExtResource("2_ouv8e")]
 transform = Transform3D(-0.999878, 0, 0.01562, 0, 1, 0, -0.01562, 0, -0.999878, 0, 0, 7.54381)
@@ -51,7 +36,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
-[node name="Portal" parent="Interactive/Portals" index="1" instance=ExtResource("2_ouv8e")]
+[node name="Portal3" parent="Interactive/Portals" index="1" instance=ExtResource("2_ouv8e")]
+transform = Transform3D(0.00356039, 0, 0.999994, 0, 1, 0, -0.999994, 0, 0.00356039, -7.10893, 0, -0.0500669)
+local_id = 2
+destination_room_id = 4
+destination_portal_id = 1
+
+[node name="Area3D" parent="Interactive/Portals/Portal3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
+
+[node name="Portal" parent="Interactive/Portals" index="2" instance=ExtResource("2_ouv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.47136)
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
@@ -61,6 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
-[editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Interactive/Portals/Portal2"]
+[editable path="Interactive/Portals/Portal3"]
 [editable path="Interactive/Portals/Portal"]

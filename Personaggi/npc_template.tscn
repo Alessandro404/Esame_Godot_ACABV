@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://djou5a1k03qm3"]
+
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="1_2ta43"]
+[ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="2_f65gw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rejvf"]
+albedo_color = Color(0.411765, 0.341176, 0.0117647, 1)
+metallic_specular = 0.0
+
+[sub_resource type="TorusMesh" id="TorusMesh_mh47c"]
+material = SubResource("StandardMaterial3D_rejvf")
+inner_radius = 0.4
+outer_radius = 0.6
+rings = 16
+ring_segments = 8
+
+[sub_resource type="Animation" id="Animation_eqgl0"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5065, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(3.14159, 0, 1.0472), Vector3(6.28319, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.6993, 1),
+"transitions": PackedFloat32Array(0.482968, 1, 1, 1.93187),
+"update": 0,
+"values": [Vector3(0, 0.8, 0), Vector3(0, 1, 0), Vector3(0, 0.7, 0), Vector3(0, 0.8, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vtbmf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6n5sh"]
+_data = {
+"Idle": SubResource("Animation_eqgl0"),
+"RESET": SubResource("Animation_vtbmf")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8w7hm"]
+radius = 0.8
+
+[node name="NpcTemplate" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("TorusMesh_mh47c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6n5sh")
+}
+autoplay = "Idle"
+
+[node name="Actionable" parent="." instance=ExtResource("1_2ta43")]
+dialogue_resource = ExtResource("2_f65gw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+shape = SubResource("SphereShape3D_8w7hm")
