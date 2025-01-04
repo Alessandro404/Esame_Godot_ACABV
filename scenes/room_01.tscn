@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=6 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_k7rch"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_8pmjc"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_ouv8e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
@@ -10,6 +11,11 @@ albedo_color = Color(0, 0, 1, 1)
 material = SubResource("StandardMaterial3D_fkmva")
 
 [node name="Room01" instance=ExtResource("1_k7rch")]
+
+[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_8pmjc")]
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
+transform = Transform3D(-3.0244e-08, -0.53326, 0.845951, -4.66191e-08, 0.845951, 0.53326, -1, -2.33095e-08, -5.04451e-08, 5, 2.93859, -2.98297)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
@@ -35,5 +41,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
+[editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal"]

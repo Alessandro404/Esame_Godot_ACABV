@@ -22,6 +22,7 @@ var fading_in :bool = false
 func _ready() -> void:
 	current_room_path = starting_room_path
 	change_room_state(current_room_path)
+	current_loaded_rooms[0].make_main()
 
 #TODO il fade node del player blocca la rotazione freeroam della camera. fixare bene e non rendendo il nodo invisibile
 
@@ -44,10 +45,9 @@ func _process(delta):
 
 func load_rooms():
 	for i in current_loaded_rooms.size():
-		if i == 0:
-			current_loaded_rooms[i].spawn_room(true) #stanza in gioco
-		else:
-			current_loaded_rooms[i].spawn_room(false) #caricata ma non in gioco
+			current_loaded_rooms[i].spawn_room() #poi riattiva la stanza
+			#current_loaded_rooms[i].make_neighbour() #poi riattiva la stanza
+
 
 
 func parse_paths_make_array() -> void:
@@ -82,6 +82,7 @@ func teleport(room_id : int, portal_id : int):
 	change_room_state(teleport_coordinates[0])
 	player.position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
 	player.teleporting = false
+	activate_room(teleport_coordinates[0])
 	
 
 func get_room_from_id(room_id: int):
@@ -100,3 +101,7 @@ func get_portal_from_id(room_id: String, portal_id: int):
 			#print("agganciato")
 			return available_portals[i]
 	print("Non trovato portali")
+
+func activate_room(room_id):
+	#print(get_node(room_id))
+	get_node(room_id).make_main()

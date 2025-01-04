@@ -55,8 +55,8 @@ func _physics_process(delta: float) -> void:
 	
 	
 	var raw_input := Input.get_vector("move_left", "move_right", "move_foward", "move_backward")
-	var forward := _camera.global_basis.z
-	var right := _camera.global_basis.x
+	var forward : Vector3 = get_viewport().get_camera_3d().global_basis.z
+	var right : Vector3 = get_viewport().get_camera_3d().global_basis.x
 	
 	var move_direction := forward * raw_input.y + right * raw_input.x
 	move_direction.y = 0.0

@@ -33,3 +33,5 @@ mesh = SubResource("CapsuleMesh_s0e73")
 [node name="Portals" type="Node3D" parent="Interactive"]
 
 [node name="CameraTriggers" type="Node3D" parent="Interactive"]
+
+[connection signal="player_changed_room" from="." to="." method="_on_player_changed_room"]
