@@ -14,9 +14,7 @@ script = ExtResource("1_vfbr6")
 
 [node name="Cameras" type="Node3D" parent="."]
 
-[node name="CameraRootA" type="Node3D" parent="Cameras"]
-
-[node name="CameraRootB" type="Node3D" parent="Cameras"]
+[node name="CameraRoot" type="Node3D" parent="Cameras"]
 
 [node name="Lights" type="Node3D" parent="."]
 

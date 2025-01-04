@@ -16,6 +16,7 @@ var _gravity := -30
 @onready var _camera_pivot: Node3D = %CameraPivot
 @onready var _camera: Camera3D = %playerCamera3D
 @onready var _skin = %SophiaSkin
+@onready var own_camera = %playerCamera3D
 
 @onready var actionable_finder: Area3D = $ActionableFinder
 
@@ -29,7 +30,6 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
 	if Input.is_action_just_pressed("talk"):
-		print("test")
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() >0:
 			

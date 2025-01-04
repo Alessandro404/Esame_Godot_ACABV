@@ -44,7 +44,10 @@ func _process(delta):
 
 func load_rooms():
 	for i in current_loaded_rooms.size():
-		current_loaded_rooms[i].spawn_room()
+		if i == 0:
+			current_loaded_rooms[i].spawn_room(true) #stanza in gioco
+		else:
+			current_loaded_rooms[i].spawn_room(false) #caricata ma non in gioco
 
 
 func parse_paths_make_array() -> void:
@@ -75,7 +78,7 @@ func teleport(room_id : int, portal_id : int):
 	var teleport_coordinates: Array
 	teleport_coordinates.insert(0, get_room_from_id(room_id))
 	teleport_coordinates.append(get_portal_from_id(teleport_coordinates[0], portal_id))
-	print(teleport_coordinates)
+	#print(teleport_coordinates)
 	change_room_state(teleport_coordinates[0])
 	player.position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
 	player.teleporting = false
@@ -94,6 +97,6 @@ func get_portal_from_id(room_id: String, portal_id: int):
 	var available_portals = get_node(room_id).get_child(0).portals
 	for i in available_portals.size():
 		if available_portals[i].local_id == portal_id:
-			print("agganciato")
+			#print("agganciato")
 			return available_portals[i]
 	print("Non trovato portali")

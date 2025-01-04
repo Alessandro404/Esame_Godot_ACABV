@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var player:CharacterBody3D
+@onready var player:CharacterBody3D = Global.player
 @onready var camera_3d = $Camera3D
 
 @export var stage_dimentions:Vector2

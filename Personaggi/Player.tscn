@@ -18,6 +18,7 @@ radius = 1.5
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_sc474")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -43,7 +44,7 @@ spring_length = 8.0
 
 [node name="playerCamera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
 unique_name_in_owner = true
-visible = false
+current = true
 
 [node name="ActionableFinder" type="Area3D" parent="."]
 collision_layer = 0
