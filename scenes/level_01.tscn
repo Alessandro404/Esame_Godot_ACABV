@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxj5s7fgm2423"]
+[gd_scene load_steps=8 format=3 uid="uid://bxj5s7fgm2423"]
 
 [ext_resource type="PackedScene" uid="uid://bjr0hsuws36lb" path="res://blender/blockout1.blend" id="1_eqgqc"]
-[ext_resource type="PackedScene" uid="uid://ccuej4sc5msgf" path="res://scenes/old_area_01.tscn" id="3_rvhgh"]
-[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="4_bycos"]
+[ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_tsi5f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxc33"]
 sky_top_color = Color(0.0874599, 0.134676, 0.23013, 1)
@@ -31,12 +30,6 @@ fog_height_density = 1.0
 radius = 0.4
 height = 1.6
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jpp83"]
-size = Vector3(500, 1, 500)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kmuek"]
-size = Vector3(28.3414, 78.2579, 1)
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_si0g2"]
 radius = 0.4
 height = 1.6
@@ -46,6 +39,7 @@ radial_segments = 32
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.469549, 0.236852, 0.850544, -7.44411e-09, -0.963345, 0.268264, 0.882907, -0.125963, -0.452338, 0, 58.9291, 6.61952)
+light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.05
 directional_shadow_mode = 1
@@ -79,43 +73,6 @@ skeleton = NodePath("../../../..")
 
 [node name="Area_01" type="Node3D" parent="Assets/Terrain/Areas"]
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.456391, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D3"]
-shape = SubResource("BoxShape3D_jpp83")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27.3671, 490.327)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D6"]
-shape = SubResource("BoxShape3D_jpp83")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.8436, 564.298)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D7"]
-shape = SubResource("BoxShape3D_jpp83")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 0.48481, -0.87462, 0, 0.87462, 0.48481, 0, 16.6337, 212.259)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 0.998365, -0.0571633, 0, 0.0571633, 0.998365, -5.43137, -8.14598, 1.53579)
-shape = SubResource("BoxShape3D_kmuek")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Assets"]
-transform = Transform3D(1, 0, 0, 0, 0.48481, -0.87462, 0, 0.87462, 0.48481, -0.625349, 43.7726, 286.195)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 0.998365, -0.0571633, 0, 0.0571633, 0.998365, -5.43137, -8.14598, 1.53579)
-shape = SubResource("BoxShape3D_kmuek")
-
 [node name="Areas" type="Node3D" parent="."]
 
 [node name="RootArea1" type="Node3D" parent="Areas"]
@@ -125,26 +82,8 @@ transform = Transform3D(-0.999995, 0, 0.00305417, 0, 1, 0, -0.00305417, 0, -0.99
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CapsuleMesh_si0g2")
 
-[node name="Area_01" parent="Areas/RootArea1" instance=ExtResource("3_rvhgh")]
-transform = Transform3D(1, 0, -4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, 0, 0, 0)
+[node name="Player" parent="." instance=ExtResource("2_tsi5f")]
 
-[node name="Player" parent="Areas/RootArea1/Area_01" index="9"]
-transform = Transform3D(1, 0, -4.65661e-10, 0, 1, 0, 4.65661e-10, 0, 1, 17.717, 52.4617, -8.09937)
-
-[node name="Portal" parent="Areas/RootArea1" instance=ExtResource("4_bycos")]
-transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 9.31323e-10, 0, 1, 44.0443, 0, 6.61899)
-stage_id = 1
-
-[node name="CollisionShape3D" parent="Areas/RootArea1/Portal/Area3D" index="0"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-
-[node name="Node3D" parent="Areas/RootArea1/Portal" index="1"]
-transform = Transform3D(1, 0, -2.32831e-10, 0, 1, 0, 2.32831e-10, 0, 1, -1.99295, 0, 0.006073)
-
-[editable path="Areas/RootArea1/Area_01"]
-[editable path="Areas/RootArea1/Area_01/Cameras/CameraRootA/Camera_area01_A"]
-[editable path="Areas/RootArea1/Area_01/Cameras/CameraRootA2/Camera_area01_A2"]
-[editable path="Areas/RootArea1/Area_01/Portal"]
-[editable path="Areas/RootArea1/Area_01/Cambiocamera"]
-[editable path="Areas/RootArea1/Area_01/Cambiocamera2"]
-[editable path="Areas/RootArea1/Portal"]
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 400.146, 542.206, -214.871)
+size = Vector3(3665.56, 1104.41, 2535.31)
