@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxj5s7fgm2423"]
+[gd_scene load_steps=10 format=3 uid="uid://bxj5s7fgm2423"]
 
 [ext_resource type="PackedScene" uid="uid://bjr0hsuws36lb" path="res://blender/blockout1.blend" id="1_eqgqc"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_tsi5f"]
+[ext_resource type="VoxelGIData" uid="uid://c2knlk1jqh7aw" path="res://data/level_01.VoxelGI_data.res" id="3_xcjgs"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_uisup"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxc33"]
 sky_top_color = Color(0.0874599, 0.134676, 0.23013, 1)
@@ -37,14 +40,20 @@ radial_segments = 32
 
 [node name="Level01" type="Node3D"]
 
+[node name="VoxelGI" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.982, 520.976, -172.398)
+visible = false
+size = Vector3(1630.89, 1151.46, 3220.88)
+camera_attributes = SubResource("CameraAttributesPractical_uisup")
+data = ExtResource("3_xcjgs")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.469549, 0.236852, 0.850544, -7.44411e-09, -0.963345, 0.268264, 0.882907, -0.125963, -0.452338, 0, 58.9291, 6.61952)
+visible = false
 light_bake_mode = 1
 shadow_enabled = true
-shadow_bias = 0.05
 directional_shadow_mode = 1
 directional_shadow_blend_splits = true
-directional_shadow_max_distance = 1000.0
 directional_shadow_pancake_size = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -83,7 +92,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("CapsuleMesh_si0g2")
 
 [node name="Player" parent="." instance=ExtResource("2_tsi5f")]
-
-[node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 400.146, 542.206, -214.871)
-size = Vector3(3665.56, 1104.41, 2535.31)
