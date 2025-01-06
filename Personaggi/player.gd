@@ -11,6 +11,7 @@ extends CharacterBody3D
 
 var _camera_input_direction := Vector2.ZERO
 var _last_movement_direction := Vector3.BACK
+var move_direction := Vector3.ZERO
 var _gravity := -30
 
 @onready var _camera_pivot: Node3D = %CameraPivot
@@ -22,6 +23,8 @@ var _gravity := -30
 
 @onready var fade = $Fade
 var teleporting: bool = false
+
+var old_raw_input := Vector2.ZERO
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
@@ -46,6 +49,7 @@ func _unhandled_input(event:InputEvent) -> void:
 	
 
 func _physics_process(delta: float) -> void:
+	
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
 	_camera_pivot.rotation.x = clamp( _camera_pivot.rotation.x, -PI / 6.0, PI / 3.0 )
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
@@ -58,21 +62,33 @@ func _physics_process(delta: float) -> void:
 	var forward : Vector3 = get_viewport().get_camera_3d().global_basis.z
 	var right : Vector3 = get_viewport().get_camera_3d().global_basis.x
 	
-	var move_direction := forward * raw_input.y + right * raw_input.x
+	#non cambiare direzione a cambi di camera improvvisi finché non si ripreme input
+	if old_raw_input != raw_input:   
+		move_direction = forward * raw_input.y + right * raw_input.x
+	elif old_raw_input == Vector2.ZERO:
+		move_direction = forward * raw_input.y + right * raw_input.x
+
+
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
 	var y_velocity := velocity.y
 	move_direction.y = 0.0
+	
 	if !teleporting:
 		velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
 		velocity.y = y_velocity + _gravity * delta
+		
 	
 	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
 	if is_starting_jump:
 		velocity.y += jump_impulse
-		
+
+	old_raw_input = raw_input
+	
 	move_and_slide()
+	
+
 	
 	if move_direction.length() > 0.2:
 		_last_movement_direction = move_direction

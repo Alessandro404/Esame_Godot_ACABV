@@ -65,6 +65,7 @@ environment = SubResource("Environment_guix8")
 
 [node name="blockout1" parent="Assets/Terrain" instance=ExtResource("1_eqgqc")]
 physics_interpolation_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Varie" type="Node3D" parent="Assets/Terrain"]
 
