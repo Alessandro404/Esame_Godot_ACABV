@@ -1,27 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://7773o71d41k5"]
+[gd_scene load_steps=5 format=3 uid="uid://7773o71d41k5"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_unklt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynul5"]
 size = Vector3(7, 3, 0.569641)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51hni"]
+albedo_color = Color(1, 0, 0.47451, 0.443137)
+
+[sub_resource type="TextMesh" id="TextMesh_ps6ks"]
+material = SubResource("StandardMaterial3D_51hni")
+text = "^"
+
 [node name="Portal" type="Node3D" node_paths=PackedStringArray("spawn_point")]
 script = ExtResource("1_unklt")
 spawn_point = NodePath("PlayerSpawn")
-metadata/_edit_group_ = true
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0775139, 0.5, -0.0466003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0747394, 0.505322, -0.0506757)
 shape = SubResource("BoxShape3D_ynul5")
 
 [node name="PlayerSpawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.451689)
+metadata/_edit_group_ = true
 
-[node name="Marker3D" type="Marker3D" parent="PlayerSpawn"]
-gizmo_extents = 1.0
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerSpawn"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+mesh = SubResource("TextMesh_ps6ks")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
