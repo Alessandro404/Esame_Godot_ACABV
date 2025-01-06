@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://djou5a1k03qm3"]
+[gd_scene load_steps=10 format=3 uid="uid://djou5a1k03qm3"]
 
 [ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="1_2ta43"]
 [ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="2_f65gw"]
@@ -76,7 +76,11 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8w7hm"]
-radius = 0.8
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_budev"]
+height = 1.6
+radius = 0.6
 
 [node name="NpcTemplate" type="Node3D"]
 
@@ -95,3 +99,9 @@ dialogue_resource = ExtResource("2_f65gw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
 shape = SubResource("SphereShape3D_8w7hm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_budev")

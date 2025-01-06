@@ -5,4 +5,6 @@ Strana voce da dietro l'angolo: ...
 Strana voce da dietro l'angolo: C'è qualcuno?..
 Strana voce da dietro l'angolo: ...no?
 
+~ AEND
+Global.dialogue_playing = false
 => END

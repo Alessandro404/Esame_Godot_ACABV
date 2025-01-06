@@ -50,58 +50,72 @@ func _unhandled_input(event:InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	_camera_pivot.rotation.x = clamp( _camera_pivot.rotation.x, -PI / 6.0, PI / 3.0 )
-	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
-	
-
-	_camera_input_direction = Vector2.ZERO
-	
-	
-	var raw_input := Input.get_vector("move_left", "move_right", "move_foward", "move_backward")
-	var forward : Vector3 = get_viewport().get_camera_3d().global_basis.z
-	var right : Vector3 = get_viewport().get_camera_3d().global_basis.x
-	
-	#non cambiare direzione a cambi di camera improvvisi finché non si ripreme input
-	if old_raw_input != raw_input:   
-		move_direction = forward * raw_input.y + right * raw_input.x
-	elif old_raw_input == Vector2.ZERO:
-		move_direction = forward * raw_input.y + right * raw_input.x
-
-
-	move_direction.y = 0.0
-	move_direction = move_direction.normalized()
-	
-	var y_velocity := velocity.y
-	move_direction.y = 0.0
-	
-	if !teleporting:
-		velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
-		velocity.y = y_velocity + _gravity * delta
+	if !Global.dialogue_playing:
+		_camera_pivot.rotation.x += _camera_input_direction.y * delta
+		_camera_pivot.rotation.x = clamp( _camera_pivot.rotation.x, -PI / 6.0, PI / 3.0 )
+		_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 		
-	
-	var is_starting_jump := Input.is_action_just_pressed("jump") and is_on_floor()
-	if is_starting_jump:
-		velocity.y += jump_impulse
 
-	old_raw_input = raw_input
-	
-	move_and_slide()
-	
+		_camera_input_direction = Vector2.ZERO
+		
+		
+		var raw_input := Input.get_vector("move_left", "move_right", "move_foward", "move_backward")
+		var forward : Vector3 = get_viewport().get_camera_3d().global_basis.z
+		var right : Vector3 = get_viewport().get_camera_3d().global_basis.x
+		
+		#non cambiare direzione a cambi di camera improvvisi finché non si ripreme input
+		if old_raw_input != raw_input:   
+			move_direction = forward * raw_input.y + right * raw_input.x
+		elif old_raw_input == Vector2.ZERO:
+			move_direction = forward * raw_input.y + right * raw_input.x
 
-	
-	if move_direction.length() > 0.2:
-		_last_movement_direction = move_direction
-	var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
-	_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
 
-	if is_starting_jump:
-		_skin.jump()
-	elif not is_on_floor() and velocity.y < 0:
-		_skin.fall()
-	elif is_on_floor():
-		var ground_speed := velocity.length()
-		if ground_speed > 0.0:
-			_skin.move()
-		else:
-			_skin.idle()
+		move_direction.y = 0.0
+		move_direction = move_direction.normalized()
+		
+		var y_velocity := velocity.y
+		move_direction.y = 0.0
+		
+		if !teleporting:
+			velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+			velocity.y = y_velocity + _gravity * delta
+			
+		
+		#TODO metodo migliore e unificare saltare e parlare
+		var is_starting_jump: bool
+		var actionables = actionable_finder.get_overlapping_areas()
+		if Input.is_action_just_pressed("jump"):
+			if actionables.size() >0 :
+				actionables[0].action()
+				print("parlare")
+				return
+			elif is_on_floor():
+				is_starting_jump = true
+		if is_starting_jump:
+			velocity.y += jump_impulse
+
+		old_raw_input = raw_input
+		
+		move_and_slide()
+		
+
+		
+		if move_direction.length() > 0.2:
+			_last_movement_direction = move_direction
+		var target_angle := Vector3.BACK.signed_angle_to(_last_movement_direction, Vector3.UP)
+		_skin.global_rotation.y = lerp_angle(_skin.rotation.y, target_angle, rotation_speed * delta)
+
+		if is_starting_jump:
+			_skin.jump()
+		elif not is_on_floor() and velocity.y < 0:
+			_skin.fall()
+		elif is_on_floor():
+			var ground_speed := velocity.length()
+			if ground_speed > 0.0:
+				_skin.move()
+			else:
+				_skin.idle()
+	else:
+		move_direction = Vector3.ZERO
+		velocity = Vector3.ZERO
+		_skin.idle()

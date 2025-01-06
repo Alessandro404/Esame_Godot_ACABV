@@ -2,4 +2,6 @@
 strange default npc: "..."
 strange dafault npc: "Still no gameplay uh?"
 
+~ AEND
+set Global.dialogue_playing = false
 => END
