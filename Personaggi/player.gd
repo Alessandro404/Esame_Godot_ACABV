@@ -90,9 +90,14 @@ func _physics_process(delta: float) -> void:
 				print("parlare")
 				return
 			elif is_on_floor():
-				is_starting_jump = true
+				#TOLTO SALTO EHEH (servono entrambi con il pezzo sotto
+				#se devi rimetterlo metti entrambi
+				#is_starting_jump = true
+				pass
 		if is_starting_jump:
-			velocity.y += jump_impulse
+			#TOLTO SALTO EHEH
+			#velocity.y += jump_impulse
+			pass
 
 		old_raw_input = raw_input
 		
