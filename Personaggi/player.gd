@@ -91,6 +91,7 @@ func _physics_process(delta: float) -> void:
 				return
 			elif is_on_floor():
 				#TOLTO SALTO EHEH (servono entrambi con il pezzo sotto
+				#TODO fixa il portale e il salto che prende il volo
 				#se devi rimetterlo metti entrambi
 				#is_starting_jump = true
 				pass
