@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://uqtjvqbmxaik"]
+[gd_scene load_steps=6 format=3 uid="uid://uqtjvqbmxaik"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_fx5rr"]
+[ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="2_7pjp6"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_lb3td"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6158h"]
@@ -17,6 +18,8 @@ visible = false
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25496, 2.1921, -0.814237)
 mesh = SubResource("BoxMesh_k34sa")
+
+[node name="Npc2DTemplate" parent="Interactive/Actionables" index="0" instance=ExtResource("2_7pjp6")]
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_lb3td")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43795, 0)

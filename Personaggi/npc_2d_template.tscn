@@ -1,0 +1,144 @@
+[gd_scene load_steps=34 format=3 uid="uid://dv2b2r5xi1lr8"]
+
+[ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="1_yfbug"]
+[ext_resource type="Texture2D" uid="uid://0rkrm745ip60" path="res://assets/CatgrillFinal/000.png" id="2_ar7yk"]
+[ext_resource type="Texture2D" uid="uid://c0oo7xs4wk3fd" path="res://assets/CatgrillFinal/001.png" id="3_87baj"]
+[ext_resource type="Texture2D" uid="uid://dowe87mvabo61" path="res://assets/CatgrillFinal/002.png" id="4_7cnv0"]
+[ext_resource type="Texture2D" uid="uid://gwadhkdryojg" path="res://assets/CatgrillFinal/003.png" id="5_t2qu3"]
+[ext_resource type="Texture2D" uid="uid://byhm4lo3u2rhb" path="res://assets/CatgrillFinal/004.png" id="6_0qhci"]
+[ext_resource type="Texture2D" uid="uid://dsaa5rn5rc62n" path="res://assets/CatgrillFinal/005.png" id="7_8ywja"]
+[ext_resource type="Texture2D" uid="uid://cptd7f857ksii" path="res://assets/CatgrillFinal/006.png" id="8_unx2a"]
+[ext_resource type="Texture2D" uid="uid://cfnh4ev70lyqt" path="res://assets/CatgrillFinal/007.png" id="9_s5fx1"]
+[ext_resource type="Texture2D" uid="uid://clcm1ndknohni" path="res://assets/CatgrillFinal/008.png" id="10_4qii0"]
+[ext_resource type="Texture2D" uid="uid://cpgf4cxevcgg" path="res://assets/CatgrillFinal/009.png" id="11_mnalb"]
+[ext_resource type="Texture2D" uid="uid://d06im0vpkvjmm" path="res://assets/CatgrillFinal/010.png" id="12_so23j"]
+[ext_resource type="Texture2D" uid="uid://b1ueayiyqyf5p" path="res://assets/CatgrillFinal/011.png" id="13_5gprv"]
+[ext_resource type="Texture2D" uid="uid://6pgbf2s86tdj" path="res://assets/CatgrillFinal/012.png" id="14_o37aq"]
+[ext_resource type="Texture2D" uid="uid://b1qohyqxe5m4p" path="res://assets/CatgrillFinal/013.png" id="15_yhwhd"]
+[ext_resource type="Texture2D" uid="uid://b3r0b6rffolj" path="res://assets/CatgrillFinal/014.png" id="16_i0cgh"]
+[ext_resource type="Texture2D" uid="uid://bavka3lkm76h0" path="res://assets/CatgrillFinal/015.png" id="17_uwwdg"]
+[ext_resource type="Texture2D" uid="uid://df0w3xg2mw30b" path="res://assets/CatgrillFinal/016.png" id="18_lox27"]
+[ext_resource type="Texture2D" uid="uid://dqrevtv2oogth" path="res://assets/CatgrillFinal/017.png" id="19_blafk"]
+[ext_resource type="Texture2D" uid="uid://bdxsfmx6u4xog" path="res://assets/CatgrillFinal/018.png" id="20_yu36n"]
+[ext_resource type="Texture2D" uid="uid://c2ef3n8lb3hmf" path="res://assets/CatgrillFinal/019.png" id="21_pkp0m"]
+[ext_resource type="Texture2D" uid="uid://d0iwuxjpgvclx" path="res://assets/CatgrillFinal/020.png" id="22_7srbl"]
+[ext_resource type="Texture2D" uid="uid://bvid33dpsnv7f" path="res://assets/CatgrillFinal/021.png" id="23_kcap7"]
+[ext_resource type="Texture2D" uid="uid://bhmjjobg6g2lu" path="res://assets/CatgrillFinal/022.png" id="24_x6hp6"]
+[ext_resource type="Texture2D" uid="uid://wvfydyejnv2b" path="res://assets/CatgrillFinal/023.png" id="25_81krw"]
+[ext_resource type="Texture2D" uid="uid://ufh02dv84vdo" path="res://assets/CatgrillFinal/024.png" id="26_bihje"]
+[ext_resource type="Texture2D" uid="uid://d2noqk4nrxtjb" path="res://assets/CatgrillFinal/025.png" id="27_7pcj2"]
+[ext_resource type="Texture2D" uid="uid://wttq0c1jbeg3" path="res://assets/CatgrillFinal/026.png" id="28_n5qu2"]
+[ext_resource type="Texture2D" uid="uid://cn0rao814kahw" path="res://assets/CatgrillFinal/027.png" id="29_uoyu2"]
+[ext_resource type="Texture2D" uid="uid://bahfpbb31d2jw" path="res://assets/CatgrillFinal/028.png" id="30_tqupr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6868p"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_v5ix1"]
+material = SubResource("StandardMaterial3D_6868p")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4c8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ar7yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_87baj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7cnv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t2qu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0qhci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ywja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_unx2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_s5fx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4qii0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mnalb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_so23j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5gprv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_o37aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yhwhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i0cgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_uwwdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lox27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_blafk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yu36n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pkp0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7srbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kcap7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x6hp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_81krw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_bihje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7pcj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n5qu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uoyu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tqupr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Npc2DTemplate" instance=ExtResource("1_yfbug")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+visible = false
+mesh = SubResource("QuadMesh_v5ix1")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." index="4"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.878, 0.516634, 10.7172, 1.80881)
+sprite_frames = SubResource("SpriteFrames_o4c8f")
+autoplay = "default"
+frame_progress = 0.669081
