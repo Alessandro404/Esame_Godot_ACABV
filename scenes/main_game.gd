@@ -81,8 +81,9 @@ func teleport(room_id : int, portal_id : int):
 	#print(teleport_coordinates)
 	change_room_state(teleport_coordinates[0])
 	player.global_position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
-	player.move_direction = teleport_coordinates[1].find_child("PlayerSpawn").global_basis.z
 	player.teleporting = false
+	player.move_direction = teleport_coordinates[1].find_child("PlayerSpawn").basis.z
+	#player._last_movement_direction = teleport_coordinates[1].find_child("PlayerSpawn").basis.z
 	activate_room(teleport_coordinates[0])
 	
 

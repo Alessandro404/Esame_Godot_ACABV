@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var id : int
+#@export var id : int
 @export var res_room: String
 @export var neighbors:Array[NodePath] = []
 

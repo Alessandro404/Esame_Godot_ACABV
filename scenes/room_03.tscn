@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96341, 0, 0)
 stage_dimentions = Vector2(8, 64)
 
 [node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
-transform = Transform3D(0.9996, 0, 0.0282882, 0, 1, 0, -0.0282882, 0, 0.9996, 0, 3.28722, 7.78755)
+transform = Transform3D(0.9996, 0, 0.0282882, 0, 1, 0, -0.0282882, 0, 0.9996, 0.0879993, 3.32683, 7.86085)
 
 [node name="CameraRoot" parent="Cameras" index="1"]
 transform = Transform3D(-0.998726, 0, -0.0504536, 0, 1, 0, 0.0504536, 0, -0.998726, -15.0475, 0, 0)
@@ -66,7 +66,7 @@ destination_room_id = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 5.00326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4046, 0.393598, 5.03369)
 camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
 
 [node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
