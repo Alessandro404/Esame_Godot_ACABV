@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://uqtjvqbmxaik"]
+[gd_scene load_steps=8 format=3 uid="uid://uqtjvqbmxaik"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_fx5rr"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="2_7pjp6"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_lb3td"]
+[ext_resource type="Resource" uid="uid://dcxj1aytgfrdd" path="res://dialogues/Maneki.dialogue" id="3_6jtus"]
+[ext_resource type="SpriteFrames" uid="uid://c12lbqm7r7avg" path="res://Personaggi/spritesheet.tres" id="3_7gspg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6158h"]
 albedo_color = Color(1, 0, 0.513726, 1)
@@ -19,7 +21,15 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25496, 2.1921, -0.814237)
 mesh = SubResource("BoxMesh_k34sa")
 
-[node name="Npc2DTemplate" parent="Interactive/Actionables" index="0" instance=ExtResource("2_7pjp6")]
+[node name="Maneki" parent="Interactive/Actionables" index="0" instance=ExtResource("2_7pjp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211996, 0, -4.92389)
+
+[node name="Actionable" parent="Interactive/Actionables/Maneki" index="2"]
+dialogue_resource = ExtResource("3_6jtus")
+
+[node name="AnimatedSprite3D" parent="Interactive/Actionables/Maneki" index="4"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 1, -1.18537, 0, 0)
+sprite_frames = ExtResource("3_7gspg")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_lb3td")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43795, 0)
@@ -35,4 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0747394, 0.505322, -4.92072
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34265, -3.63134)
 
+[editable path="Interactive/Actionables/Maneki"]
 [editable path="Interactive/Portals/Portal"]

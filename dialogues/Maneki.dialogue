@@ -1,0 +1,26 @@
+~ start
+maneki: niaaannn
+=> AEND
+
+maneki: mrrrhh
+
+~ AEND
+set Global.dialogue_playing = false
+=> END
+
+
+
+
+
+
+~ this_is_a_node_title
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END

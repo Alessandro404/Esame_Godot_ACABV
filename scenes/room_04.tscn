@@ -75,6 +75,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Cameras/CameraRoot2/Camera_rig"]
+[editable path="Interactive/Actionables/NpcTemplate"]
 [editable path="Interactive/Portals/Portal"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal3"]

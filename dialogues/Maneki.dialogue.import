@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dcxj1aytgfrdd"
+path="res://.godot/imported/Maneki.dialogue-4253b14187c33289b7eac9ddde65f6d9.tres"
+
+[deps]
+
+source_file="res://dialogues/Maneki.dialogue"
+dest_files=["res://.godot/imported/Maneki.dialogue-4253b14187c33289b7eac9ddde65f6d9.tres"]
+
+[params]
+
+defaults=true
