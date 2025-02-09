@@ -57,6 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
+[node name="Node3D" type="Node3D" parent="." index="4"]
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal3"]
