@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpff0jlrw6veo"]
+[gd_scene load_steps=7 format=3 uid="uid://dpff0jlrw6veo"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_tp1q4"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_c0p5g"]
+[ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="2_xm005"]
+[ext_resource type="PackedScene" uid="uid://o3lnxuyr1oxg" path="res://blender/cono2.blend" id="3_t47dh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iosjb"]
 albedo_color = Color(1, 0.407843, 1, 1)
@@ -14,6 +16,20 @@ material = SubResource("StandardMaterial3D_iosjb")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20747, 0.5, 1.82051)
 mesh = SubResource("BoxMesh_erjwh")
+
+[node name="NpcCono1" parent="Interactive/Actionables" index="0" instance=ExtResource("2_xm005")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36595, 0, -2.00826)
+
+[node name="cono2" parent="Interactive/Actionables/NpcCono1" index="0" instance=ExtResource("3_t47dh")]
+
+[node name="Skeleton3D" parent="Interactive/Actionables/NpcCono1/cono2/Armature" index="0"]
+bones/0/rotation = Quaternion(0, 0.999201, 0, 0.039968)
+
+[node name="AnimationPlayer" parent="Interactive/Actionables/NpcCono1/cono2" index="1"]
+autoplay = "ArmatureAction"
+
+[node name="MeshInstance3D" parent="Interactive/Actionables/NpcCono1" index="1"]
+visible = false
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_c0p5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.37001)
@@ -31,5 +47,7 @@ destination_room_id = 3
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0248271, 0, 1.64388)
 
+[editable path="Interactive/Actionables/NpcCono1"]
+[editable path="Interactive/Actionables/NpcCono1/cono2"]
 [editable path="Interactive/Portals/Portal"]
 [editable path="Interactive/Portals/Portal2"]
