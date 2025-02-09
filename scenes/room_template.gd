@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var player = Global.player
 @onready var camera = $Cameras/CameraRoot
+@onready var EndCamera : Node3D = %EndCamera
 
 signal player_changed_room
 var portals: Array[Node]
