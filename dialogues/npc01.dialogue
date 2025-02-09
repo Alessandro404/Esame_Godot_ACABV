@@ -1,6 +1,14 @@
 ~ start
 strange default npc: "..."
 strange dafault npc: "Still no gameplay uh?"
+=> AEND
+
+~ startcono1
+strange cono: "..."
+strange cono: "oh my god you are so 3d moe"
+=> AEND
+
+
 
 ~ AEND
 set Global.dialogue_playing = false

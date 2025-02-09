@@ -31,6 +31,9 @@ autoplay = "ArmatureAction"
 [node name="MeshInstance3D" parent="Interactive/Actionables/NpcCono1" index="1"]
 visible = false
 
+[node name="Actionable" parent="Interactive/Actionables/NpcCono1" index="3"]
+dialogue_start = "startcono1"
+
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_c0p5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.37001)
 destination_room_id = 1
