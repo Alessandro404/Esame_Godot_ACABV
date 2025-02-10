@@ -19,6 +19,11 @@ var old_loaded_rooms: Array[Node3D]
 var fading_out :bool = false
 var fading_in :bool = false
 
+
+@onready var EndCamera: Node3D = %CameraFinale  #TODO rimuovi queste due robe
+@export_group("Cose oscene da togliere")
+@export var proc_sky: Resource
+
 func _ready() -> void:
 	current_room_path = starting_room_path
 	change_room_state(current_room_path)
@@ -42,6 +47,21 @@ func _process(delta):
 		if fade_in_timer <= 0.0:
 			fading_in = false
 			fade_in_timer = fade_speed
+			
+	if Global.startfinale:   #TODO orribile, poi toglilo
+		EndCamera.set_current(true)
+		print("cambiato camera per finale")
+		if $DirectionalLight3D.rotation_degrees.x <= -20:
+			$DirectionalLight3D.rotation_degrees.x += 0.05
+		$DirectionalLight3D.rotation_degrees.x += 0.05
+		$DirectionalLight3D.light_energy -= 0.0015
+		if proc_sky.energy_multiplier > 0:
+			proc_sky.energy_multiplier -= 0.002
+		if proc_sky.sky_curve > 0.002:
+			proc_sky.sky_curve -=0.0002
+		print($DirectionalLight3D.rotation_degrees.x)
+		if $DirectionalLight3D.rotation_degrees.x >= 0:
+			Global.startfinale = false
 
 func load_rooms():
 	for i in current_loaded_rooms.size():
@@ -107,3 +127,6 @@ func get_portal_from_id(room_id: String, portal_id: int):
 func activate_room(room_id):
 	#print(get_node(room_id))
 	get_node(room_id).make_main()
+
+
+##HIC SUNT CAZZATE

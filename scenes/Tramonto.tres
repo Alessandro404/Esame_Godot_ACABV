@@ -1,0 +1,21 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dp3q6sdg40w2j"]
+
+[ext_resource type="Material" uid="uid://bqqax1eym67ah" path="res://scenes/ProceduralSkytramonto.tres" id="1_lx5cy"]
+
+[sub_resource type="Sky" id="Sky_fd2g2"]
+sky_material = ExtResource("1_lx5cy")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_fd2g2")
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+glow_intensity = 0.1
+glow_strength = 0.1
+fog_density = 0.0
+fog_aerial_perspective = 1.0
+fog_sky_affect = 0.0
+fog_height_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0

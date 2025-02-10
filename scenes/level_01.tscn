@@ -1,33 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxj5s7fgm2423"]
+[gd_scene load_steps=8 format=3 uid="uid://bxj5s7fgm2423"]
 
 [ext_resource type="PackedScene" uid="uid://bjr0hsuws36lb" path="res://blender/blockout1.blend" id="1_eqgqc"]
+[ext_resource type="Environment" uid="uid://dp3q6sdg40w2j" path="res://scenes/Tramonto.tres" id="2_qiuks"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="2_tsi5f"]
 [ext_resource type="VoxelGIData" uid="uid://c2knlk1jqh7aw" path="res://data/level_01.VoxelGI_data.res" id="3_xcjgs"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_uisup"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fxc33"]
-sky_top_color = Color(0.0874599, 0.134676, 0.23013, 1)
-sky_horizon_color = Color(0.86381, 0.558004, 0.578755, 1)
-ground_bottom_color = Color(0.283578, 0.12442, 0.000934434, 1)
-sun_angle_max = 0.0
-energy_multiplier = 1.5
-
-[sub_resource type="Sky" id="Sky_fd2g2"]
-sky_material = SubResource("ProceduralSkyMaterial_fxc33")
-
-[sub_resource type="Environment" id="Environment_guix8"]
-background_mode = 2
-sky = SubResource("Sky_fd2g2")
-reflected_light_source = 2
-tonemap_mode = 3
-ssao_enabled = true
-glow_intensity = 0.1
-glow_strength = 0.1
-fog_density = 0.0
-fog_aerial_perspective = 1.0
-fog_sky_affect = 0.0
-fog_height_density = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gsjgr"]
 radius = 0.4
@@ -57,7 +35,7 @@ directional_shadow_blend_splits = true
 directional_shadow_pancake_size = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_guix8")
+environment = ExtResource("2_qiuks")
 
 [node name="Assets" type="Node" parent="."]
 
