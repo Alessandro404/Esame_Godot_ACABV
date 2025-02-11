@@ -50,7 +50,7 @@ func _process(delta):
 			
 	if Global.startfinale:   #TODO orribile, poi toglilo
 		EndCamera.set_current(true)
-		print("cambiato camera per finale")
+		
 		if $DirectionalLight3D.rotation_degrees.x <= -20:
 			$DirectionalLight3D.rotation_degrees.x += 0.05
 		$DirectionalLight3D.rotation_degrees.x += 0.05
@@ -59,7 +59,6 @@ func _process(delta):
 			proc_sky.energy_multiplier -= 0.002
 		if proc_sky.sky_curve > 0.002:
 			proc_sky.sky_curve -=0.0002
-		print($DirectionalLight3D.rotation_degrees.x)
 		if $DirectionalLight3D.rotation_degrees.x >= 0:
 			Global.startfinale = false
 
