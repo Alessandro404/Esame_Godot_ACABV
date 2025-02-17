@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=59 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_k7rch"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_8pmjc"]
@@ -54,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://devkgyt56j108" path="res://assets/Edgelord/edgelord47.webp" id="51_waxlt"]
 [ext_resource type="Texture2D" uid="uid://dydkfrg8djol1" path="res://assets/Edgelord/edgelord48.webp" id="52_vfoy8"]
 [ext_resource type="Texture2D" uid="uid://oev70ichtgwx" path="res://assets/Edgelord/edgelord49.webp" id="53_r6ctm"]
+[ext_resource type="PackedScene" uid="uid://btrywf15khorb" path="res://blender/xXSlasherXxroom.blend" id="55_aiytd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
 albedo_color = Color(0, 0, 1, 1)
@@ -279,8 +280,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
 [node name="Node3D" type="Node3D" parent="." index="4"]
 
+[node name="xXSlasherXxroom" parent="." index="5" instance=ExtResource("55_aiytd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 5, 46)
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Assets/scene_template01"]
 [editable path="Interactive/Actionables/xX-Slasher-Xx"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal3"]
 [editable path="Interactive/Portals/Portal"]
+[editable path="xXSlasherXxroom"]
