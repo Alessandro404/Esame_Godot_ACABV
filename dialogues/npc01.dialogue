@@ -14,7 +14,11 @@ strange cono: "Inside you there are two wolves"
 => AEND
 
 ~ startslasher
-strange cono: "Salve sono Nico"
+if Global.pres_slasher == false
+	superslasherXXX8l004: "Salve sono Nico"
+	set Global.pres_slasher = true
+else
+	superslasherXXX8l004: "Ci siamo già sentiti"
 => AEND
 
 ~ AEND
