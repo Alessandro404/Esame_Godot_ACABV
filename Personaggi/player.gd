@@ -87,7 +87,12 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			if actionables.size() >0 :
 				actionables[0].action()
-				print("parlare")
+				print(Global.npc_dict.slasher)
+				#TODO ## orribile da togliere appena possibile
+				for element in Global.npc_dict : 
+					var value = Global.npc_dict[element]
+					if value == false :
+						print("Non hai ancora finito.")
 				return
 			elif is_on_floor():
 				#TOLTO SALTO EHEH (servono entrambi con il pezzo sotto

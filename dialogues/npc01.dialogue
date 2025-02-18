@@ -14,9 +14,9 @@ strange cono: "Inside you there are two wolves"
 => AEND
 
 ~ startslasher
-if Global.pres_slasher == false
+if Global.npc_dict.slasher == false
 	superslasherXXX8l004: "Salve sono Nico"
-	set Global.pres_slasher = true
+	set Global.npc_dict.slasher = true
 else
 	superslasherXXX8l004: "Ci siamo già sentiti"
 => AEND
