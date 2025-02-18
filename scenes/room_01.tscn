@@ -1,7 +1,6 @@
-[gd_scene load_steps=59 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=58 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_k7rch"]
-[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_8pmjc"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_ouv8e"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="3_g4oqh"]
 [ext_resource type="Texture2D" uid="uid://nelb5il2cssb" path="res://assets/Edgelord/edgelord00.webp" id="4_ni8m7"]
@@ -222,11 +221,13 @@ animations = [{
 
 [node name="Room01" instance=ExtResource("1_k7rch")]
 
-[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_8pmjc")]
-stage_dimentions = Vector2(4, 4)
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 20)
+light_bake_mode = 1
+shadow_enabled = true
 
-[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(-4.15664e-08, -0.288731, 0.95741, -3.68819e-08, 0.95741, 0.288731, -1, -2.33096e-08, -5.04451e-08, 9.3217, 5.39586, 0)
+[node name="scene_template01" parent="Assets" index="0"]
+visible = false
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -234,6 +235,9 @@ visible = false
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
 mesh = SubResource("BoxMesh_mmlno")
+
+[node name="xXSlasherXxroom" parent="Assets" index="3" instance=ExtResource("55_aiytd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 9, 46)
 
 [node name="xX-Slasher-Xx" parent="Interactive/Actionables" index="0" instance=ExtResource("3_g4oqh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
@@ -280,13 +284,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
 
 [node name="Node3D" type="Node3D" parent="." index="4"]
 
-[node name="xXSlasherXxroom" parent="." index="5" instance=ExtResource("55_aiytd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 5, 46)
-
-[editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Assets/scene_template01"]
+[editable path="Assets/xXSlasherXxroom"]
 [editable path="Interactive/Actionables/xX-Slasher-Xx"]
 [editable path="Interactive/Portals/Portal2"]
 [editable path="Interactive/Portals/Portal3"]
 [editable path="Interactive/Portals/Portal"]
-[editable path="xXSlasherXxroom"]
