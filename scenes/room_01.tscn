@@ -223,8 +223,10 @@ animations = [{
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 20)
+light_energy = 14.0
 light_bake_mode = 1
 shadow_enabled = true
+omni_range = 27.0
 
 [node name="scene_template01" parent="Assets" index="0"]
 visible = false
