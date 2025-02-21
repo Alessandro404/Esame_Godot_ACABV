@@ -1,9 +1,7 @@
-[gd_scene load_steps=81 format=3 uid="uid://7773o71d41k5"]
+[gd_scene load_steps=79 format=3 uid="uid://7773o71d41k5"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_unklt"]
 [ext_resource type="Texture2D" uid="uid://0svdyifaqp1n" path="res://assets/ZZZportal/Portale01.webp" id="2_0idfl"]
-[ext_resource type="Texture2D" uid="uid://dr7adepltye5j" path="res://assets/ZZZportal/Portale02.webp" id="3_u82h1"]
-[ext_resource type="Texture2D" uid="uid://dx8dp81wduj4t" path="res://assets/ZZZportal/Portale00.webp" id="4_stnf1"]
 [ext_resource type="Texture2D" uid="uid://bgabejs6woucm" path="res://assets/ZZZportal/Portale03.webp" id="5_ktfwf"]
 [ext_resource type="Texture2D" uid="uid://dqm8ehse2ungf" path="res://assets/ZZZportal/Portale04.webp" id="6_xw1eo"]
 [ext_resource type="Texture2D" uid="uid://q0pele8vbepq" path="res://assets/ZZZportal/Portale05.webp" id="7_papk4"]
@@ -85,12 +83,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_0idfl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_u82h1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_stnf1")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_ktfwf")
@@ -337,7 +329,7 @@ shape = SubResource("BoxShape3D_ynul5")
 transform = Transform3D(0.725978, 0, 0, 0, 0.725978, 0, 0, 0, 0.725978, 0, 4.46372, -0.355013)
 sprite_frames = SubResource("SpriteFrames_1pdaq")
 autoplay = "default"
-frame_progress = 0.315119
+frame_progress = 0.034383
 
 [node name="PlayerSpawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.451689)
