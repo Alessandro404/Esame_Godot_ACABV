@@ -124,8 +124,11 @@ func _physics_process(delta: float) -> void:
 			var ground_speed := velocity.length()
 			if ground_speed > 0.0:
 				_skin.move()
+				#TODO fixare nomi animazioni...
+				#_skin.Armature|armature|Run()
 			else:
 				_skin.idle()
+				#_skin.Armature|armature|Idle()
 	else:
 		move_direction = Vector3.ZERO
 		velocity = Vector3.ZERO

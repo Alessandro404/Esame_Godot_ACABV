@@ -37,9 +37,11 @@ func _set_run_tilt(value : float):
 
 func idle():
 	state_machine.travel("Idle")
+	#state_machine.travel("Armature|Armature|Idle")
 
 func move():
 	state_machine.travel("Move")
+	#state_machine.travel("Armature|Armature|Run")
 
 func fall():
 	state_machine.travel("Fall")
