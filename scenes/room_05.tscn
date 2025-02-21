@@ -32,7 +32,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 1, -1.18537, 0, 0)
 sprite_frames = ExtResource("3_7gspg")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_lb3td")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.43795, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43795, 0)
 destination_room_id = 4
 destination_portal_id = 2
 
@@ -40,10 +40,13 @@ destination_portal_id = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.298024, -1.72914, -1.66707)
 
 [node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0747394, 0.505322, -4.92072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0747394, 0.505322, 8.93743)
+
+[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal/Area3D" index="1"]
+transform = Transform3D(0.725978, 0, 0, 0, 0.725978, 0, 0, 0, 0.725978, 0, 2.46662, 9.89634)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34265, -3.63134)
+transform = Transform3D(-0.999418, 0, 0.0341146, 0, 1, 0, -0.0341146, 0, -0.999418, 0, -2.34265, 5.96908)
 
 [editable path="Interactive/Actionables/Maneki"]
 [editable path="Interactive/Portals/Portal"]

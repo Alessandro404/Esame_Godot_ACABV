@@ -10,11 +10,11 @@ var old_loaded_rooms: Array[Node3D]
 @onready var player= Global.player
 
 @export_group("Level Fade")
-@export var fade_speed :float = 0.2
+@export var fade_speed :float = 0.3
 #@export var fade_out_durata = 1.0
 #@export var fade_in_durata = 1.2
-@onready var fade_out_timer = 0.5
-@onready var fade_in_timer = 0.5
+@onready var fade_out_timer = 0.3
+@onready var fade_in_timer = 0.3
 
 var fading_out :bool = false
 var fading_in :bool = false
