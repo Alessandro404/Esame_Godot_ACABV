@@ -50,15 +50,21 @@ transform = Transform3D(0.139674, -0.990198, 1.49012e-08, -3.58928e-09, 4.47227e
 mesh = SubResource("PlaneMesh_s8kx1")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_41v43")]
-transform = Transform3D(0.0640098, 0, -0.997949, 0, 1, 0, 0.997949, 0, 0.0640098, 7.26202, 0, -0.0992661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95784, 0, 0.900998)
 destination_room_id = 2
 destination_portal_id = 1
 
+[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+transform = Transform3D(0.00240858, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00240858, -2.26066, 0, -1.07302)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0747404, 0.505322, -0.0506757)
+
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+transform = Transform3D(0.0410023, 0.000397385, -0.999159, -0.000345011, 1, 0.000383557, 0.999159, 0.000328988, 0.0410024, -4.8503, 0, -1.00173)
 
 [node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_41v43")]
-transform = Transform3D(0.999799, 0, 0.0200525, 0, 1, 0, -0.0200525, 0, 0.999799, -15.2214, 0, -7.43958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2214, 0, -7.43958)
 local_id = 1
 destination_room_id = 4
 

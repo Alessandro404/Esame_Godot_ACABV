@@ -10,11 +10,11 @@ var old_loaded_rooms: Array[Node3D]
 @onready var player= Global.player
 
 @export_group("Level Fade")
-@export var fade_speed :float = 1.0
+@export var fade_speed :float = 0.2
 #@export var fade_out_durata = 1.0
 #@export var fade_in_durata = 1.2
-@onready var fade_out_timer = 1.0
-@onready var fade_in_timer = 1.0
+@onready var fade_out_timer = 0.5
+@onready var fade_in_timer = 0.5
 
 var fading_out :bool = false
 var fading_in :bool = false
@@ -100,8 +100,8 @@ func teleport(room_id : int, portal_id : int):
 	#print(teleport_coordinates)
 	change_room_state(teleport_coordinates[0])
 	player.global_position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
-	player.teleporting = false
 	player.move_direction = teleport_coordinates[1].find_child("PlayerSpawn").basis.z
+	player.teleporting = false
 	#player._last_movement_direction = teleport_coordinates[1].find_child("PlayerSpawn").basis.z
 	activate_room(teleport_coordinates[0])
 	

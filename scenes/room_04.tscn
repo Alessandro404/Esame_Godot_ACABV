@@ -49,21 +49,39 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1925, 0, 30.4108)
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("3_phdxi")]
-transform = Transform3D(0.0210123, 0, -0.999779, 0, 1, 0, 0.999779, 0, 0.0210123, 45.2128, 0.270176, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.2975, 0.561611, 5.75091)
 destination_room_id = 3
 destination_portal_id = 1
 
+[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21207, 0, -0.0565872)
+
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0663281, 0, 3.60762)
+transform = Transform3D(0.999765, 0, -0.0216579, 0, 1, 0, 0.0216579, 0, 0.999765, 2.08898, -4.76837e-07, 2.78492)
+
+[node name="MeshInstance3D" parent="Interactive/Portals/Portal/PlayerSpawn" index="0"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, -0.140071, 0, -6.46591)
 
 [node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("3_phdxi")]
-transform = Transform3D(0.998584, 0, 0.05319, 0, 1, 0, -0.05319, 0, 0.998584, 8.45967, 0.270176, -23.4545)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.45967, 0.270176, -23.4545)
 local_id = 1
 destination_room_id = 1
 destination_portal_id = 2
 
+[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+transform = Transform3D(-0.128536, 0, 0.991705, 0, 1, 0, -0.991705, 0, -0.128536, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, -0.410405, 0.505322, 3.6924)
+
+[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal2/Area3D" index="1"]
+transform = Transform3D(0.725978, 0, 7.45058e-09, 0, 0.725978, 0, -7.45058e-09, 0, 0.725978, -0.43049, 4.46372, 2.96638)
+
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0663281, 0, 3.60762)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.427397, -9.53674e-07, -0.243423)
+
+[node name="MeshInstance3D" parent="Interactive/Portals/Portal2/PlayerSpawn" index="0"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
 
 [node name="Portal3" parent="Interactive/Portals" index="2" instance=ExtResource("3_phdxi")]
 transform = Transform3D(0.0943167, 0, 0.995542, 0, 1, 0, -0.995542, 0, 0.0943167, -26.5367, 0.270176, 6.1821)
