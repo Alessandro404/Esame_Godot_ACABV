@@ -97,12 +97,11 @@ func teleport(room_id : int, portal_id : int):
 	var teleport_coordinates: Array
 	teleport_coordinates.insert(0, get_room_from_id(room_id))
 	teleport_coordinates.append(get_portal_from_id(teleport_coordinates[0], portal_id))
-	#print(teleport_coordinates)
 	change_room_state(teleport_coordinates[0])
 	player.global_position = teleport_coordinates[1].find_child("PlayerSpawn").global_position
 	#player.move_direction = teleport_coordinates[1].find_child("PlayerSpawn").global_basis.z.normalized()
-	player.move_direction = Vector3.ZERO
-	player.move_direction.z = Vector3.FORWARD.signed_angle_to(teleport_coordinates[1].find_child("PlayerSpawn").global_basis.z.normalized(), Vector3.UP)
+	player.velocity = Vector3.ZERO
+	player.move_direction = teleport_coordinates[1].find_child("PlayerSpawn").global_basis.z.normalized()
 	player.teleporting = false
 
 	activate_room(teleport_coordinates[0])

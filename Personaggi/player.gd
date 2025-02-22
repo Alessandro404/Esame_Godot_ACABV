@@ -23,7 +23,7 @@ var _gravity := -30
 
 @onready var fade = $Fade
 var teleporting: bool = false
-
+var is_camera_motion
 
 var old_raw_input := Vector2.ZERO
 
@@ -41,7 +41,7 @@ func _input(event: InputEvent) -> void:
 			return
 
 func _unhandled_input(event:InputEvent) -> void:
-	var is_camera_motion := (
+	is_camera_motion = (
 		event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 	)
 	if is_camera_motion:
@@ -69,8 +69,8 @@ func _physics_process(delta: float) -> void:
 			move_direction = forward * raw_input.y + right * raw_input.x
 		elif old_raw_input == Vector2.ZERO:
 			move_direction = forward * raw_input.y + right * raw_input.x
-		#elif is_camera_motion: #TODO questo potrebbe aggiungere bug. controlla
-			#move_direction = forward * raw_input.y + right * raw_input.x
+		elif is_camera_motion and own_camera.current: #TODO questo potrebbe aggiungere bug. controlla
+			move_direction = forward * raw_input.y + right * raw_input.x
 
 
 		move_direction.y = 0.0

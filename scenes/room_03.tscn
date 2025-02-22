@@ -59,16 +59,16 @@ destination_portal_id = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26066, 0, -1.07302)
 
 [node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
-transform = Transform3D(-0.047089, 0, -0.998891, 0, 1, 0, 0.998891, 0, -0.047089, 0.0747404, 0.505322, -0.0506757)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0747404, 0.505322, -0.0506757)
 
 [node name="AnimatedSprite3D" parent="Interactive/Portals/Portal/Area3D" index="1"]
 transform = Transform3D(0.00212867, 0, -0.725975, 0, 0.725978, 0, 0.725975, 0, 0.00212867, 0, 4.46372, -0.355013)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8503, 0, -1.00173)
+transform = Transform3D(-0.0427824, 0, -0.999084, 0, 1, 0, 0.999084, 0, -0.0427824, -4.8503, 0, -1.00173)
 
 [node name="MeshInstance3D" parent="Interactive/Portals/Portal/PlayerSpawn" index="0"]
-transform = Transform3D(-1.31134e-07, -3, 1.31134e-07, 0, -1.31134e-07, -3, 3, -1.31134e-07, 5.73206e-15, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
 
 [node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_41v43")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2214, 0, -7.43958)

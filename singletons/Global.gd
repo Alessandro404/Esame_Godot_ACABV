@@ -12,7 +12,6 @@ extends Node
 
 
 
-
 @onready var dialogue_playing : bool = false:
 	set(value):
 		if !value:

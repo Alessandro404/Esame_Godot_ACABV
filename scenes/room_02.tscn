@@ -94,12 +94,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.37001)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
 [node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_c0p5g")]
-transform = Transform3D(0.0208203, 0, 0.999783, 0, 1, 0, -0.999783, 0, 0.0208203, -7.95898, 0, 0)
+transform = Transform3D(-0.0128627, 0, 0.999917, 0, 1, 0, -0.999917, 0, -0.0128627, -7.95898, 0, 0)
 local_id = 1
 destination_room_id = 3
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0248271, 0, 1.64388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.75112)
 
 [editable path="Interactive/Actionables/NpcCono1"]
 [editable path="Interactive/Actionables/NpcCono1/cono2"]
