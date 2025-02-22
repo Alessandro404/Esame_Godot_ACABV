@@ -33,7 +33,7 @@ res_room = "res://scenes/room_00.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
 
 [node name="RoomSpawner01" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.9461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 265.476)
 res_room = "res://scenes/room_01.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner00"), NodePath("../RoomSpawner02"), NodePath("../RoomSpawner04")])
 
@@ -43,7 +43,7 @@ res_room = "res://scenes/room_02.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner01"), NodePath("../RoomSpawner03"), NodePath("../RoomSpawner00")])
 
 [node name="RoomSpawner03" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9792, 0, 261.939)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.9792, 0, 591.081)
 res_room = "res://scenes/room_03.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner02"), NodePath("../RoomSpawner04")])
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://2t7h4xroxfjx"]
+[gd_scene load_steps=14 format=3 uid="uid://2t7h4xroxfjx"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_p1x8e"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_ld84j"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_y1ug0"]
+[ext_resource type="PackedScene" uid="uid://bbrih18hf8u05" path="res://blender/main_square.blend" id="4_i3tm3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -72,10 +73,11 @@ visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
+visible = false
 mesh = SubResource("SphereMesh_k4crk")
 
 [node name="FogVolume" type="FogVolume" parent="Assets" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.269364, -0.00530708, -0.00028801)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8602, -0.00530708, -0.00028801)
 size = Vector3(19.7505, 2, 29.1759)
 material = SubResource("FogMaterial_giku2")
 
@@ -85,7 +87,7 @@ libraries = {
 }
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_y1ug0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182076, 0, 7.24813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0981365, 0.0165443, 20.9838)
 destination_room_id = 1
 tint_color = Color(1, 0, 1, 1)
 
@@ -98,4 +100,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
+[node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_y1ug0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364152, 0, 41.892)
+destination_room_id = 1
+tint_color = Color(1, 0, 1, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+
+[node name="main_square" parent="." index="5" instance=ExtResource("4_i3tm3")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.161982, -0.498675, -1.90015)
+
 [editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal2"]

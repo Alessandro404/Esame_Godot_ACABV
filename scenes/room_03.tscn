@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=12 format=3 uid="uid://tmcb5337qjau"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_14pt0"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_41v43"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="3_g6px7"]
 [ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="4_b02gk"]
 [ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="5_h4wvk"]
+[ext_resource type="PackedScene" uid="uid://b0jgbbsxfr6nq" path="res://blender/kalyaniroom.blend" id="7_41el5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3i07"]
 albedo_color = Color(0, 1, 0, 1)
@@ -78,6 +79,9 @@ camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
 [node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 3.26876)
 camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
+
+[node name="kalyaniroom" parent="." index="4" instance=ExtResource("7_41el5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1775, -78.7982, 55.6527)
 
 [editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig"]
