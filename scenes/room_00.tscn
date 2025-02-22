@@ -87,9 +87,7 @@ libraries = {
 }
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_y1ug0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0981365, 0.0165443, 20.9838)
-destination_room_id = 1
-tint_color = Color(1, 0, 1, 1)
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0.00955814, 0.3, -9.09928)
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
@@ -100,9 +98,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_y1ug0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.364152, 0, 41.892)
+[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("2_y1ug0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
+local_id = 1
 destination_room_id = 1
+tint_color = Color(0.526747, 0.599717, 0.918598, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal1/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+
+[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("2_y1ug0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1, 0.3, 21)
+local_id = 2
+destination_room_id = 2
 tint_color = Color(1, 0, 1, 1)
 
 [node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
@@ -118,4 +132,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.161982, -0.498675, -1.90015)
 
 [editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal1"]
 [editable path="Interactive/Portals/Portal2"]
