@@ -24,6 +24,7 @@ var _gravity := -30
 @onready var fade = $Fade
 var teleporting: bool = false
 
+
 var old_raw_input := Vector2.ZERO
 
 func _input(event: InputEvent) -> void:
@@ -68,6 +69,8 @@ func _physics_process(delta: float) -> void:
 			move_direction = forward * raw_input.y + right * raw_input.x
 		elif old_raw_input == Vector2.ZERO:
 			move_direction = forward * raw_input.y + right * raw_input.x
+		#elif is_camera_motion: #TODO questo potrebbe aggiungere bug. controlla
+			#move_direction = forward * raw_input.y + right * raw_input.x
 
 
 		move_direction.y = 0.0
@@ -106,7 +109,6 @@ func _physics_process(delta: float) -> void:
 			pass
 
 		old_raw_input = raw_input
-		
 		move_and_slide()
 		
 
