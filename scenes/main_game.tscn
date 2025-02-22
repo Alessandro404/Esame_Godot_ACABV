@@ -30,7 +30,7 @@ shadow_enabled = true
 
 [node name="RoomSpawner00" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 res_room = "res://scenes/room_00.tscn"
-neighbors = Array[NodePath]([NodePath("../RoomSpawner01")])
+neighbors = Array[NodePath]([NodePath("../RoomSpawner01"), NodePath("../RoomSpawner02")])
 
 [node name="RoomSpawner01" parent="LevelsRoot" instance=ExtResource("6_xos5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 265.476)
