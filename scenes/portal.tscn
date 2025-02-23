@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://7773o71d41k5"]
+[gd_scene load_steps=80 format=3 uid="uid://7773o71d41k5"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_unklt"]
 [ext_resource type="Texture2D" uid="uid://0svdyifaqp1n" path="res://assets/ZZZportal/Portale01.webp" id="2_0idfl"]
@@ -72,6 +72,7 @@
 [ext_resource type="Texture2D" uid="uid://4f22fud2cjfx" path="res://assets/ZZZportal/Portale70.webp" id="72_tfai3"]
 [ext_resource type="Texture2D" uid="uid://dxnfrfhmjcr5y" path="res://assets/ZZZportal/Portale71.webp" id="73_3nxgg"]
 [ext_resource type="Texture2D" uid="uid://cjg0g6ny6o6qn" path="res://assets/ZZZportal/Portale72.webp" id="74_2xuh1"]
+[ext_resource type="Script" path="res://scenes/flickeringLight.gd" id="75_ahin7"]
 [ext_resource type="Texture2D" uid="uid://d2kmo0x4ila4e" path="res://assets/ZZZportal/Portale73.webp" id="75_g0dqg"]
 [ext_resource type="Texture2D" uid="uid://btmxaifj0dn53" path="res://assets/ZZZportal/Portale74.webp" id="76_xth53"]
 
@@ -339,5 +340,10 @@ metadata/_edit_group_ = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerSpawn"]
 transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
 mesh = SubResource("TextMesh_ps6ks")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_energy = 2.0
+script = ExtResource("75_ahin7")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
