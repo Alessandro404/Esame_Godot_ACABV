@@ -79,7 +79,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="Portal3_kiwi" parent="Interactive/Portals" index="3" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, -0.17101, -15, 0.3, -7)
-local_id = 2
+local_id = 3
 destination_room_id = 10
 destination_portal_id = 3
 tint_color = Color(0, 1, 0, 1)
@@ -95,7 +95,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="Portal4_ba" parent="Interactive/Portals" index="4" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.17101, 0, 0.469846, 0, 0.5, 0, -0.469846, 0, -0.17101, 15, 0.3, -7)
-local_id = 2
+local_id = 4
 destination_room_id = 11
 destination_portal_id = 2
 tint_color = Color(1, 0.960784, 0.541176, 1)

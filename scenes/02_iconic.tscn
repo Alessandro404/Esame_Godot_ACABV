@@ -71,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
 [node name="Portal3_kiwi" parent="Interactive/Portals" index="3" instance=ExtResource("5_42ic1")]
 transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, -1.92857, 0.463637, 4.36997)
+local_id = 3
 destination_room_id = 10
 destination_portal_id = 2
 tint_color = Color(0, 1, 0, 1)

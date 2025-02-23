@@ -80,7 +80,7 @@ transform = Transform3D(0.00212867, 0, -0.725975, 0, 0.725978, 0, 0.725975, 0, 0
 transform = Transform3D(-0.0427824, 0, -0.999084, 0, 1, 0, 0.999084, 0, -0.0427824, -4.8503, 0, -1.00173)
 
 [node name="Portal1_josh" parent="Interactive/Portals" index="1" instance=ExtResource("5_nllir")]
-transform = Transform3D(0.383022, 0, -0.321394, 0, 0.5, 0, 0.321394, 0, 0.383022, 21.8255, 0.25, -6.45311)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 21.4536, 0.25, -6.45311)
 local_id = 1
 destination_room_id = 6
 destination_portal_id = 1
@@ -90,7 +90,7 @@ tint_color = Color(1, 0.39, 0.735667, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Portal2_catburger" parent="Interactive/Portals" index="2" instance=ExtResource("5_nllir")]
-transform = Transform3D(0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, 0.17101, 24.267, 0.25, -3.55432)
+transform = Transform3D(0.321394, 0, -0.383022, 0, 0.5, 0, 0.383022, 0, 0.321394, 24.7549, 0.25, -4.21076)
 local_id = 2
 destination_room_id = 7
 destination_portal_id = 1
@@ -100,7 +100,7 @@ tint_color = Color(1, 1, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Portal3_avocado" parent="Interactive/Portals" index="3" instance=ExtResource("5_nllir")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 25.7793, 0.25, 0)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 26.3416, 0.25, 0)
 local_id = 3
 destination_room_id = 8
 destination_portal_id = 1
@@ -110,7 +110,7 @@ tint_color = Color(0.588235, 1, 0.603922, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Portal4_kiwi" parent="Interactive/Portals" index="4" instance=ExtResource("5_nllir")]
-transform = Transform3D(-0.225439, 0, -0.446293, 0, 0.5, 0, 0.446293, 0, -0.225439, 24.2235, 0.25, 3.58307)
+transform = Transform3D(-0.383022, 0, -0.321394, 0, 0.5, 0, 0.321394, 0, -0.383022, 24.4401, 0.25, 4.50553)
 local_id = 4
 destination_room_id = 10
 destination_portal_id = 1
@@ -120,7 +120,7 @@ tint_color = Color(0, 1, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Portal5_maneki" parent="Interactive/Portals" index="5" instance=ExtResource("5_nllir")]
-transform = Transform3D(-0.286788, 0, -0.409576, 0, 0.5, 0, 0.409576, 0, -0.286788, 21.826, 0.25, 6.453)
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 21.1207, 0.25, 6.453)
 local_id = 5
 destination_room_id = 13
 destination_portal_id = 1
