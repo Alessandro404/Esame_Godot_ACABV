@@ -106,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.854)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
 local_id = 1
 destination_room_id = 1
-tint_color = Color(0, 0.991978, 0.791056, 1)
+tint_color = Color(0, 0.992157, 1, 1)
 
 [node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
@@ -136,7 +136,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0999999, 0.3, 21)
 local_id = 3
 destination_room_id = 3
-tint_color = Color(0.486686, 0.458019, 0.936356, 1)
+tint_color = Color(0.465845, 0.179811, 0.165326, 1)
 
 [node name="Area3D" parent="Interactive/Portals/Portal3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)

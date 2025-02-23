@@ -62,61 +62,70 @@ mesh = SubResource("PlaneMesh_s8kx1")
 [node name="kalyaniroom" parent="Assets" index="5" instance=ExtResource("7_gnfub")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, -0.738, -1.03296)
 
-[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("5_nllir")]
+[node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("5_nllir")]
 transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -3.85985, 11.0278, 31.735)
 destination_portal_id = 1
 
-[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal0_lobby" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26066, 0, -1.07302)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal0_lobby/Area3D" index="0"]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0.0747414, 0.505322, -0.0506744)
 
-[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal/Area3D" index="1"]
+[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal0_lobby/Area3D" index="1"]
 transform = Transform3D(0.00212867, 0, -0.725975, 0, 0.725978, 0, 0.725975, 0, 0.00212867, 0, 4.46372, -0.355013)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal0_lobby" index="1"]
 transform = Transform3D(-0.0427824, 0, -0.999084, 0, 1, 0, 0.999084, 0, -0.0427824, -4.8503, 0, -1.00173)
 
-[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("5_nllir")]
+[node name="Portal1_josh" parent="Interactive/Portals" index="1" instance=ExtResource("5_nllir")]
 transform = Transform3D(0.383022, 0, -0.321394, 0, 0.5, 0, 0.321394, 0, 0.383022, 21.8255, 0.25, -6.45311)
 local_id = 1
 destination_room_id = 6
 destination_portal_id = 1
+tint_color = Color(1, 0.39, 0.735667, 1)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1_josh" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
-[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("5_nllir")]
+[node name="Portal2_catburger" parent="Interactive/Portals" index="2" instance=ExtResource("5_nllir")]
 transform = Transform3D(0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, 0.17101, 24.267, 0.25, -3.55432)
 local_id = 2
-destination_room_id = 4
+destination_room_id = 7
+destination_portal_id = 1
+tint_color = Color(1, 1, 0, 1)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2_catburger" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
-[node name="Portal3" parent="Interactive/Portals" index="3" instance=ExtResource("5_nllir")]
+[node name="Portal3_avocado" parent="Interactive/Portals" index="3" instance=ExtResource("5_nllir")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 25.7793, 0.25, 0)
 local_id = 3
-destination_room_id = 4
+destination_room_id = 8
+destination_portal_id = 1
+tint_color = Color(0.588235, 1, 0.603922, 1)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3_avocado" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
-[node name="Portal4" parent="Interactive/Portals" index="4" instance=ExtResource("5_nllir")]
+[node name="Portal4_kiwi" parent="Interactive/Portals" index="4" instance=ExtResource("5_nllir")]
 transform = Transform3D(-0.225439, 0, -0.446293, 0, 0.5, 0, 0.446293, 0, -0.225439, 24.2235, 0.25, 3.58307)
 local_id = 4
-destination_room_id = 4
+destination_room_id = 10
+destination_portal_id = 1
+tint_color = Color(0, 1, 0, 1)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal4" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal4_kiwi" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
-[node name="Portal5" parent="Interactive/Portals" index="5" instance=ExtResource("5_nllir")]
+[node name="Portal5_maneki" parent="Interactive/Portals" index="5" instance=ExtResource("5_nllir")]
 transform = Transform3D(-0.286788, 0, -0.409576, 0, 0.5, 0, 0.409576, 0, -0.286788, 21.826, 0.25, 6.453)
 local_id = 5
-destination_room_id = 4
+destination_room_id = 13
+destination_portal_id = 1
+tint_color = Color(0.616667, 0, 1, 1)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal5" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal5_maneki" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("6_qfw3a")]
@@ -129,9 +138,9 @@ camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
 
 [editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig"]
-[editable path="Interactive/Portals/Portal"]
-[editable path="Interactive/Portals/Portal1"]
-[editable path="Interactive/Portals/Portal2"]
-[editable path="Interactive/Portals/Portal3"]
-[editable path="Interactive/Portals/Portal4"]
-[editable path="Interactive/Portals/Portal5"]
+[editable path="Interactive/Portals/Portal0_lobby"]
+[editable path="Interactive/Portals/Portal1_josh"]
+[editable path="Interactive/Portals/Portal2_catburger"]
+[editable path="Interactive/Portals/Portal3_avocado"]
+[editable path="Interactive/Portals/Portal4_kiwi"]
+[editable path="Interactive/Portals/Portal5_maneki"]

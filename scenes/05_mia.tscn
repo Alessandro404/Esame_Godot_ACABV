@@ -32,81 +32,85 @@ mesh = SubResource("SphereMesh_k4crk")
 [node name="MIAroom" parent="Assets" index="3" instance=ExtResource("3_0lw4s")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 5)
 
-[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("3_mdjpx")]
+[node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -10.9092)
 destination_portal_id = 5
 
-[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal0_lobby" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal0_lobby/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal0_lobby" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("3_mdjpx")]
+[node name="Portal1_captchas" parent="Interactive/Portals" index="1" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.453154, 0, 0.211309, 0, 0.5, 0, -0.211309, 0, -0.453154, 10, 0.3, -12)
 local_id = 1
-destination_room_id = 1
-tint_color = Color(0.526747, 0.599717, 0.918598, 1)
+destination_room_id = 4
+destination_portal_id = 1
+tint_color = Color(0.372549, 0.372549, 0.372549, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal1_captchas" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal1/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal1_captchas/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1_captchas" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("3_mdjpx")]
+[node name="Portal2_josh" parent="Interactive/Portals" index="2" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.453154, 0, -0.211309, 0, 0.5, 0, 0.211309, 0, -0.453154, -10, 0.3, -12)
 local_id = 2
-destination_room_id = 2
-tint_color = Color(1, 0, 1, 1)
+destination_room_id = 6
+destination_portal_id = 3
+tint_color = Color(1, 0.388235, 0.737255, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal2_josh" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal2_josh/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2_josh" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[node name="Portal3" parent="Interactive/Portals" index="3" instance=ExtResource("3_mdjpx")]
+[node name="Portal3_kiwi" parent="Interactive/Portals" index="3" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, -0.17101, -15, 0.3, -7)
 local_id = 2
-destination_room_id = 2
-tint_color = Color(1, 0, 1, 1)
+destination_room_id = 10
+destination_portal_id = 3
+tint_color = Color(0, 1, 0, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal3" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal3_kiwi" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal3/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal3_kiwi/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3_kiwi" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[node name="Portal4" parent="Interactive/Portals" index="4" instance=ExtResource("3_mdjpx")]
+[node name="Portal4_ba" parent="Interactive/Portals" index="4" instance=ExtResource("3_mdjpx")]
 transform = Transform3D(-0.17101, 0, 0.469846, 0, 0.5, 0, -0.469846, 0, -0.17101, 15, 0.3, -7)
 local_id = 2
-destination_room_id = 2
-tint_color = Color(1, 0, 1, 1)
+destination_room_id = 11
+destination_portal_id = 2
+tint_color = Color(1, 0.960784, 0.541176, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal4" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal4_ba" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal4/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal4_ba/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal4" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal4_ba" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[editable path="Interactive/Portals/Portal"]
-[editable path="Interactive/Portals/Portal1"]
-[editable path="Interactive/Portals/Portal2"]
-[editable path="Interactive/Portals/Portal3"]
-[editable path="Interactive/Portals/Portal4"]
+[editable path="Interactive/Portals/Portal0_lobby"]
+[editable path="Interactive/Portals/Portal1_captchas"]
+[editable path="Interactive/Portals/Portal2_josh"]
+[editable path="Interactive/Portals/Portal3_kiwi"]
+[editable path="Interactive/Portals/Portal4_ba"]

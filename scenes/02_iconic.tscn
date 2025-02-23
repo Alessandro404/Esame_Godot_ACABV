@@ -54,7 +54,7 @@ transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 
 local_id = 1
 destination_room_id = 3
 destination_portal_id = 1
-tint_color = Color(0.486275, 0.458824, 0.937255, 1)
+tint_color = Color(0.466667, 0.180392, 0.164706, 1)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal1_slasher" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
@@ -64,13 +64,14 @@ transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 
 local_id = 2
 destination_room_id = 9
 destination_portal_id = 1
-tint_color = Color(0.978242, 0, 0.394085, 1)
+tint_color = Color(0.968627, 0.678431, 0.270588, 1)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2_astronatur" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
 [node name="Portal3_kiwi" parent="Interactive/Portals" index="3" instance=ExtResource("5_42ic1")]
 transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, -1.92857, 0.463637, 4.36997)
+destination_room_id = 10
 destination_portal_id = 2
 tint_color = Color(0, 1, 0, 1)
 
