@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1naisx8txa4l"]
+[gd_scene load_steps=12 format=3 uid="uid://d1naisx8txa4l"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_nu3nt"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_un37a"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_qp08o"]
 [ext_resource type="PackedScene" uid="uid://chmgp0eb7d1qg" path="res://blender/ipasscaptchasroom.blend" id="3_wanof"]
+[ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="4_lrcax"]
+[ext_resource type="PackedScene" uid="uid://bjk6jr8g6mr2c" path="res://Personaggi/ipasscaptchas.blend" id="5_in8mj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -15,6 +17,23 @@ rings = 16
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eyx4l"]
 size = Vector3(1, 16.0996, 17.5284)
+
+[sub_resource type="Animation" id="Animation_do855"]
+resource_name = "EmptyAction"
+length = 10.4167
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Empty")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -7.80161e-06, 0.012516, -0.000623283, 0.999922, 0.0333333, 1, -7.80161e-06, 0.012516, -0.000623283, 0.999922, 0.0666667, 1, -2.18434e-05, 0.0200247, -0.000997095, 0.999799, 5.23333, 1, -0.0618339, 0.998086, 7.8374e-05, -0.00124913, 5.26667, 1, 0.062092, -0.998007, -0.000700468, 0.0112428, 8.1, 1, 0.0548764, -0.648318, -0.0640504, 0.756683, 8.66667, 1, 0.0455124, -0.510568, -0.0762368, 0.855241, 10.4167, 1, 2.58774e-05, -0.0125158, -0.00206741, 0.99992)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sg3gg"]
+_data = {
+"EmptyAction": SubResource("Animation_do855")
+}
 
 [node name="Room00" instance=ExtResource("1_nu3nt")]
 
@@ -65,6 +84,24 @@ transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -7.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43554, 8.18184, 0.446838)
 shape = SubResource("BoxShape3D_eyx4l")
 
+[node name="IpAssCapTchas" parent="Interactive/Actionables" index="0" instance=ExtResource("4_lrcax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2477)
+
+[node name="MeshInstance3D" parent="Interactive/Actionables/IpAssCapTchas" index="0"]
+visible = false
+
+[node name="ipasscaptchas" parent="Interactive/Actionables/IpAssCapTchas" index="4" instance=ExtResource("5_in8mj")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+
+[node name="Empty" parent="Interactive/Actionables/IpAssCapTchas/ipasscaptchas" index="0"]
+transform = Transform3D(0.999686, 0.00124627, 0.02503, -0.00124666, 0.999999, 0, -0.02503, -3.1204e-05, 0.999687, 0.0974863, 0.0299146, -0.000651419)
+
+[node name="AnimationPlayer" parent="Interactive/Actionables/IpAssCapTchas/ipasscaptchas" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_sg3gg")
+}
+autoplay = "EmptyAction"
+
 [node name="Portals" parent="Interactive" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88633, 0, -2.10386)
 
@@ -113,6 +150,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2_maneki" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
+[editable path="Interactive/Actionables/IpAssCapTchas"]
+[editable path="Interactive/Actionables/IpAssCapTchas/ipasscaptchas"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_mia"]
 [editable path="Interactive/Portals/Portal2_maneki"]
