@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpff0jlrw6veo"]
+[gd_scene load_steps=11 format=3 uid="uid://dpff0jlrw6veo"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_ynwjw"]
 [ext_resource type="PackedScene" uid="uid://bws342xiqok07" path="res://blender/iconic_room.blend" id="2_q6sr4"]
 [ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="2_qh646"]
 [ext_resource type="PackedScene" uid="uid://o3lnxuyr1oxg" path="res://blender/cono2.blend" id="3_s64vs"]
+[ext_resource type="PackedScene" uid="uid://b0mm65ltoyiub" path="res://Personaggi/I-conic.blend" id="4_wadrq"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="5_42ic1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iosjb"]
@@ -11,6 +12,23 @@ albedo_color = Color(1, 0.407843, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_erjwh"]
 material = SubResource("StandardMaterial3D_iosjb")
+
+[sub_resource type="Animation" id="Animation_5luk0"]
+resource_name = "ArmatureAction"
+length = 10.4167
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.207912, 0.978148, 0.0333333, 1, 0, 0, -0.207912, 0.978148, 0.0666667, 1, -0.00156544, 0.00737545, -0.207734, 0.978156, 0.466667, 1, -0.0262018, 0.125112, -0.203303, 0.970736, 1.06667, 1, -0.0611037, 0.298033, -0.191328, 0.933186, 2.06667, 1, -0.11122, 0.562573, -0.158888, 0.803677, 3.6, 1, -0.161109, 0.863822, -0.0875196, 0.469251, 5.23333, 1, -0.175115, 0.984535, -0.000879455, 0.00494907, 5.26667, 1, 0.175325, -0.984498, -0.000882107, 0.00494868, 6.93333, 1, 0.162375, -0.858656, -0.090333, 0.477686, 8.1, 1, 0.126076, -0.640495, -0.14631, 0.743279, 8.93333, 1, 0.0880494, -0.435064, -0.17775, 0.878278, 9.5, 1, 0.0575491, -0.279149, -0.193538, 0.93878, 9.93333, 1, 0.0322638, -0.154339, -0.202067, 0.966596, 10.3, 1, 0.00987666, -0.0467011, -0.206685, 0.977242, 10.4167, 1, 0.00260932, -0.012292, -0.207635, 0.978126)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m3auh"]
+_data = {
+"ArmatureAction": SubResource("Animation_5luk0")
+}
 
 [node name="Room02" instance=ExtResource("1_ynwjw")]
 
@@ -25,21 +43,33 @@ mesh = SubResource("BoxMesh_erjwh")
 [node name="iconic_room" parent="Assets" index="3" instance=ExtResource("2_q6sr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07457, -0.0599644, -2.64191)
 
-[node name="NpcCono1" parent="Interactive/Actionables" index="0" instance=ExtResource("2_qh646")]
+[node name="iConic" parent="Interactive/Actionables" index="0" instance=ExtResource("2_qh646")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16027, 1.31361, -0.26596)
 
-[node name="cono2" parent="Interactive/Actionables/NpcCono1" index="0" instance=ExtResource("3_s64vs")]
+[node name="I-conic" parent="Interactive/Actionables/iConic" index="0" instance=ExtResource("4_wadrq")]
 
-[node name="Skeleton3D" parent="Interactive/Actionables/NpcCono1/cono2/Armature" index="0"]
-bones/0/rotation = Quaternion(0, 0.999201, 0, 0.039968)
+[node name="Armature" parent="Interactive/Actionables/iConic/I-conic" index="0"]
+transform = Transform3D(1.47355, 0.630116, 1.19012, -0.784668, 1.8355, -0.000282017, -1.09441, -0.467608, 1.60262, 0, 0.26777, 0)
 
-[node name="AnimationPlayer" parent="Interactive/Actionables/NpcCono1/cono2" index="1"]
+[node name="AnimationPlayer" parent="Interactive/Actionables/iConic/I-conic" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_m3auh")
+}
 autoplay = "ArmatureAction"
 
-[node name="MeshInstance3D" parent="Interactive/Actionables/NpcCono1" index="1"]
+[node name="cono2" parent="Interactive/Actionables/iConic" index="1" instance=ExtResource("3_s64vs")]
 visible = false
 
-[node name="Actionable" parent="Interactive/Actionables/NpcCono1" index="3"]
+[node name="Skeleton3D" parent="Interactive/Actionables/iConic/cono2/Armature" index="0"]
+bones/0/rotation = Quaternion(0, 0.999201, 0, 0.039968)
+
+[node name="AnimationPlayer" parent="Interactive/Actionables/iConic/cono2" index="1"]
+autoplay = "ArmatureAction"
+
+[node name="MeshInstance3D" parent="Interactive/Actionables/iConic" index="2"]
+visible = false
+
+[node name="Actionable" parent="Interactive/Actionables/iConic" index="4"]
 dialogue_start = "startcono1"
 
 [node name="Portal_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("5_42ic1")]
@@ -79,8 +109,9 @@ tint_color = Color(0, 1, 0, 1)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal3_kiwi" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
-[editable path="Interactive/Actionables/NpcCono1"]
-[editable path="Interactive/Actionables/NpcCono1/cono2"]
+[editable path="Interactive/Actionables/iConic"]
+[editable path="Interactive/Actionables/iConic/I-conic"]
+[editable path="Interactive/Actionables/iConic/cono2"]
 [editable path="Interactive/Portals/Portal_lobby"]
 [editable path="Interactive/Portals/Portal1_slasher"]
 [editable path="Interactive/Portals/Portal2_astronatur"]
