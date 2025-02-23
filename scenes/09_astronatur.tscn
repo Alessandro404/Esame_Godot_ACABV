@@ -21,9 +21,6 @@ size = Vector3(1, 16.0996, 17.5284)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource("2_a0l56")
 
-[node name="scene_template01" parent="Assets" index="0"]
-visible = false
-
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
 
@@ -36,7 +33,7 @@ mesh = SubResource("SphereMesh_k4crk")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 4.1, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Assets/astronaturroom" index="8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18674, -3.64269, -4.3413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.89896, -3.64269, -4.3413)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/astronaturroom/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43554, 8.18184, 0.446838)
@@ -63,8 +60,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.425
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
 shape = SubResource("BoxShape3D_6oyt2")
 
+[node name="StaticBody3D5" type="StaticBody3D" parent="Assets/astronaturroom" index="12"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.337604, 5.51104, -4.844)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/astronaturroom/StaticBody3D5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_6oyt2")
+
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_6k5wy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.84092, 0.3, -24.1691)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.84092, 0.35, -24.1691)
 
 [node name="Area3D" parent="Interactive/Portals/Portal0_lobby" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
@@ -76,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal1_iconic" parent="Interactive/Portals" index="1" instance=ExtResource("3_6k5wy")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -29.9571, 0.3, -0.429708)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -29.9571, 0.35, -0.429708)
 local_id = 1
 destination_room_id = 2
 destination_portal_id = 2
@@ -92,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal2_josh" parent="Interactive/Portals" index="2" instance=ExtResource("3_6k5wy")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.9279, 0.3, -24.1691)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -23.9279, 0.35, -24.1691)
 local_id = 2
 destination_room_id = 6
 destination_portal_id = 4
@@ -108,7 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal3_catbuger" parent="Interactive/Portals" index="3" instance=ExtResource("3_6k5wy")]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.230261, 0.3, -0.429708)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.322175, 0.35, -0.429708)
 local_id = 3
 destination_room_id = 7
 destination_portal_id = 2
@@ -124,7 +128,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal4_avocado" parent="Interactive/Portals" index="4" instance=ExtResource("3_6k5wy")]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -6.31794, 0.3, 5.90256)
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -6.31794, 0.35, 5.90256)
 local_id = 4
 destination_room_id = 8
 destination_portal_id = 3
