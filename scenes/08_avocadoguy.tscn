@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://xjkn1mqfhg6f"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_wrec3"]
-[ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_x1pcf"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_3rhqh"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_7leca"]
 [ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="3_atj6e"]
 [ext_resource type="PackedScene" uid="uid://cgyeunx1icj11" path="res://scenes/avocado_room.blend" id="3_swogs"]
 [ext_resource type="PackedScene" uid="uid://dy70p2ubthwqk" path="res://blender/avocado_bro.blend" id="4_icbpf"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="7_1pqlc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -131,14 +131,17 @@ radius = 1.3777
 
 [node name="Room00" instance=ExtResource("1_wrec3")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
-environment = ExtResource("2_x1pcf")
-
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("3_7leca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.57843)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
 transform = Transform3D(0.755305, 0.460783, -0.46604, -1.49012e-08, 0.711106, 0.703085, 0.655374, -0.531043, 0.537102, -14.2599, 21.0673, 23.458)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_7leca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.995823, 0, 5.01919)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.493562, 3.28124, -5.72105)
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -276,7 +279,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal3_astronatur" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("7_1pqlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.41397)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Interactive/Actionables/avocadoguy"]
 [editable path="Interactive/Actionables/avocadoguy/avocado_bro"]
 [editable path="Interactive/Portals/Portal0_lobby"]

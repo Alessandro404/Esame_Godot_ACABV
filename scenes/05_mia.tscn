@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cih0jx11au025"]
+[gd_scene load_steps=25 format=3 uid="uid://cih0jx11au025"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_r3lpa"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_4brfc"]
@@ -7,6 +7,19 @@
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_mdjpx"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="5_yiu11"]
 [ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="6_c3vev"]
+[ext_resource type="Texture2D" uid="uid://cr4x43ohd56lk" path="res://assets/MiaOf/OF MIA00.webp" id="6_iw8p4"]
+[ext_resource type="Texture2D" uid="uid://c0kv6b31qshc7" path="res://assets/MiaOf/OF MIA01.webp" id="7_jljc2"]
+[ext_resource type="Texture2D" uid="uid://bqioatyrem6qj" path="res://assets/MiaOf/OF MIA02.webp" id="8_62cel"]
+[ext_resource type="Texture2D" uid="uid://bi3epmx04dgj1" path="res://assets/MiaOf/OF MIA03.webp" id="9_pj1oc"]
+[ext_resource type="Texture2D" uid="uid://bpnk3x40dis64" path="res://assets/MiaOf/OF MIA04.webp" id="10_cb76g"]
+[ext_resource type="Texture2D" uid="uid://d0qt67fvsqo2x" path="res://assets/MiaOf/OF MIA05.webp" id="11_e88dx"]
+[ext_resource type="Texture2D" uid="uid://cqhn55ymvjjhr" path="res://assets/MiaOf/OF MIA06.webp" id="12_fgjfi"]
+[ext_resource type="Texture2D" uid="uid://cjrqdyk5cqf7x" path="res://assets/MiaOf/OF MIA07.webp" id="13_xafj5"]
+[ext_resource type="Texture2D" uid="uid://c5lftnu2801os" path="res://assets/MiaOf/OF MIA08.webp" id="14_oaue2"]
+[ext_resource type="Texture2D" uid="uid://bvxtrnjuxpxfs" path="res://assets/MiaOf/OF MIA09.webp" id="15_4wcls"]
+[ext_resource type="Texture2D" uid="uid://bgxhkjgcnn131" path="res://assets/MiaOf/OF MIA10.webp" id="16_syb4g"]
+[ext_resource type="Texture2D" uid="uid://b7yfnpidsfnpa" path="res://assets/MiaOf/OF MIA11.webp" id="17_mmvml"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="20_ot3mv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -23,40 +36,40 @@ size = Vector3(5.95551, 2.51587, 4.59326)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_iw8p4")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_jljc2")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("8_62cel")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("9_pj1oc")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("10_cb76g")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("11_e88dx")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("12_fgjfi")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("13_xafj5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("14_oaue2")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("15_4wcls")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("16_syb4g")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("17_mmvml")
 }],
 "loop": true,
 "name": &"default",
@@ -80,6 +93,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.411,
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
 transform = Transform3D(0.0660645, -0.697937, 0.713106, 0.0084654, 0.715034, 0.699039, -0.997779, -0.040145, 0.0531467, 30.9311, 31.5493, -2.38419e-06)
+
+[node name="Camera_rig3" parent="Cameras/CameraRoot" index="2" instance=ExtResource("3_e6hah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04567, 24.0228)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig3" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.95066, -4.69429)
 
 [node name="scene_template01" parent="Assets" index="0"]
 visible = false
@@ -194,8 +213,14 @@ camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
 transform = Transform3D(1.50062, 0, 0, 0, 1.50062, 0, 0, 0, 1.50062, 0, 0, 36.3363)
 camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="2" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("20_ot3mv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.2024)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig3")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig2"]
+[editable path="Cameras/CameraRoot/Camera_rig3"]
 [editable path="Interactive/Actionables/Npc2DTemplate"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_captchas"]

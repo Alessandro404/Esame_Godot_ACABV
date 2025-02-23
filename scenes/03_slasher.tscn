@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=62 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_yao8f"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_4138h"]
@@ -56,6 +56,7 @@
 [ext_resource type="Texture2D" uid="uid://oev70ichtgwx" path="res://assets/Edgelord/edgelord49.webp" id="53_cripl"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="54_1qcui"]
 [ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="56_kybhs"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="57_42fh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
 albedo_color = Color(0, 0, 1, 1)
@@ -238,6 +239,12 @@ transform = Transform3D(-0.965831, 0, -0.259173, 0, 1, 0, 0.259173, 0, -0.965831
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
 transform = Transform3D(-1, 1.84105e-08, -8.54623e-08, 0, 0.977574, 0.210591, 8.74228e-08, 0.210591, -0.977574, -1.95039e-06, 9.52315, -21.5428)
 
+[node name="Camera_rig3" parent="Cameras/CameraRoot" index="2" instance=ExtResource("2_4138h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.2489, 4.76837e-07, 28.0973)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig3" index="0"]
+transform = Transform3D(0.682662, 0, 0.730734, 0, 1, 0, -0.730734, 0, 0.682662, 3.51848, 2.67069, 3.3888)
+
 [node name="OmniLight3D1" type="OmniLight3D" parent="Lights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69715, 2.83958, 15.3036)
 light_energy = 14.0
@@ -332,10 +339,16 @@ camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
 transform = Transform3D(2.62224, 0, 0.0485182, 0, 2.62269, 0, -0.0485182, 0, 2.62224, -38.2201, 0.350976, -6.65983)
 camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="3" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("57_42fh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8511, 0, 27.3052)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig3")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+
 [node name="Node3D" type="Node3D" parent="." index="4"]
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig2"]
+[editable path="Cameras/CameraRoot/Camera_rig3"]
 [editable path="Assets/scene_template01"]
 [editable path="Assets/xXSlasherXxroom"]
 [editable path="Interactive/Actionables/xX-Slasher-Xx"]

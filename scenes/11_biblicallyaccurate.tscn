@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deqqieudpm884"]
+[gd_scene load_steps=16 format=3 uid="uid://deqqieudpm884"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_33q4p"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_a6nhv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cbnanm16nuvrg" path="res://blender/biblicallyaccurateroom.blend" id="3_y7s0g"]
 [ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="5_in6ql"]
 [ext_resource type="PackedScene" uid="uid://cuegth07xadqb" path="res://Personaggi/BiblicallyAccurate.blend" id="6_xj4nx"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="8_ii6lv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -54,6 +55,12 @@ stage_dimentions = Vector2(32, 8)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
 transform = Transform3D(-0.851727, -0.22128, 0.47497, 0, 0.906455, 0.422302, -0.523986, 0.359686, -0.772052, 5.50922, 3.65542, -7.09183)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_baf75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4071, 0, -8.63533)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(0.610297, 0, -0.792172, 0, 1, 0, 0.792172, 0, 0.610297, -3.33649, 1.00547, 3.01605)
 
 [node name="Lights" type="Node3D" parent="Lights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)
@@ -199,7 +206,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal3_chemtrails" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("8_ii6lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.336, 0, -8.24183)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Interactive/Actionables/BiblicallyAccurate"]
 [editable path="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate"]
 [editable path="Interactive/Portals/Portal0_lobby"]

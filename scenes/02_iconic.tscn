@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpff0jlrw6veo"]
+[gd_scene load_steps=13 format=3 uid="uid://dpff0jlrw6veo"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_ynwjw"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_0r3mt"]
 [ext_resource type="PackedScene" uid="uid://bws342xiqok07" path="res://blender/iconic_room.blend" id="2_q6sr4"]
 [ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="2_qh646"]
 [ext_resource type="PackedScene" uid="uid://o3lnxuyr1oxg" path="res://blender/cono2.blend" id="3_s64vs"]
 [ext_resource type="PackedScene" uid="uid://b0mm65ltoyiub" path="res://Personaggi/I-conic.blend" id="4_wadrq"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="5_42ic1"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="7_r67qf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iosjb"]
 albedo_color = Color(1, 0.407843, 1, 1)
@@ -31,6 +33,16 @@ _data = {
 }
 
 [node name="Room02" instance=ExtResource("1_ynwjw")]
+
+[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_0r3mt")]
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
+transform = Transform3D(-0.641048, -0.425041, 0.63906, 0, 0.832651, 0.553799, -0.767501, 0.355011, -0.533769, 13.6486, 17.4055, -8.40981)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("2_0r3mt")]
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(-0.166149, 0, -0.986101, 0, 1, 0, 0.986101, 0, -0.166149, -5.61029, 2.8806, -2.14764)
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -73,14 +85,14 @@ visible = false
 dialogue_start = "startcono1"
 
 [node name="Portal_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("5_42ic1")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.92857, 0.463637, -9.87798)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.92857, 0.463637, -9.57195)
 destination_portal_id = 2
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal_lobby" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
 [node name="Portal1_slasher" parent="Interactive/Portals" index="1" instance=ExtResource("5_42ic1")]
-transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -9.3837, 0.463637, -2.44864)
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -8.84005, 0.463637, -2.44864)
 local_id = 1
 destination_room_id = 3
 destination_portal_id = 1
@@ -109,6 +121,13 @@ tint_color = Color(0, 1, 0, 1)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal3_kiwi" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("7_r67qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47405, 0, 0)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
+[editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Interactive/Actionables/iConic"]
 [editable path="Interactive/Actionables/iConic/I-conic"]
 [editable path="Interactive/Actionables/iConic/cono2"]

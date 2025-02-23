@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bodv0y3pdbj1q"]
+[gd_scene load_steps=64 format=3 uid="uid://bodv0y3pdbj1q"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_87k8v"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_7y67t"]
@@ -6,6 +6,52 @@
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_vas34"]
 [ext_resource type="PackedScene" uid="uid://dc43uhv5o6opr" path="res://blender/kiwi_room.blend" id="4_iboug"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="4_iej3k"]
+[ext_resource type="Texture2D" uid="uid://gmwrkogsyc5a" path="res://assets/Kiwi/kiwi00.webp" id="5_wdnj5"]
+[ext_resource type="Texture2D" uid="uid://04fgggxa16gu" path="res://assets/Kiwi/kiwi01.webp" id="6_4y6lk"]
+[ext_resource type="Texture2D" uid="uid://b8cgrxbjvr6yp" path="res://assets/Kiwi/kiwi02.webp" id="7_0oopk"]
+[ext_resource type="Texture2D" uid="uid://jdgnjrlyn7p1" path="res://assets/Kiwi/kiwi03.webp" id="8_khmpe"]
+[ext_resource type="Texture2D" uid="uid://boaspsfc70ct2" path="res://assets/Kiwi/kiwi04.webp" id="9_4bacd"]
+[ext_resource type="Texture2D" uid="uid://d1m55ayqnenv" path="res://assets/Kiwi/kiwi05.webp" id="10_2qnqu"]
+[ext_resource type="Texture2D" uid="uid://bdx1e4u1rxbta" path="res://assets/Kiwi/kiwi06.webp" id="11_w3coi"]
+[ext_resource type="Texture2D" uid="uid://dvncafjxtx3km" path="res://assets/Kiwi/kiwi07.webp" id="12_iivkd"]
+[ext_resource type="Texture2D" uid="uid://dii6w36yq2oq5" path="res://assets/Kiwi/kiwi08.webp" id="13_gmmc3"]
+[ext_resource type="Texture2D" uid="uid://d0g8rayb5jpky" path="res://assets/Kiwi/kiwi09.webp" id="14_txx5s"]
+[ext_resource type="Texture2D" uid="uid://bfk4r4wbpdyxr" path="res://assets/Kiwi/kiwi10.webp" id="15_ue5s0"]
+[ext_resource type="Texture2D" uid="uid://d11e5tonpm8vu" path="res://assets/Kiwi/kiwi11.webp" id="16_l5flr"]
+[ext_resource type="Texture2D" uid="uid://b2nuxw5w47wvt" path="res://assets/Kiwi/kiwi12.webp" id="17_oqnh7"]
+[ext_resource type="Texture2D" uid="uid://c4v0uq7i2i5lv" path="res://assets/Kiwi/kiwi13.webp" id="18_4fkme"]
+[ext_resource type="Texture2D" uid="uid://6vbu6g70f52r" path="res://assets/Kiwi/kiwi14.webp" id="19_1jewa"]
+[ext_resource type="Texture2D" uid="uid://dmi0pjln3f2vh" path="res://assets/Kiwi/kiwi15.webp" id="20_5evfb"]
+[ext_resource type="Texture2D" uid="uid://qh8k83m145fu" path="res://assets/Kiwi/kiwi16.webp" id="21_ycj1q"]
+[ext_resource type="Texture2D" uid="uid://cbvc8gc3e754q" path="res://assets/Kiwi/kiwi17.webp" id="22_qvn1u"]
+[ext_resource type="Texture2D" uid="uid://b8b7se8ltj5v8" path="res://assets/Kiwi/kiwi18.webp" id="23_50rse"]
+[ext_resource type="Texture2D" uid="uid://cbtb28lmv1n1m" path="res://assets/Kiwi/kiwi19.webp" id="24_u37h6"]
+[ext_resource type="Texture2D" uid="uid://caj8b1cra75n0" path="res://assets/Kiwi/kiwi20.webp" id="25_u8ng0"]
+[ext_resource type="Texture2D" uid="uid://k8grlces1tfw" path="res://assets/Kiwi/kiwi21.webp" id="26_umver"]
+[ext_resource type="Texture2D" uid="uid://x0emit1sgmy" path="res://assets/Kiwi/kiwi22.webp" id="27_y6eu1"]
+[ext_resource type="Texture2D" uid="uid://u6odpwus0ic" path="res://assets/Kiwi/kiwi23.webp" id="28_reiug"]
+[ext_resource type="Texture2D" uid="uid://b3rfvcidfp2ax" path="res://assets/Kiwi/kiwi24.webp" id="29_maokj"]
+[ext_resource type="Texture2D" uid="uid://c5rfu305bdjvu" path="res://assets/Kiwi/kiwi25.webp" id="30_espqn"]
+[ext_resource type="Texture2D" uid="uid://bqtwcxbe4iwbj" path="res://assets/Kiwi/kiwi26.webp" id="31_kfq7v"]
+[ext_resource type="Texture2D" uid="uid://b636r00tn4rva" path="res://assets/Kiwi/kiwi27.webp" id="32_fsuj0"]
+[ext_resource type="Texture2D" uid="uid://ct6vc3nyc6g0n" path="res://assets/Kiwi/kiwi28.webp" id="33_a5anr"]
+[ext_resource type="Texture2D" uid="uid://dyo1jjw0a0soj" path="res://assets/Kiwi/kiwi29.webp" id="34_8jpip"]
+[ext_resource type="Texture2D" uid="uid://g1m16odjv7vh" path="res://assets/Kiwi/kiwi30.webp" id="35_5hp4p"]
+[ext_resource type="Texture2D" uid="uid://chjaqtx4wncel" path="res://assets/Kiwi/kiwi31.webp" id="36_htoc6"]
+[ext_resource type="Texture2D" uid="uid://48poxs8t7rqp" path="res://assets/Kiwi/kiwi32.webp" id="37_hqebe"]
+[ext_resource type="Texture2D" uid="uid://cjn2efi6fgy1c" path="res://assets/Kiwi/kiwi33.webp" id="38_71ve5"]
+[ext_resource type="Texture2D" uid="uid://ubm48f6a00ja" path="res://assets/Kiwi/kiwi34.webp" id="39_adpjh"]
+[ext_resource type="Texture2D" uid="uid://prp8kh6o8kdy" path="res://assets/Kiwi/kiwi35.webp" id="40_q32e7"]
+[ext_resource type="Texture2D" uid="uid://cwlhiey3qt1tc" path="res://assets/Kiwi/kiwi36.webp" id="41_3m67o"]
+[ext_resource type="Texture2D" uid="uid://c8gut5y4sidc5" path="res://assets/Kiwi/kiwi37.webp" id="42_2fr5j"]
+[ext_resource type="Texture2D" uid="uid://bonjklluo80uo" path="res://assets/Kiwi/kiwi38.webp" id="43_h4d2k"]
+[ext_resource type="Texture2D" uid="uid://dr5il65t0ukdr" path="res://assets/Kiwi/kiwi39.webp" id="44_pn2eg"]
+[ext_resource type="Texture2D" uid="uid://blrxd62vcpskx" path="res://assets/Kiwi/kiwi40.webp" id="45_5gx45"]
+[ext_resource type="Texture2D" uid="uid://beghk4kkrvy5v" path="res://assets/Kiwi/kiwi41.webp" id="46_ioxml"]
+[ext_resource type="Texture2D" uid="uid://citrnpo6qdxgt" path="res://assets/Kiwi/kiwi42.webp" id="47_xau16"]
+[ext_resource type="Texture2D" uid="uid://b2cjvmvrpi3k1" path="res://assets/Kiwi/kiwi43.webp" id="48_1nk8s"]
+[ext_resource type="Texture2D" uid="uid://btnlorukfxgha" path="res://assets/Kiwi/kiwi44.webp" id="49_cbamf"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="51_r34kr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -73,139 +119,139 @@ radius = 0.666594
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("5_wdnj5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_4y6lk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_0oopk")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("8_khmpe")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("9_4bacd")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("10_2qnqu")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("11_w3coi")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("12_iivkd")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("13_gmmc3")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("14_txx5s")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("15_ue5s0")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("16_l5flr")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("17_oqnh7")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("18_4fkme")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("19_1jewa")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("20_5evfb")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("21_ycj1q")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("22_qvn1u")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("23_50rse")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("24_u37h6")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("25_u8ng0")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("26_umver")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("27_y6eu1")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("28_reiug")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("29_maokj")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("30_espqn")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("31_kfq7v")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("32_fsuj0")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("33_a5anr")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("34_8jpip")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("35_5hp4p")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("36_htoc6")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("37_hqebe")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("38_71ve5")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("39_adpjh")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("40_q32e7")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("41_3m67o")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("42_2fr5j")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("43_h4d2k")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("44_pn2eg")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("45_5gx45")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("46_ioxml")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("47_xau16")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("48_1nk8s")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("49_cbamf")
 }],
 "loop": true,
 "name": &"default",
@@ -223,6 +269,12 @@ stage_dimentions = Vector2(16, 64)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
 transform = Transform3D(0.999791, -0.0120039, 0.0165396, 0, 0.809314, 0.587376, -0.0204365, -0.587253, 0.809145, 3.32781e-06, 13.4338, 27.1569)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_a1q7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8239, 0, 17.4602)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(-0.717531, 0, 0.696527, 0, 1, 0, -0.696527, 0, -0.717531, 5.15758, 5.95473, -5.45308)
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -332,10 +384,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal4_catburger" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("51_r34kr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1602, 0, 17.2134)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
 [node name="kiwi_room" parent="." index="5" instance=ExtResource("4_iboug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.76967, 0)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Interactive/Actionables/Kiwi04"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_kalyani"]

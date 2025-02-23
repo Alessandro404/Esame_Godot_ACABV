@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2gt8hxm5bhvo"]
+[gd_scene load_steps=13 format=3 uid="uid://c2gt8hxm5bhvo"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_gi5bs"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_yp17t"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_tbofr"]
 [ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="5_5n2ag"]
 [ext_resource type="PackedScene" uid="uid://h8w6qbcjnens" path="res://Personaggi/Catburger69.blend" id="6_guu1c"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="8_4pgo6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -41,7 +42,13 @@ environment = ExtResource("2_yp17t")
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("3_tbofr")]
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(0.659293, -0.70719, 0.255371, 2.98023e-08, 0.339641, 0.940555, -0.751886, -0.620102, 0.223923, 5.92173, 13.3949, 6.14503)
+transform = Transform3D(0.607764, 0.746911, -0.269715, 3.8439e-08, 0.339641, 0.940555, 0.794118, -0.571636, 0.206422, -6.46729, 13.3949, 8.55289)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_tbofr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01091, 0, -5.85915)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(0.455545, 0, -0.890213, 0, 1, 0, 0.890213, 0, 0.455545, -3.00751, 2.05786, 1.79396)
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -132,7 +139,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal3_kiwi" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("8_4pgo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.89016, 0, -5.70041)
+camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Interactive/Actionables/NpcTemplate"]
 [editable path="Interactive/Actionables/NpcTemplate/Catburger69"]
 [editable path="Interactive/Portals/Portal0_lobby"]
