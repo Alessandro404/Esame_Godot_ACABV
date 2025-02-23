@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dutgfxuaduxsw"]
+[gd_scene load_steps=9 format=3 uid="uid://dutgfxuaduxsw"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_02pc6"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_a0l56"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_6k5wy"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_sow2d"]
 [ext_resource type="PackedScene" uid="uid://c281xdcgk7jta" path="res://blender/astronaturroom.blend" id="3_x3wqi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
@@ -20,6 +21,12 @@ size = Vector3(1, 16.0996, 17.5284)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource("2_a0l56")
+
+[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("3_sow2d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.645, 0, -7.0113)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
+transform = Transform3D(0.728455, 0.596134, -0.337606, 0, 0.492788, 0.870149, 0.685094, -0.633864, 0.358974, -8.08557, 28.8567, 11.3635)
 
 [node name="scene_template01" parent="Assets" index="0"]
 visible = false
@@ -146,6 +153,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal4_avocado" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_iconic"]
 [editable path="Interactive/Portals/Portal2_josh"]
