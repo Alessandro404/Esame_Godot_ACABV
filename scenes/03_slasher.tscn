@@ -224,63 +224,47 @@ animations = [{
 
 [node name="Room01" instance=ExtResource("1_yao8f")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, 20)
+[node name="OmniLight3D1" type="OmniLight3D" parent="Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69715, 2.83958, 15.3036)
 light_energy = 14.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 27.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 5, 35)
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1799, 5, 12.4888)
 light_energy = 14.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 27.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 4, 30)
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.6921, 4, 31.1077)
 light_energy = 14.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 27.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 4, 59)
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.1755, 4, -4.38056)
 light_energy = 14.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 27.0
-
-[node name="OmniLight3D6" type="OmniLight3D" parent="Lights" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 4, 51)
-light_energy = 14.0
-light_bake_mode = 1
-shadow_enabled = true
-omni_range = 27.0
-
-[node name="OmniLight3D5" type="OmniLight3D" parent="Lights" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 4, 1)
-light_energy = 14.0
-light_bake_mode = 1
-shadow_enabled = true
-omni_range = 27.0
-
-[node name="scene_template01" parent="Assets" index="0"]
-visible = false
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
 transform = Transform3D(0.835472, 0, -0.549533, 0, 1, 0, 0.549533, 0, 0.835472, -1.95141, 0.500001, 5.23397)
+visible = false
 mesh = SubResource("BoxMesh_mmlno")
 
 [node name="xXSlasherXxroom" parent="Assets" index="3" instance=ExtResource("2_qr51i")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12, 9, 12)
+transform = Transform3D(-0.6, 0, 9.05975e-08, 0, 0.6, 0, -9.05975e-08, 0, -0.6, -4.66244, 5.412, 4)
 
 [node name="xX-Slasher-Xx" parent="Interactive/Actionables" index="0" instance=ExtResource("3_iugmj")]
-transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -89, 0, 50)
+transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -52.5239, 0, 27.2899)
 
 [node name="Actionable" parent="Interactive/Actionables/xX-Slasher-Xx" index="2"]
 dialogue_start = "startslasher"
@@ -294,50 +278,37 @@ transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-0
 sprite_frames = SubResource("SpriteFrames_87gfi")
 frame_progress = 0.0768644
 
-[node name="Portal2" parent="Interactive/Portals" index="0" instance=ExtResource("54_1qcui")]
-transform = Transform3D(-0.999878, 0, 0.01562, 0, 1, 0, -0.01562, 0, -0.999878, 0, 0, 7.54381)
-local_id = 1
-destination_room_id = 2
-
-[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
-
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
-
-[node name="Portal3" parent="Interactive/Portals" index="1" instance=ExtResource("54_1qcui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2253, 0, -0.0500669)
-local_id = 2
-destination_room_id = 4
-destination_portal_id = 1
-
-[node name="Area3D" parent="Interactive/Portals/Portal3" index="0"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.91738e-07, 0, 0.492406)
-
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal3/Area3D" index="0"]
-transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0.0312092, 0.505322, -0.0506754)
-
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.84562, -4.76837e-07, -0.187998)
-
-[node name="MeshInstance3D" parent="Interactive/Portals/Portal3/PlayerSpawn" index="0"]
-transform = Transform3D(-1.18163, 2.75749, -1.20534e-07, -3.97047e-23, -1.31134e-07, -3, -2.75749, -1.18163, 5.16508e-08, 0, 0, 0)
-
-[node name="Portal" parent="Interactive/Portals" index="2" instance=ExtResource("54_1qcui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.47136)
+[node name="Portal_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("54_1qcui")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.464, -9.40055)
 destination_portal_id = 3
 
-[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal_lobby" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.47494)
+[node name="Portal_1slasher" parent="Interactive/Portals" index="1" instance=ExtResource("54_1qcui")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -36.3284, 0.464, -9.40055)
+local_id = 1
+destination_room_id = 2
+destination_portal_id = 1
+tint_color = Color(1, 0, 0, 1)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal_1slasher" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
+
+[node name="Portal_2ba" parent="Interactive/Portals" index="2" instance=ExtResource("54_1qcui")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -41.4263, 0.464, -9.40055)
+local_id = 2
+destination_room_id = 11
+destination_portal_id = 1
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal_2ba" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
 [node name="Node3D" type="Node3D" parent="." index="4"]
 
 [editable path="Assets/scene_template01"]
 [editable path="Assets/xXSlasherXxroom"]
 [editable path="Interactive/Actionables/xX-Slasher-Xx"]
-[editable path="Interactive/Portals/Portal2"]
-[editable path="Interactive/Portals/Portal3"]
-[editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal_lobby"]
+[editable path="Interactive/Portals/Portal_1slasher"]
+[editable path="Interactive/Portals/Portal_2ba"]
