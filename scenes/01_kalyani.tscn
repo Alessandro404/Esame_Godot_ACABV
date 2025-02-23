@@ -1,4 +1,4 @@
-[gd_scene load_steps=254 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=255 format=3 uid="uid://tmcb5337qjau"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_pcurv"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_o110u"]
@@ -260,6 +260,9 @@ albedo_texture = ExtResource("4_xgf1c")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s8kx1"]
 material = SubResource("StandardMaterial3D_s8ojx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkr17"]
+size = Vector3(1, 5.7027, 2.84692)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pxy5v"]
 animations = [{
@@ -1032,10 +1035,16 @@ mesh = SubResource("PlaneMesh_s8kx1")
 [node name="kalyaniroom" parent="Assets" index="5" instance=ExtResource("7_gnfub")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, -0.738, -1.03296)
 
-[node name="Npc2DTemplate" parent="Interactive/Actionables" index="0" instance=ExtResource("6_lp768")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6559, 12.7048, -0.917572)
+[node name="Kalyani" parent="Interactive/Actionables" index="0" instance=ExtResource("6_lp768")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6559, 12.7048, -0.118872)
 
-[node name="AnimatedSprite3D" parent="Interactive/Actionables/Npc2DTemplate" index="4"]
+[node name="CollisionShape3D" parent="Interactive/Actionables/Kalyani/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74024, -0.02311)
+shape = SubResource("BoxShape3D_fkr17")
+
+[node name="AnimatedSprite3D" parent="Interactive/Actionables/Kalyani" index="4"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 2.63114)
+axis = 0
 sprite_frames = SubResource("SpriteFrames_pxy5v")
 frame = 31
 frame_progress = 0.924702
@@ -1116,7 +1125,7 @@ camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
 
 [editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig"]
-[editable path="Interactive/Actionables/Npc2DTemplate"]
+[editable path="Interactive/Actionables/Kalyani"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_josh"]
 [editable path="Interactive/Portals/Portal2_catburger"]
