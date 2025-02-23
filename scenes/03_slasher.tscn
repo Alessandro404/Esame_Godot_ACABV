@@ -1,6 +1,7 @@
-[gd_scene load_steps=59 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=61 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_yao8f"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_4138h"]
 [ext_resource type="PackedScene" uid="uid://btrywf15khorb" path="res://blender/xXSlasherXxroom.blend" id="2_qr51i"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="3_iugmj"]
 [ext_resource type="Texture2D" uid="uid://nelb5il2cssb" path="res://assets/Edgelord/edgelord00.webp" id="4_fymlf"]
@@ -54,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://dydkfrg8djol1" path="res://assets/Edgelord/edgelord48.webp" id="52_fe2iv"]
 [ext_resource type="Texture2D" uid="uid://oev70ichtgwx" path="res://assets/Edgelord/edgelord49.webp" id="53_cripl"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="54_1qcui"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="56_kybhs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkmva"]
 albedo_color = Color(0, 0, 1, 1)
@@ -224,6 +226,18 @@ animations = [{
 
 [node name="Room01" instance=ExtResource("1_yao8f")]
 
+[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_4138h")]
+transform = Transform3D(0.0386843, 0, -0.999251, 0, 1, 0, 0.999251, 0, 0.0386843, -7.55894, -4.76837e-07, 9.74784)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
+transform = Transform3D(-0.791864, -0.252864, 0.555888, 0, 0.910251, 0.414058, -0.610698, 0.327877, -0.720794, 11.4734, 9.65255, -8.6719)
+
+[node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("2_4138h")]
+transform = Transform3D(-0.965831, 0, -0.259173, 0, 1, 0, 0.259173, 0, -0.965831, -40.1111, 0, 14.0498)
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
+transform = Transform3D(-1, 1.84105e-08, -8.54623e-08, 0, 0.977574, 0.210591, 8.74228e-08, 0.210591, -0.977574, -1.95039e-06, 9.52315, -21.5428)
+
 [node name="OmniLight3D1" type="OmniLight3D" parent="Lights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69715, 2.83958, 15.3036)
 light_energy = 14.0
@@ -305,8 +319,22 @@ tint_color = Color(1, 0.960784, 0.541176, 1)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal_2ba" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
 
+[node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("56_kybhs")]
+transform = Transform3D(0.0524999, 0, -2.62217, 0, 2.62269, 0, 2.62217, 0, 0.0524999, -28.5337, 0.646858, 11.1894)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
+[node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("56_kybhs")]
+transform = Transform3D(0.0524999, 0, -2.62217, 0, 2.62269, 0, 2.62217, 0, 0.0524999, -32.1477, 0.350976, 11.2618)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+
+[node name="Cambiocamera3" parent="Interactive/CameraTriggers" index="2" node_paths=PackedStringArray("camera_rig") instance=ExtResource("56_kybhs")]
+transform = Transform3D(2.62224, 0, 0.0485182, 0, 2.62269, 0, -0.0485182, 0, 2.62224, -38.2201, 0.350976, -6.65983)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
+
 [node name="Node3D" type="Node3D" parent="." index="4"]
 
+[editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig2"]
 [editable path="Assets/scene_template01"]
 [editable path="Assets/xXSlasherXxroom"]
 [editable path="Interactive/Actionables/xX-Slasher-Xx"]
