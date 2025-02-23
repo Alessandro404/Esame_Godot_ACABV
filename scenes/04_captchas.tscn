@@ -58,6 +58,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
 shape = SubResource("BoxShape3D_eyx4l")
 
+[node name="StaticBody3D5" type="StaticBody3D" parent="Assets/ipasscaptchasroom" index="18"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -7.77131, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/ipasscaptchasroom/StaticBody3D5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43554, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_eyx4l")
+
 [node name="Portals" parent="Interactive" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.88633, 0, -2.10386)
 
@@ -75,7 +82,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal1_mia" parent="Interactive/Portals" index="1" instance=ExtResource("3_qp08o")]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 9.34925, 0.3, 2.87588)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 8.61999, 0.3, 3.03872)
 local_id = 1
 destination_room_id = 5
 destination_portal_id = 1
@@ -88,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal1_mia" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal2_maneki" parent="Interactive/Portals" index="2" instance=ExtResource("3_qp08o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.371498, 0.3, 11.8586)

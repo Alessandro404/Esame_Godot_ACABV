@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://deqqieudpm884"]
+[gd_scene load_steps=8 format=3 uid="uid://deqqieudpm884"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_33q4p"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_a6nhv"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_ggwv8"]
+[ext_resource type="PackedScene" uid="uid://cbnanm16nuvrg" path="res://blender/biblicallyaccurateroom.blend" id="3_y7s0g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -12,60 +13,33 @@ material = SubResource("StandardMaterial3D_f7e4p")
 radial_segments = 32
 rings = 16
 
-[sub_resource type="Gradient" id="Gradient_0lac5"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qus32"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_2if2l"]
-color_ramp = SubResource("Gradient_0lac5")
-noise = SubResource("FastNoiseLite_qus32")
-
-[sub_resource type="FogMaterial" id="FogMaterial_giku2"]
-density = 0.6209
-emission = Color(0.585062, 0.585062, 0.585062, 1)
-edge_fade = 0.0965936
-density_texture = SubResource("NoiseTexture3D_2if2l")
-
-[sub_resource type="Animation" id="Animation_1jyuv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="Animation" id="Animation_sbded"]
-resource_name = "fog_noise_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l"), SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4h06"]
-_data = {
-"RESET": SubResource("Animation_1jyuv"),
-"fog_noise_animation": SubResource("Animation_sbded")
-}
+[sub_resource type="BoxShape3D" id="BoxShape3D_rhdpx"]
+size = Vector3(1, 20.1014, 81.0596)
 
 [node name="Room00" instance=ExtResource("1_33q4p")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource("2_a6nhv")
+
+[node name="Lights" type="Node3D" parent="Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)
+
+[node name="OmniLight3D1" type="OmniLight3D" parent="Lights/Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.631, 7.81196, -3.65469)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights/Lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95487, 7.81196, -3.65469)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="scene_template01" parent="Assets" index="0"]
+visible = false
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -75,59 +49,105 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
 visible = false
 mesh = SubResource("SphereMesh_k4crk")
 
-[node name="FogVolume" type="FogVolume" parent="Assets" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8602, -0.00530708, -0.00028801)
-visible = false
-size = Vector3(19.7505, 2, 29.1759)
-material = SubResource("FogMaterial_giku2")
+[node name="biblicallyaccurateroom" parent="Assets" index="3" instance=ExtResource("3_y7s0g")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.392, -3.998, 1.109)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Assets/FogVolume" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_i4h06")
-}
+[node name="StaticBody3D" type="StaticBody3D" parent="Assets" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7751, -3.64269, -4.3413)
 
-[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("3_ggwv8")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.43554, 10.1828, 9.68706)
+shape = SubResource("BoxShape3D_rhdpx")
 
-[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Assets" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.33773, -3.64269, -4.3413)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33866, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_rhdpx")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Assets" index="6"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.98674, -3.64269, 4.45532)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_rhdpx")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Assets" index="7"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.24902, -3.64269, -2.0573)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_rhdpx")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Assets" index="8"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 8.24902, 7.19869, -18.1154)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/StaticBody3D5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84435, 8.18184, 0.446838)
+shape = SubResource("BoxShape3D_rhdpx")
+
+[node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_ggwv8")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -15.6728, 0.3, 0.967749)
+
+[node name="Area3D" parent="Interactive/Portals/Portal0_lobby" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal0_lobby/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal0_lobby" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("3_ggwv8")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
+[node name="Portal1_slasher" parent="Interactive/Portals" index="1" instance=ExtResource("3_ggwv8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.509867, 0.3, -9.09928)
 local_id = 1
-destination_room_id = 1
-tint_color = Color(0.526747, 0.599717, 0.918598, 1)
+destination_room_id = 3
+destination_portal_id = 2
+tint_color = Color(0.466667, 0.180392, 0.164706, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal1_slasher" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal1/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal1_slasher/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1_slasher" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("3_ggwv8")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1, 0.3, 21)
+[node name="Portal2_mia" parent="Interactive/Portals" index="2" instance=ExtResource("3_ggwv8")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 7.12934, 0.3, 11.264)
 local_id = 2
-destination_room_id = 2
-tint_color = Color(1, 0, 1, 1)
+destination_room_id = 5
+destination_portal_id = 4
+tint_color = Color(0.239216, 0.133333, 1, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal2_mia" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal2_mia/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2_mia" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[editable path="Interactive/Portals/Portal"]
-[editable path="Interactive/Portals/Portal1"]
-[editable path="Interactive/Portals/Portal2"]
+[node name="Portal3_chemtrails" parent="Interactive/Portals" index="3" instance=ExtResource("3_ggwv8")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 31.9808, 0.3, 8.50171)
+local_id = 3
+destination_room_id = 12
+destination_portal_id = 1
+tint_color = Color(0.282353, 0.501961, 0.270588, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal3_chemtrails" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal3_chemtrails/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3_chemtrails" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
+
+[editable path="Interactive/Portals/Portal0_lobby"]
+[editable path="Interactive/Portals/Portal1_slasher"]
+[editable path="Interactive/Portals/Portal2_mia"]
+[editable path="Interactive/Portals/Portal3_chemtrails"]

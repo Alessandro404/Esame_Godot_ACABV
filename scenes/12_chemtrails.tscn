@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpwusmiis3ysn"]
+[gd_scene load_steps=7 format=3 uid="uid://dpwusmiis3ysn"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_geleg"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_w7gp5"]
+[ext_resource type="PackedScene" uid="uid://dgnl46w3e5jb" path="res://blender/chemtrailsroom.blend" id="3_aapl4"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_ucm3f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
@@ -12,60 +13,90 @@ material = SubResource("StandardMaterial3D_f7e4p")
 radial_segments = 32
 rings = 16
 
-[sub_resource type="Gradient" id="Gradient_0lac5"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qus32"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_2if2l"]
-color_ramp = SubResource("Gradient_0lac5")
-noise = SubResource("FastNoiseLite_qus32")
-
-[sub_resource type="FogMaterial" id="FogMaterial_giku2"]
-density = 0.6209
-emission = Color(0.585062, 0.585062, 0.585062, 1)
-edge_fade = 0.0965936
-density_texture = SubResource("NoiseTexture3D_2if2l")
-
-[sub_resource type="Animation" id="Animation_1jyuv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="Animation" id="Animation_sbded"]
-resource_name = "fog_noise_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l"), SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4h06"]
-_data = {
-"RESET": SubResource("Animation_1jyuv"),
-"fog_noise_animation": SubResource("Animation_sbded")
-}
-
 [node name="Room00" instance=ExtResource("1_geleg")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource("2_w7gp5")
+
+[node name="Lights2" type="Node3D" parent="Lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights/Lights2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00101, 7.81196, -3.65469)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D1" type="OmniLight3D" parent="Lights/Lights2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61405, 7.81196, 28.3571)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights/Lights2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8682, 7.81196, 41.1564)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights/Lights2" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.8559, 7.81196, 48.5665)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights/Lights2" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.4514, 7.81196, 66.9005)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights/Lights2" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.2364, 7.81196, 95.449)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights/Lights2" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3066, 4.52349, 114.307)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights/Lights2" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0277, -10.5226, 84.1868)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights/Lights2" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6713, -12.5407, 56.9477)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights/Lights2" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.1485, 2.91938, 23.6847)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lights/Lights2" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.8161, 7.81196, 36.5185)
+light_energy = 14.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 27.0
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -75,59 +106,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
 visible = false
 mesh = SubResource("SphereMesh_k4crk")
 
-[node name="FogVolume" type="FogVolume" parent="Assets" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8602, -0.00530708, -0.00028801)
-visible = false
-size = Vector3(19.7505, 2, 29.1759)
-material = SubResource("FogMaterial_giku2")
+[node name="chemtrailsroom" parent="Assets" index="3" instance=ExtResource("3_aapl4")]
+transform = Transform3D(-0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, -0.573576, 10.447, -2.98, 57.674)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Assets/FogVolume" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_i4h06")
-}
+[node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_ucm3f")]
+transform = Transform3D(-0.286788, 0, 0.409576, 0, 0.5, 0, -0.409576, 0, -0.286788, -94.4406, 0.300004, 45.254)
 
-[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("3_ucm3f")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)
-
-[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal0_lobby" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal0_lobby/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal0_lobby" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("3_ucm3f")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
+[node name="Portal1_ba" parent="Interactive/Portals" index="1" instance=ExtResource("3_ucm3f")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)
 local_id = 1
-destination_room_id = 1
-tint_color = Color(0.526747, 0.599717, 0.918598, 1)
+destination_room_id = 11
+destination_portal_id = 3
+tint_color = Color(1, 0.960784, 0.541176, 1)
 
-[node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
+[node name="Area3D" parent="Interactive/Portals/Portal1_ba" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal1/Area3D" index="0"]
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal1_ba/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1_ba" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("3_ucm3f")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1, 0.3, 21)
-local_id = 2
-destination_room_id = 2
-tint_color = Color(1, 0, 1, 1)
-
-[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
-
-[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
-
-[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
-
-[editable path="Interactive/Portals/Portal"]
-[editable path="Interactive/Portals/Portal1"]
-[editable path="Interactive/Portals/Portal2"]
+[editable path="Interactive/Portals/Portal0_lobby"]
+[editable path="Interactive/Portals/Portal1_ba"]

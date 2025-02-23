@@ -300,6 +300,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -41.4263, 0.464, -9.400
 local_id = 2
 destination_room_id = 11
 destination_portal_id = 1
+tint_color = Color(1, 0.960784, 0.541176, 1)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal_2ba" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.22151)
