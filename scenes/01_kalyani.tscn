@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://tmcb5337qjau"]
+
+[ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_pcurv"]
+[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_o110u"]
+[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="3_5c23p"]
+[ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="4_xgf1c"]
+[ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="5_nllir"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="6_qfw3a"]
+[ext_resource type="PackedScene" uid="uid://b0jgbbsxfr6nq" path="res://blender/kalyaniroom.blend" id="7_gnfub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3i07"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q1dd7"]
+material = SubResource("StandardMaterial3D_p3i07")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8ojx"]
+albedo_texture = ExtResource("4_xgf1c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s8kx1"]
+material = SubResource("StandardMaterial3D_s8ojx")
+
+[node name="Room03" instance=ExtResource("1_pcurv")]
+
+[node name="CameraRoot2" type="Node3D" parent="Cameras" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96341, 0, 0)
+
+[node name="Camera_rig" parent="Cameras/CameraRoot2" index="0" instance=ExtResource("2_o110u")]
+stage_dimentions = Vector2(8, 64)
+
+[node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
+transform = Transform3D(0.9996, 0, 0.0282882, 0, 1, 0, -0.0282882, 0, 0.9996, 0.0879993, 3.32683, 7.86085)
+
+[node name="CameraRoot" parent="Cameras" index="1"]
+transform = Transform3D(-0.998726, 0, -0.0504536, 0, 1, 0, 0.0504536, 0, -0.998726, -15.0475, 0, 0)
+
+[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_o110u")]
+
+[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
+transform = Transform3D(0.259475, -0.156803, 0.952935, -0.00831336, 0.986332, 0.164562, -0.965714, -0.0506219, 0.254625, 6.68837, 1, -5.65447)
+
+[node name="scene_template01" parent="Assets" index="0"]
+visible = false
+
+[node name="scene_template02" parent="Assets" index="1" instance=ExtResource("3_5c23p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8515, 0, 0)
+visible = false
+
+[node name="MeshInstance3D" parent="Assets" index="2"]
+visible = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724696, 0.5, 6.23079)
+visible = false
+mesh = SubResource("BoxMesh_q1dd7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Assets" index="4"]
+transform = Transform3D(0.139674, -0.990198, 1.49012e-08, -3.58928e-09, 4.47227e-08, -1, 0.990198, 0.139674, 8.7018e-10, -16.0384, -2, 5.65464)
+visible = false
+mesh = SubResource("PlaneMesh_s8kx1")
+
+[node name="kalyaniroom" parent="Assets" index="5" instance=ExtResource("7_gnfub")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, -0.738, -1.03296)
+
+[node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("5_nllir")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -3.85985, 11.0278, 31.735)
+destination_portal_id = 1
+
+[node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26066, 0, -1.07302)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0.0747414, 0.505322, -0.0506744)
+
+[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal/Area3D" index="1"]
+transform = Transform3D(0.00212867, 0, -0.725975, 0, 0.725978, 0, 0.725975, 0, 0.00212867, 0, 4.46372, -0.355013)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
+transform = Transform3D(-0.0427824, 0, -0.999084, 0, 1, 0, 0.999084, 0, -0.0427824, -4.8503, 0, -1.00173)
+
+[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("5_nllir")]
+transform = Transform3D(0.383022, 0, -0.321394, 0, 0.5, 0, 0.321394, 0, 0.383022, 21.8255, 0.25, -6.45311)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("5_nllir")]
+transform = Transform3D(0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, 0.17101, 24.267, 0.25, -3.55432)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Portal3" parent="Interactive/Portals" index="3" instance=ExtResource("5_nllir")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 25.7793, 0.25, 0)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Portal4" parent="Interactive/Portals" index="4" instance=ExtResource("5_nllir")]
+transform = Transform3D(-0.225439, 0, -0.446293, 0, 0.5, 0, 0.446293, 0, -0.225439, 24.2235, 0.25, 3.58307)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Portal5" parent="Interactive/Portals" index="5" instance=ExtResource("5_nllir")]
+transform = Transform3D(-0.286788, 0, -0.409576, 0, 0.5, 0, 0.409576, 0, -0.286788, 21.826, 0.25, 6.453)
+local_id = 1
+destination_room_id = 4
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal5" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+
+[node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("6_qfw3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4046, 0.393598, 5.03369)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
+[node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("6_qfw3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 3.26876)
+camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
+
+[editable path="Cameras/CameraRoot2/Camera_rig"]
+[editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal1"]
+[editable path="Interactive/Portals/Portal2"]
+[editable path="Interactive/Portals/Portal3"]
+[editable path="Interactive/Portals/Portal4"]
+[editable path="Interactive/Portals/Portal5"]

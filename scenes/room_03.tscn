@@ -1,95 +1,133 @@
-[gd_scene load_steps=12 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=13 format=3 uid="uid://b1foh7jdv5013"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_14pt0"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_41v43"]
-[ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_ie8n1"]
-[ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="3_g6px7"]
-[ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="4_b02gk"]
-[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="5_h4wvk"]
-[ext_resource type="PackedScene" uid="uid://b0jgbbsxfr6nq" path="res://blender/kalyaniroom.blend" id="7_41el5"]
+[ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_wuktm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3i07"]
-albedo_color = Color(0, 1, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
+albedo_color = Color(1, 1, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_q1dd7"]
-material = SubResource("StandardMaterial3D_p3i07")
+[sub_resource type="SphereMesh" id="SphereMesh_k4crk"]
+material = SubResource("StandardMaterial3D_f7e4p")
+radial_segments = 32
+rings = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8ojx"]
-albedo_texture = ExtResource("4_b02gk")
+[sub_resource type="Gradient" id="Gradient_0lac5"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_s8kx1"]
-material = SubResource("StandardMaterial3D_s8ojx")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qus32"]
 
-[node name="Room03" instance=ExtResource("1_14pt0")]
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_2if2l"]
+color_ramp = SubResource("Gradient_0lac5")
+noise = SubResource("FastNoiseLite_qus32")
 
-[node name="CameraRoot2" type="Node3D" parent="Cameras" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96341, 0, 0)
+[sub_resource type="FogMaterial" id="FogMaterial_giku2"]
+density = 0.6209
+emission = Color(0.585062, 0.585062, 0.585062, 1)
+edge_fade = 0.0965936
+density_texture = SubResource("NoiseTexture3D_2if2l")
 
-[node name="Camera_rig" parent="Cameras/CameraRoot2" index="0" instance=ExtResource("2_ie8n1")]
-stage_dimentions = Vector2(8, 64)
+[sub_resource type="Animation" id="Animation_1jyuv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:density_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("NoiseTexture3D_2if2l")]
+}
 
-[node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
-transform = Transform3D(0.9996, 0, 0.0282882, 0, 1, 0, -0.0282882, 0, 0.9996, 0.0879993, 3.32683, 7.86085)
+[sub_resource type="Animation" id="Animation_sbded"]
+resource_name = "fog_noise_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:density_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("NoiseTexture3D_2if2l"), SubResource("NoiseTexture3D_2if2l")]
+}
 
-[node name="CameraRoot" parent="Cameras" index="1"]
-transform = Transform3D(-0.998726, 0, -0.0504536, 0, 1, 0, 0.0504536, 0, -0.998726, -15.0475, 0, 0)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4h06"]
+_data = {
+"RESET": SubResource("Animation_1jyuv"),
+"fog_noise_animation": SubResource("Animation_sbded")
+}
 
-[node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_ie8n1")]
+[node name="Room00" instance=ExtResource("1_14pt0")]
 
-[node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(0.259475, -0.156803, 0.952935, -0.00831336, 0.986332, 0.164562, -0.965714, -0.0506219, 0.254625, 6.68837, 1, -5.65447)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = ExtResource("2_wuktm")
 
-[node name="scene_template02" parent="Assets" index="1" instance=ExtResource("3_g6px7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8515, 0, 0)
+[node name="MeshInstance3D" parent="Assets" index="1"]
+visible = false
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.724696, 0.5, 6.23079)
-mesh = SubResource("BoxMesh_q1dd7")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Assets" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
+visible = false
+mesh = SubResource("SphereMesh_k4crk")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Assets" index="4"]
-transform = Transform3D(0.139674, -0.990198, 1.49012e-08, -3.58928e-09, 4.47227e-08, -1, 0.990198, 0.139674, 8.7018e-10, -16.0384, -2, 5.65464)
-mesh = SubResource("PlaneMesh_s8kx1")
+[node name="FogVolume" type="FogVolume" parent="Assets" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8602, -0.00530708, -0.00028801)
+visible = false
+size = Vector3(19.7505, 2, 29.1759)
+material = SubResource("FogMaterial_giku2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Assets/FogVolume" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_i4h06")
+}
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_41v43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95784, 0, 0.900998)
-destination_room_id = 2
-destination_portal_id = 1
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26066, 0, -1.07302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
 
 [node name="CollisionShape3D" parent="Interactive/Portals/Portal/Area3D" index="0"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0747404, 0.505322, -0.0506757)
-
-[node name="AnimatedSprite3D" parent="Interactive/Portals/Portal/Area3D" index="1"]
-transform = Transform3D(0.00212867, 0, -0.725975, 0, 0.725978, 0, 0.725975, 0, 0.00212867, 0, 4.46372, -0.355013)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal" index="1"]
-transform = Transform3D(-0.0427824, 0, -0.999084, 0, 1, 0, 0.999084, 0, -0.0427824, -4.8503, 0, -1.00173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
-[node name="MeshInstance3D" parent="Interactive/Portals/Portal/PlayerSpawn" index="0"]
-transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
-
-[node name="Portal2" parent="Interactive/Portals" index="1" instance=ExtResource("2_41v43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2214, 0, -7.43958)
+[node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("2_41v43")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
 local_id = 1
-destination_room_id = 4
+destination_room_id = 1
+tint_color = Color(0.526747, 0.599717, 0.918598, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal1/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal1" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+
+[node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("2_41v43")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1, 0.3, 21)
+local_id = 2
+destination_room_id = 2
+tint_color = Color(1, 0, 1, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
-[node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4046, 0.393598, 5.03369)
-camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
-
-[node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("5_h4wvk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 3.26876)
-camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
-
-[node name="kalyaniroom" parent="." index="4" instance=ExtResource("7_41el5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1775, -78.7982, 55.6527)
-
-[editable path="Cameras/CameraRoot2/Camera_rig"]
-[editable path="Cameras/CameraRoot/Camera_rig"]
 [editable path="Interactive/Portals/Portal"]
+[editable path="Interactive/Portals/Portal1"]
 [editable path="Interactive/Portals/Portal2"]
