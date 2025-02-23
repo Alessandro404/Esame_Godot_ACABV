@@ -290,7 +290,8 @@ shape = SubResource("BoxShape3D_4osi8")
 [node name="AnimatedSprite3D" parent="Interactive/Actionables/xX-Slasher-Xx" index="4"]
 transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_87gfi")
-frame_progress = 0.0768644
+frame = 17
+frame_progress = 0.661635
 
 [node name="Portal_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("54_1qcui")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.464, -9.40055)
