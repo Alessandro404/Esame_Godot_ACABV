@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bihq7wgn4gr4k"]
+[gd_scene load_steps=18 format=3 uid="uid://bihq7wgn4gr4k"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_vpf3x"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_dgsav"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_l1lof"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_utr3k"]
 [ext_resource type="PackedScene" uid="uid://3fuxwt18oexx" path="res://blender/maneki_room.blend" id="4_3rior"]
+[ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="5_vnops"]
+[ext_resource type="Resource" uid="uid://dcxj1aytgfrdd" path="res://dialogues/Maneki.dialogue" id="6_5e82k"]
+[ext_resource type="SpriteFrames" uid="uid://c12lbqm7r7avg" path="res://Personaggi/spritesheet.tres" id="7_nfaw2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -97,6 +100,16 @@ libraries = {
 [node name="maneki_room" parent="Assets" index="4" instance=ExtResource("4_3rior")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93, 0)
 
+[node name="Maneki" parent="Interactive/Actionables" index="0" instance=ExtResource("5_vnops")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11085, 0.0473118, -9.23118)
+
+[node name="Actionable" parent="Interactive/Actionables/Maneki" index="2"]
+dialogue_resource = ExtResource("6_5e82k")
+
+[node name="AnimatedSprite3D" parent="Interactive/Actionables/Maneki" index="4"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 1, -1.18537, 0, 0)
+sprite_frames = ExtResource("7_nfaw2")
+
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_utr3k")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.73237, 0.3, 9.22444)
 
@@ -142,6 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Interactive/Actionables/Maneki"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_kalyani"]
 [editable path="Interactive/Portals/Portal2_captchas"]

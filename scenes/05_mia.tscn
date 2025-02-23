@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cih0jx11au025"]
+[gd_scene load_steps=12 format=3 uid="uid://cih0jx11au025"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_r3lpa"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_4brfc"]
@@ -7,18 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_mdjpx"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="5_yiu11"]
 [ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="6_c3vev"]
-[ext_resource type="Texture2D" uid="uid://cr4x43ohd56lk" path="res://assets/MiaOf/OF MIA00.webp" id="6_orvna"]
-[ext_resource type="Texture2D" uid="uid://c0kv6b31qshc7" path="res://assets/MiaOf/OF MIA01.webp" id="7_x2brc"]
-[ext_resource type="Texture2D" uid="uid://bqioatyrem6qj" path="res://assets/MiaOf/OF MIA02.webp" id="8_rgyvs"]
-[ext_resource type="Texture2D" uid="uid://bi3epmx04dgj1" path="res://assets/MiaOf/OF MIA03.webp" id="9_5jh6b"]
-[ext_resource type="Texture2D" uid="uid://bpnk3x40dis64" path="res://assets/MiaOf/OF MIA04.webp" id="10_33ey1"]
-[ext_resource type="Texture2D" uid="uid://d0qt67fvsqo2x" path="res://assets/MiaOf/OF MIA05.webp" id="11_rllv0"]
-[ext_resource type="Texture2D" uid="uid://cqhn55ymvjjhr" path="res://assets/MiaOf/OF MIA06.webp" id="12_le2td"]
-[ext_resource type="Texture2D" uid="uid://cjrqdyk5cqf7x" path="res://assets/MiaOf/OF MIA07.webp" id="13_nhxf8"]
-[ext_resource type="Texture2D" uid="uid://c5lftnu2801os" path="res://assets/MiaOf/OF MIA08.webp" id="14_o6e31"]
-[ext_resource type="Texture2D" uid="uid://bvxtrnjuxpxfs" path="res://assets/MiaOf/OF MIA09.webp" id="15_de2fg"]
-[ext_resource type="Texture2D" uid="uid://bgxhkjgcnn131" path="res://assets/MiaOf/OF MIA10.webp" id="16_hd678"]
-[ext_resource type="Texture2D" uid="uid://b7yfnpidsfnpa" path="res://assets/MiaOf/OF MIA11.webp" id="17_rhv1s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -35,40 +23,40 @@ size = Vector3(5.95551, 2.51587, 4.59326)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_orvna")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_x2brc")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_rgyvs")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_5jh6b")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_33ey1")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_rllv0")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_le2td")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_nhxf8")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_o6e31")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_de2fg")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_hd678")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_rhv1s")
+"texture": null
 }],
 "loop": true,
 "name": &"default",

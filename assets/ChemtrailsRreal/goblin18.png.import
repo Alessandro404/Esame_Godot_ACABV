@@ -1,9 +1,9 @@
 [remap]
 
-importer="texture"
-type="CompressedTexture2D"
+importer="3d_texture"
+type="CompressedTexture3D"
 uid="uid://by11xu8to5pqq"
-path="res://.godot/imported/goblin18.png-3fd618b7156c8e49e2e7183dc64c7149.ctex"
+path="res://.godot/imported/goblin18.png-3fd618b7156c8e49e2e7183dc64c7149.ctex3d"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/ChemtrailsRreal/goblin18.png"
-dest_files=["res://.godot/imported/goblin18.png-3fd618b7156c8e49e2e7183dc64c7149.ctex"]
+dest_files=["res://.godot/imported/goblin18.png-3fd618b7156c8e49e2e7183dc64c7149.ctex3d"]
 
 [params]
 
@@ -19,16 +19,8 @@ compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
-process/fix_alpha_border=true
-process/premult_alpha=false
-process/normal_map_invert_y=false
-process/hdr_as_srgb=false
-process/hdr_clamp_exposure=false
-process/size_limit=0
-detect_3d/compress_to=1
+slices/horizontal=8
+slices/vertical=8

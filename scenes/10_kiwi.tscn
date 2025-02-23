@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bodv0y3pdbj1q"]
+[gd_scene load_steps=18 format=3 uid="uid://bodv0y3pdbj1q"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_87k8v"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_7y67t"]
@@ -6,51 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_vas34"]
 [ext_resource type="PackedScene" uid="uid://dc43uhv5o6opr" path="res://blender/kiwi_room.blend" id="4_iboug"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="4_iej3k"]
-[ext_resource type="Texture2D" uid="uid://gmwrkogsyc5a" path="res://assets/Kiwi/kiwi00.webp" id="5_tfgly"]
-[ext_resource type="Texture2D" uid="uid://04fgggxa16gu" path="res://assets/Kiwi/kiwi01.webp" id="6_8x7rl"]
-[ext_resource type="Texture2D" uid="uid://b8cgrxbjvr6yp" path="res://assets/Kiwi/kiwi02.webp" id="7_xfq77"]
-[ext_resource type="Texture2D" uid="uid://jdgnjrlyn7p1" path="res://assets/Kiwi/kiwi03.webp" id="8_hurob"]
-[ext_resource type="Texture2D" uid="uid://boaspsfc70ct2" path="res://assets/Kiwi/kiwi04.webp" id="9_e5g32"]
-[ext_resource type="Texture2D" uid="uid://d1m55ayqnenv" path="res://assets/Kiwi/kiwi05.webp" id="10_l8uka"]
-[ext_resource type="Texture2D" uid="uid://bdx1e4u1rxbta" path="res://assets/Kiwi/kiwi06.webp" id="11_2u774"]
-[ext_resource type="Texture2D" uid="uid://dvncafjxtx3km" path="res://assets/Kiwi/kiwi07.webp" id="12_kbpml"]
-[ext_resource type="Texture2D" uid="uid://dii6w36yq2oq5" path="res://assets/Kiwi/kiwi08.webp" id="13_gvvcm"]
-[ext_resource type="Texture2D" uid="uid://d0g8rayb5jpky" path="res://assets/Kiwi/kiwi09.webp" id="14_okaql"]
-[ext_resource type="Texture2D" uid="uid://bfk4r4wbpdyxr" path="res://assets/Kiwi/kiwi10.webp" id="15_t5f1m"]
-[ext_resource type="Texture2D" uid="uid://d11e5tonpm8vu" path="res://assets/Kiwi/kiwi11.webp" id="16_72lmc"]
-[ext_resource type="Texture2D" uid="uid://b2nuxw5w47wvt" path="res://assets/Kiwi/kiwi12.webp" id="17_i0mfp"]
-[ext_resource type="Texture2D" uid="uid://c4v0uq7i2i5lv" path="res://assets/Kiwi/kiwi13.webp" id="18_1ue0q"]
-[ext_resource type="Texture2D" uid="uid://6vbu6g70f52r" path="res://assets/Kiwi/kiwi14.webp" id="19_dvqnc"]
-[ext_resource type="Texture2D" uid="uid://dmi0pjln3f2vh" path="res://assets/Kiwi/kiwi15.webp" id="20_wn0at"]
-[ext_resource type="Texture2D" uid="uid://qh8k83m145fu" path="res://assets/Kiwi/kiwi16.webp" id="21_btc3g"]
-[ext_resource type="Texture2D" uid="uid://cbvc8gc3e754q" path="res://assets/Kiwi/kiwi17.webp" id="22_jw0m6"]
-[ext_resource type="Texture2D" uid="uid://b8b7se8ltj5v8" path="res://assets/Kiwi/kiwi18.webp" id="23_pvb63"]
-[ext_resource type="Texture2D" uid="uid://cbtb28lmv1n1m" path="res://assets/Kiwi/kiwi19.webp" id="24_fkxgd"]
-[ext_resource type="Texture2D" uid="uid://caj8b1cra75n0" path="res://assets/Kiwi/kiwi20.webp" id="25_375nh"]
-[ext_resource type="Texture2D" uid="uid://k8grlces1tfw" path="res://assets/Kiwi/kiwi21.webp" id="26_8arim"]
-[ext_resource type="Texture2D" uid="uid://x0emit1sgmy" path="res://assets/Kiwi/kiwi22.webp" id="27_iscid"]
-[ext_resource type="Texture2D" uid="uid://u6odpwus0ic" path="res://assets/Kiwi/kiwi23.webp" id="28_3hjor"]
-[ext_resource type="Texture2D" uid="uid://b3rfvcidfp2ax" path="res://assets/Kiwi/kiwi24.webp" id="29_qkr7d"]
-[ext_resource type="Texture2D" uid="uid://c5rfu305bdjvu" path="res://assets/Kiwi/kiwi25.webp" id="30_awafn"]
-[ext_resource type="Texture2D" uid="uid://bqtwcxbe4iwbj" path="res://assets/Kiwi/kiwi26.webp" id="31_4lexy"]
-[ext_resource type="Texture2D" uid="uid://b636r00tn4rva" path="res://assets/Kiwi/kiwi27.webp" id="32_j0ne2"]
-[ext_resource type="Texture2D" uid="uid://ct6vc3nyc6g0n" path="res://assets/Kiwi/kiwi28.webp" id="33_orqvp"]
-[ext_resource type="Texture2D" uid="uid://dyo1jjw0a0soj" path="res://assets/Kiwi/kiwi29.webp" id="34_gu8el"]
-[ext_resource type="Texture2D" uid="uid://g1m16odjv7vh" path="res://assets/Kiwi/kiwi30.webp" id="35_q66iv"]
-[ext_resource type="Texture2D" uid="uid://chjaqtx4wncel" path="res://assets/Kiwi/kiwi31.webp" id="36_rthy6"]
-[ext_resource type="Texture2D" uid="uid://48poxs8t7rqp" path="res://assets/Kiwi/kiwi32.webp" id="37_wrvd7"]
-[ext_resource type="Texture2D" uid="uid://cjn2efi6fgy1c" path="res://assets/Kiwi/kiwi33.webp" id="38_pwhma"]
-[ext_resource type="Texture2D" uid="uid://ubm48f6a00ja" path="res://assets/Kiwi/kiwi34.webp" id="39_d8g3v"]
-[ext_resource type="Texture2D" uid="uid://prp8kh6o8kdy" path="res://assets/Kiwi/kiwi35.webp" id="40_7st1t"]
-[ext_resource type="Texture2D" uid="uid://cwlhiey3qt1tc" path="res://assets/Kiwi/kiwi36.webp" id="41_0ospq"]
-[ext_resource type="Texture2D" uid="uid://c8gut5y4sidc5" path="res://assets/Kiwi/kiwi37.webp" id="42_ykx5t"]
-[ext_resource type="Texture2D" uid="uid://bonjklluo80uo" path="res://assets/Kiwi/kiwi38.webp" id="43_5eka2"]
-[ext_resource type="Texture2D" uid="uid://dr5il65t0ukdr" path="res://assets/Kiwi/kiwi39.webp" id="44_ttoa1"]
-[ext_resource type="Texture2D" uid="uid://blrxd62vcpskx" path="res://assets/Kiwi/kiwi40.webp" id="45_ls8ef"]
-[ext_resource type="Texture2D" uid="uid://beghk4kkrvy5v" path="res://assets/Kiwi/kiwi41.webp" id="46_l6bko"]
-[ext_resource type="Texture2D" uid="uid://citrnpo6qdxgt" path="res://assets/Kiwi/kiwi42.webp" id="47_u2sea"]
-[ext_resource type="Texture2D" uid="uid://b2cjvmvrpi3k1" path="res://assets/Kiwi/kiwi43.webp" id="48_ckwad"]
-[ext_resource type="Texture2D" uid="uid://btnlorukfxgha" path="res://assets/Kiwi/kiwi44.webp" id="49_38loa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -118,139 +73,139 @@ radius = 0.666594
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_tfgly")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_8x7rl")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xfq77")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_hurob")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_e5g32")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_l8uka")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_2u774")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_kbpml")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_gvvcm")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_okaql")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_t5f1m")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_72lmc")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_i0mfp")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_1ue0q")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_dvqnc")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("20_wn0at")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("21_btc3g")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_jw0m6")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_pvb63")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_fkxgd")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_375nh")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("26_8arim")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("27_iscid")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("28_3hjor")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_qkr7d")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("30_awafn")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("31_4lexy")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("32_j0ne2")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_orqvp")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("34_gu8el")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("35_q66iv")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("36_rthy6")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("37_wrvd7")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("38_pwhma")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("39_d8g3v")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_7st1t")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_0ospq")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("42_ykx5t")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_5eka2")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_ttoa1")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("45_ls8ef")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_l6bko")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_u2sea")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("48_ckwad")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("49_38loa")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
