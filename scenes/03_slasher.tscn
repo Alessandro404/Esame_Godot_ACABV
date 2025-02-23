@@ -325,6 +325,7 @@ transform = Transform3D(-1.18163, 2.75749, -1.20534e-07, -3.97047e-23, -1.31134e
 
 [node name="Portal" parent="Interactive/Portals" index="2" instance=ExtResource("54_1qcui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.47136)
+destination_portal_id = 3
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.653041)

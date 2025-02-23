@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cih0jx11au025"]
+[gd_scene load_steps=7 format=3 uid="uid://cih0jx11au025"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_r3lpa"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_4brfc"]
+[ext_resource type="PackedScene" uid="uid://boyxr8uk5ebcj" path="res://blender/MIAroom.blend" id="3_0lw4s"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_mdjpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
@@ -12,60 +13,13 @@ material = SubResource("StandardMaterial3D_f7e4p")
 radial_segments = 32
 rings = 16
 
-[sub_resource type="Gradient" id="Gradient_0lac5"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qus32"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_2if2l"]
-color_ramp = SubResource("Gradient_0lac5")
-noise = SubResource("FastNoiseLite_qus32")
-
-[sub_resource type="FogMaterial" id="FogMaterial_giku2"]
-density = 0.6209
-emission = Color(0.585062, 0.585062, 0.585062, 1)
-edge_fade = 0.0965936
-density_texture = SubResource("NoiseTexture3D_2if2l")
-
-[sub_resource type="Animation" id="Animation_1jyuv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="Animation" id="Animation_sbded"]
-resource_name = "fog_noise_animation"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:density_texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("NoiseTexture3D_2if2l"), SubResource("NoiseTexture3D_2if2l")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i4h06"]
-_data = {
-"RESET": SubResource("Animation_1jyuv"),
-"fog_noise_animation": SubResource("Animation_sbded")
-}
-
 [node name="Room00" instance=ExtResource("1_r3lpa")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 environment = ExtResource("2_4brfc")
+
+[node name="scene_template01" parent="Assets" index="0"]
+visible = false
 
 [node name="MeshInstance3D" parent="Assets" index="1"]
 visible = false
@@ -75,19 +29,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84713, 0.5, 1.31555)
 visible = false
 mesh = SubResource("SphereMesh_k4crk")
 
-[node name="FogVolume" type="FogVolume" parent="Assets" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.8602, -0.00530708, -0.00028801)
-visible = false
-size = Vector3(19.7505, 2, 29.1759)
-material = SubResource("FogMaterial_giku2")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Assets/FogVolume" index="0"]
-libraries = {
-"": SubResource("AnimationLibrary_i4h06")
-}
+[node name="MIAroom" parent="Assets" index="3" instance=ExtResource("3_0lw4s")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 5)
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("3_mdjpx")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -10.9092)
+destination_portal_id = 5
 
 [node name="Area3D" parent="Interactive/Portals/Portal" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
@@ -99,7 +46,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="Portal1" parent="Interactive/Portals" index="1" instance=ExtResource("3_mdjpx")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 8.5, 0.3, 21)
+transform = Transform3D(-0.453154, 0, 0.211309, 0, 0.5, 0, -0.211309, 0, -0.453154, 10, 0.3, -12)
 local_id = 1
 destination_room_id = 1
 tint_color = Color(0.526747, 0.599717, 0.918598, 1)
@@ -114,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
 [node name="Portal2" parent="Interactive/Portals" index="2" instance=ExtResource("3_mdjpx")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.1, 0.3, 21)
+transform = Transform3D(-0.453154, 0, -0.211309, 0, 0.5, 0, 0.211309, 0, -0.453154, -10, 0.3, -12)
 local_id = 2
 destination_room_id = 2
 tint_color = Color(1, 0, 1, 1)
@@ -128,6 +75,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal2" index="1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
 
+[node name="Portal3" parent="Interactive/Portals" index="3" instance=ExtResource("3_mdjpx")]
+transform = Transform3D(-0.17101, 0, -0.469846, 0, 0.5, 0, 0.469846, 0, -0.17101, -15, 0.3, -7)
+local_id = 2
+destination_room_id = 2
+tint_color = Color(1, 0, 1, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal3/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal3" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+
+[node name="Portal4" parent="Interactive/Portals" index="4" instance=ExtResource("3_mdjpx")]
+transform = Transform3D(-0.17101, 0, 0.469846, 0, 0.5, 0, -0.469846, 0, -0.17101, 15, 0.3, -7)
+local_id = 2
+destination_room_id = 2
+tint_color = Color(1, 0, 1, 1)
+
+[node name="Area3D" parent="Interactive/Portals/Portal4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.749672)
+
+[node name="CollisionShape3D" parent="Interactive/Portals/Portal4/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
+
+[node name="PlayerSpawn" parent="Interactive/Portals/Portal4" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.24098)
+
 [editable path="Interactive/Portals/Portal"]
 [editable path="Interactive/Portals/Portal1"]
 [editable path="Interactive/Portals/Portal2"]
+[editable path="Interactive/Portals/Portal3"]
+[editable path="Interactive/Portals/Portal4"]
