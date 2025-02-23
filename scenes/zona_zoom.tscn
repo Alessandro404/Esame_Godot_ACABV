@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://ncgxbjng434n"]
+
+[ext_resource type="Script" path="res://scenes/zona_zoom.gd" id="1_4bajf"]
+[ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="1_8flgl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fxfc5"]
+radius = 2.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i4vkb"]
+radius = 0.315298
+height = 7.82942
+
+[node name="ZonaZoom" type="Node3D"]
+script = ExtResource("1_4bajf")
+
+[node name="cambio_interno" parent="." instance=ExtResource("1_8flgl")]
+
+[node name="CollisionShape3D" parent="cambio_interno/Area3D" index="0"]
+shape = SubResource("SphereShape3D_fxfc5")
+
+[node name="cambio_esterno1" parent="." instance=ExtResource("1_8flgl")]
+
+[node name="CollisionShape3D" parent="cambio_esterno1/Area3D" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, -3.59552)
+shape = SubResource("CapsuleShape3D_i4vkb")
+
+[node name="cambio_esterno2" parent="." instance=ExtResource("1_8flgl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="cambio_esterno2/Area3D" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, -3.59552)
+shape = SubResource("CapsuleShape3D_i4vkb")
+
+[node name="cambio_esterno3" parent="." instance=ExtResource("1_8flgl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="cambio_esterno3/Area3D" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, -3.59552)
+shape = SubResource("CapsuleShape3D_i4vkb")
+
+[node name="cambio_esterno4" parent="." instance=ExtResource("1_8flgl")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="cambio_esterno4/Area3D" index="0"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 0, -3.59552)
+shape = SubResource("CapsuleShape3D_i4vkb")
+
+[editable path="cambio_interno"]
+[editable path="cambio_esterno1"]
+[editable path="cambio_esterno2"]
+[editable path="cambio_esterno3"]
+[editable path="cambio_esterno4"]
