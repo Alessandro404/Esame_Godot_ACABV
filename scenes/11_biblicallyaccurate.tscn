@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://deqqieudpm884"]
+[gd_scene load_steps=15 format=3 uid="uid://deqqieudpm884"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_33q4p"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_a6nhv"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_baf75"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_ggwv8"]
 [ext_resource type="PackedScene" uid="uid://cbnanm16nuvrg" path="res://blender/biblicallyaccurateroom.blend" id="3_y7s0g"]
+[ext_resource type="PackedScene" uid="uid://djou5a1k03qm3" path="res://Personaggi/npc_template.tscn" id="5_in6ql"]
+[ext_resource type="PackedScene" uid="uid://cuegth07xadqb" path="res://Personaggi/BiblicallyAccurate.blend" id="6_xj4nx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -19,6 +21,27 @@ size = Vector3(1, 20.1014, 81.0596)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k43li"]
 size = Vector3(34.9026, 1, 17.209)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7b2a3"]
+height = 1.6
+radius = 0.691038
+
+[sub_resource type="Animation" id="Animation_u3hxh"]
+resource_name = "EmptyAction"
+length = 10.4167
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Empty")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.012516, 0, 0.999922, 0.0333333, 1, 0, 0.012516, 0, 0.999922, 0.0666667, 1, 0, 0.0200248, 0, 0.999799, 5.23333, 1, 0, 0.999999, 0, -0.00125165, 5.26667, 1, 0, -0.999937, 0, 0.0112646, 10.4167, 1, 0, -0.0125158, 0, 0.999922)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qqno0"]
+_data = {
+"EmptyAction": SubResource("Animation_u3hxh")
+}
 
 [node name="Room00" instance=ExtResource("1_33q4p")]
 
@@ -97,6 +120,25 @@ shape = SubResource("BoxShape3D_rhdpx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07214, 2.30077, -0.307617)
 shape = SubResource("BoxShape3D_k43li")
 
+[node name="BiblicallyAccurate" parent="Interactive/Actionables" index="0" instance=ExtResource("5_in6ql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7424, 0.51148, -7.93669)
+
+[node name="MeshInstance3D" parent="Interactive/Actionables/BiblicallyAccurate" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Interactive/Actionables/BiblicallyAccurate/StaticBody3D" index="0"]
+shape = SubResource("CylinderShape3D_7b2a3")
+
+[node name="BiblicallyAccurate" parent="Interactive/Actionables/BiblicallyAccurate" index="4" instance=ExtResource("6_xj4nx")]
+
+[node name="Empty" parent="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate" index="1"]
+transform = Transform3D(0.999687, 0, 0.02503, 0, 1, 0, -0.02503, 0, 0.999687, 0, 0.540102, 0)
+
+[node name="AnimationPlayer" parent="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_qqno0")
+}
+
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_ggwv8")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -15.6728, 0.3, 0.967749)
 
@@ -158,6 +200,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Interactive/Actionables/BiblicallyAccurate"]
+[editable path="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_slasher"]
 [editable path="Interactive/Portals/Portal2_mia"]

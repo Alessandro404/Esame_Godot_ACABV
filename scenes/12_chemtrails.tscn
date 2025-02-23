@@ -1,9 +1,59 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpwusmiis3ysn"]
+[gd_scene load_steps=58 format=3 uid="uid://dpwusmiis3ysn"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_geleg"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_w7gp5"]
 [ext_resource type="PackedScene" uid="uid://dgnl46w3e5jb" path="res://blender/chemtrailsroom.blend" id="3_aapl4"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_ucm3f"]
+[ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="4_fbvjy"]
+[ext_resource type="Texture2D" uid="uid://be1nx03rxivmm" path="res://assets/ChemtrailsRreal/goblin01.png" id="5_cs642"]
+[ext_resource type="Texture2D" uid="uid://dokcmuagoh3k0" path="res://assets/ChemtrailsRreal/goblin02.png" id="6_layq5"]
+[ext_resource type="Texture2D" uid="uid://bxl30essnacjl" path="res://assets/ChemtrailsRreal/goblin03.png" id="7_ml4p1"]
+[ext_resource type="Texture2D" uid="uid://bsmegs3u6qmr1" path="res://assets/ChemtrailsRreal/goblin04.png" id="8_wruoj"]
+[ext_resource type="Texture2D" uid="uid://cmxc0p4vouri7" path="res://assets/ChemtrailsRreal/goblin05.png" id="9_bjykc"]
+[ext_resource type="Texture2D" uid="uid://gafgy4jrpjlg" path="res://assets/ChemtrailsRreal/goblin06.png" id="10_tipyv"]
+[ext_resource type="Texture2D" uid="uid://dukv2x8j2iin1" path="res://assets/ChemtrailsRreal/goblin07.png" id="11_1nvn4"]
+[ext_resource type="Texture2D" uid="uid://cnk208dwpfgwb" path="res://assets/ChemtrailsRreal/goblin08.png" id="12_yf3s0"]
+[ext_resource type="Texture2D" uid="uid://15melvbvset2" path="res://assets/ChemtrailsRreal/goblin09.png" id="13_ppvhg"]
+[ext_resource type="Texture2D" uid="uid://c2b151vqhvl3p" path="res://assets/ChemtrailsRreal/goblin10.png" id="14_dna8t"]
+[ext_resource type="Texture2D" uid="uid://b0pmwncmlm8sp" path="res://assets/ChemtrailsRreal/goblin11.png" id="15_o0jq1"]
+[ext_resource type="Texture2D" uid="uid://dk5df5ysjb8a4" path="res://assets/ChemtrailsRreal/goblin12.png" id="16_b3i57"]
+[ext_resource type="Texture2D" uid="uid://xuv0d0s8vo7a" path="res://assets/ChemtrailsRreal/goblin13.png" id="17_kootd"]
+[ext_resource type="Texture2D" uid="uid://be8l7kq0pawk" path="res://assets/ChemtrailsRreal/goblin14.png" id="18_yhl3b"]
+[ext_resource type="Texture2D" uid="uid://b601x4q76rkjl" path="res://assets/ChemtrailsRreal/goblin15.png" id="19_04fvi"]
+[ext_resource type="Texture2D" uid="uid://c38bbq5544mk8" path="res://assets/ChemtrailsRreal/goblin16.png" id="20_0nenl"]
+[ext_resource type="Texture2D" uid="uid://ckv7ihtsuaj6u" path="res://assets/ChemtrailsRreal/goblin17.png" id="21_14838"]
+[ext_resource type="Texture2D" uid="uid://by11xu8to5pqq" path="res://assets/ChemtrailsRreal/goblin18.png" id="22_yo61b"]
+[ext_resource type="Texture2D" uid="uid://bd57w44eiko6" path="res://assets/ChemtrailsRreal/goblin19.png" id="23_na375"]
+[ext_resource type="Texture2D" uid="uid://cxq7wec14hyfu" path="res://assets/ChemtrailsRreal/goblin20.png" id="24_jgk2q"]
+[ext_resource type="Texture2D" uid="uid://boqojbdxo7hyx" path="res://assets/ChemtrailsRreal/goblin21.png" id="25_xl26b"]
+[ext_resource type="Texture2D" uid="uid://qmh5y3ptgbo5" path="res://assets/ChemtrailsRreal/goblin22.png" id="26_1pb6w"]
+[ext_resource type="Texture2D" uid="uid://bmdpaqbw7sag4" path="res://assets/ChemtrailsRreal/goblin23.png" id="27_g4ti8"]
+[ext_resource type="Texture2D" uid="uid://bjdjjnae1331m" path="res://assets/ChemtrailsRreal/goblin24.png" id="28_qgw0d"]
+[ext_resource type="Texture2D" uid="uid://d0365yc8wbqp1" path="res://assets/ChemtrailsRreal/goblin25.png" id="29_1wwna"]
+[ext_resource type="Texture2D" uid="uid://cr5jhl76xu203" path="res://assets/ChemtrailsRreal/goblin26.png" id="30_ejfjc"]
+[ext_resource type="Texture2D" uid="uid://1pnb3p5cv14" path="res://assets/ChemtrailsRreal/goblin27.png" id="31_4xjxe"]
+[ext_resource type="Texture2D" uid="uid://iypinuwdtrpp" path="res://assets/ChemtrailsRreal/goblin28.png" id="32_lc386"]
+[ext_resource type="Texture2D" uid="uid://c5gsib2jno3a1" path="res://assets/ChemtrailsRreal/goblin29.png" id="33_e4av5"]
+[ext_resource type="Texture2D" uid="uid://cv2fomw1enoru" path="res://assets/ChemtrailsRreal/goblin30.png" id="34_swdoo"]
+[ext_resource type="Texture2D" uid="uid://cw5kaeum8o8t7" path="res://assets/ChemtrailsRreal/goblin31.png" id="35_oxn2e"]
+[ext_resource type="Texture2D" uid="uid://bv6jptykohc7y" path="res://assets/ChemtrailsRreal/goblin32.png" id="36_opgdj"]
+[ext_resource type="Texture2D" uid="uid://ddrdpsd1ub03s" path="res://assets/ChemtrailsRreal/goblin33.png" id="37_7j4u5"]
+[ext_resource type="Texture2D" uid="uid://ceya1qxd1f4ra" path="res://assets/ChemtrailsRreal/goblin34.png" id="38_stceo"]
+[ext_resource type="Texture2D" uid="uid://bvcor04jlqpki" path="res://assets/ChemtrailsRreal/goblin35.png" id="39_h4qus"]
+[ext_resource type="Texture2D" uid="uid://ipil06elmu5m" path="res://assets/ChemtrailsRreal/goblin36.png" id="40_nr8ol"]
+[ext_resource type="Texture2D" uid="uid://dbiti8u8maeus" path="res://assets/ChemtrailsRreal/goblin37.png" id="41_3fu7k"]
+[ext_resource type="Texture2D" uid="uid://cxdlwkuxf1b7g" path="res://assets/ChemtrailsRreal/goblin38.png" id="42_gv1p0"]
+[ext_resource type="Texture2D" uid="uid://dl23o2cjtpf03" path="res://assets/ChemtrailsRreal/goblin39.png" id="43_vgssf"]
+[ext_resource type="Texture2D" uid="uid://drk3o3keotyw1" path="res://assets/ChemtrailsRreal/goblin40.png" id="44_y2m7v"]
+[ext_resource type="Texture2D" uid="uid://d4dmymq47ec6j" path="res://assets/ChemtrailsRreal/goblin41.png" id="45_418jq"]
+[ext_resource type="Texture2D" uid="uid://cy5c2s0rwppib" path="res://assets/ChemtrailsRreal/goblin42.png" id="46_essmr"]
+[ext_resource type="Texture2D" uid="uid://n5waunc2d7pb" path="res://assets/ChemtrailsRreal/goblin43.png" id="47_chn80"]
+[ext_resource type="Texture2D" uid="uid://wmb4xkrk8i73" path="res://assets/ChemtrailsRreal/goblin44.png" id="48_5skmt"]
+[ext_resource type="Texture2D" uid="uid://c3ngsw00kl6nk" path="res://assets/ChemtrailsRreal/goblin45.png" id="49_cg1y3"]
+[ext_resource type="Texture2D" uid="uid://c25bb0cupjtm8" path="res://assets/ChemtrailsRreal/goblin46.png" id="50_s6acy"]
+[ext_resource type="Texture2D" uid="uid://86ougbtyrl4h" path="res://assets/ChemtrailsRreal/goblin47.png" id="51_47dot"]
+[ext_resource type="Texture2D" uid="uid://crdhuoy8nrwy3" path="res://assets/ChemtrailsRreal/goblin48.png" id="52_pa755"]
+[ext_resource type="Texture2D" uid="uid://dod8exatwnunb" path="res://assets/ChemtrailsRreal/goblin49.png" id="53_73gav"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -12,6 +62,161 @@ albedo_color = Color(1, 1, 0, 1)
 material = SubResource("StandardMaterial3D_f7e4p")
 radial_segments = 32
 rings = 16
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bv1nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cs642")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_layq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ml4p1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wruoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bjykc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tipyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1nvn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yf3s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ppvhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dna8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o0jq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_b3i57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kootd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yhl3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_04fvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0nenl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_14838")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yo61b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_na375")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jgk2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xl26b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1pb6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_g4ti8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qgw0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1wwna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ejfjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4xjxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lc386")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_e4av5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_swdoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_oxn2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_opgdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_7j4u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_stceo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_h4qus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_nr8ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3fu7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gv1p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_vgssf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_y2m7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_418jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_essmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_chn80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5skmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_cg1y3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_s6acy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_47dot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_pa755")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_73gav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="Room00" instance=ExtResource("1_geleg")]
 
@@ -109,6 +314,13 @@ mesh = SubResource("SphereMesh_k4crk")
 [node name="chemtrailsroom" parent="Assets" index="3" instance=ExtResource("3_aapl4")]
 transform = Transform3D(-0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, -0.573576, 10.447, -2.98, 57.674)
 
+[node name="Npc2DTemplate" parent="Interactive/Actionables" index="0" instance=ExtResource("4_fbvjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.2307, -0.81065, 40.8758)
+
+[node name="AnimatedSprite3D" parent="Interactive/Actionables/Npc2DTemplate" index="4"]
+transform = Transform3D(-0.141421, 0, 0.141421, 0, 0.2, 0, -0.141421, 0, -0.141421, 0.603477, -2.38419e-07, 0.567692)
+sprite_frames = SubResource("SpriteFrames_bv1nr")
+
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_ucm3f")]
 transform = Transform3D(-0.286788, 0, 0.409576, 0, 0.5, 0, -0.409576, 0, -0.286788, -94.4406, 0.300004, 45.254)
 
@@ -137,5 +349,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 [node name="PlayerSpawn" parent="Interactive/Portals/Portal1_ba" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
+[editable path="Interactive/Actionables/Npc2DTemplate"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_ba"]
