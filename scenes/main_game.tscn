@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgt3fwvn8ru0o"]
+[gd_scene load_steps=8 format=3 uid="uid://cgt3fwvn8ru0o"]
 
 [ext_resource type="Script" path="res://scenes/main_game.gd" id="1_24h1i"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="1_dnq5r"]
 [ext_resource type="Material" uid="uid://bqqax1eym67ah" path="res://scenes/ProceduralSkytramonto.tres" id="2_by1xo"]
 [ext_resource type="Environment" uid="uid://dp3q6sdg40w2j" path="res://scenes/Tramonto.tres" id="2_wwbup"]
 [ext_resource type="AudioStream" uid="uid://cr3336tw6m4lc" path="res://darkambientsound.mp3" id="6_5obhi"]
+[ext_resource type="Texture2D" uid="uid://ctblsik13d5hx" path="res://assets/De-Address.webp" id="6_dhaof"]
 [ext_resource type="PackedScene" uid="uid://dj7m02njp2sdi" path="res://scenes/room_spawner.tscn" id="6_xos5l"]
 
 [node name="MainGame" type="Node3D"]
@@ -13,7 +14,7 @@ proc_sky = ExtResource("2_by1xo")
 
 [node name="CameraFinale" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-0.0532597, 0, 0.998581, 0, 1, 0, -0.998581, 0, -0.0532597, 0, 19.2813, 0)
+transform = Transform3D(-0.0512428, -0.00364353, 0.99868, 0.00173503, 0.999991, 0.00373734, -0.998685, 0.00192424, -0.0512361, 0, 19.2813, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_wwbup")
@@ -98,13 +99,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.867, 2.58524, 185.858)
 res_room = "res://scenes/13_maneki.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner00"), NodePath("../RoomSpawner01"), NodePath("../RoomSpawner04")])
 
-[node name="Container" type="Container" parent="."]
-visible = false
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="De-address" type="Sprite2D" parent="Control/ColorRect/Control"]
+position = Vector2(17.635, 25.49)
+texture = ExtResource("6_dhaof")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_5obhi")

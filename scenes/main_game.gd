@@ -19,7 +19,7 @@ var old_loaded_rooms: Array[Node3D]
 var fading_out :bool = false
 var fading_in :bool = false
 
-
+var fade_generic_timer = 1.0
 @onready var EndCamera: Node3D = %CameraFinale  #TODO rimuovi queste due robe
 @export_group("Cose oscene da togliere")
 @export var proc_sky: Resource
@@ -62,6 +62,19 @@ func _process(delta):
 		if $DirectionalLight3D.rotation_degrees.x >= 0:
 			Global.startfinale = false
 
+	if Global.startinizio:
+		$"Control/ColorRect/Control/De-address".modulate = Color(1,1,1,0)
+		await get_tree().create_timer(2).timeout
+		$"Control/ColorRect/Control/De-address".modulate = Color(1,1,1,fade_generic_timer)
+		await get_tree().create_timer(3).timeout
+		fade_generic_timer -= delta/2
+		$Control/ColorRect.visible = true
+		$Control/ColorRect.color = Color(0,0,0,fade_generic_timer*2)
+		$"Control/ColorRect/Control/De-address".modulate = Color(1,1,1,fade_generic_timer)
+		if fade_generic_timer <= 0.0:
+			Global.startinizio = false
+			$Control.visible = false
+			$"Control/ColorRect/Control/De-address".visible = false
 func load_rooms():
 	for i in current_loaded_rooms.size():
 			current_loaded_rooms[i].spawn_room() #poi riattiva la stanza

@@ -2,6 +2,7 @@ extends Node
 
 @onready var player: CharacterBody3D = get_tree().get_nodes_in_group("player")[0]
 @onready var startfinale : bool = false   ##ORRIBILE ACCROCCHIO  #TODO
+@onready var startinizio: bool = true  #TODO orribile accrocchio
 
 ##Variabili Antonia una per personaggio
 @onready var pres_slasher : bool = false
