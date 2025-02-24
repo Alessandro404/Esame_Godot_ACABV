@@ -16,5 +16,5 @@ func _process(delta):
 
 	var sampled_noise = texture.noise.get_noise_1d(time_passed)
 	sampled_noise = abs(sampled_noise)
-	light_energy = sampled_noise*200+1
+	light_energy = sampled_noise*50+0.8
 	

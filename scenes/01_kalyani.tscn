@@ -1,4 +1,4 @@
-[gd_scene load_steps=255 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=256 format=3 uid="uid://tmcb5337qjau"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_pcurv"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_o110u"]
@@ -248,6 +248,7 @@
 [ext_resource type="Texture2D" uid="uid://0iiradympps4" path="res://assets/kalyani/vishnu smaller237.webp" id="244_h3yoo"]
 [ext_resource type="Texture2D" uid="uid://dixes3b8ropk3" path="res://assets/kalyani/vishnu smaller238.webp" id="245_j58mq"]
 [ext_resource type="Texture2D" uid="uid://nqo7vx2tj43" path="res://assets/kalyani/vishnu smaller239.webp" id="246_c8hp2"]
+[ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="249_m1axd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3i07"]
 albedo_color = Color(0, 1, 0, 1)
@@ -1002,15 +1003,26 @@ transform = Transform3D(-0.9193, 0, -0.393557, 0, 1, 0, 0.393557, 0, -0.9193, 0,
 stage_dimentions = Vector2(32, 8)
 
 [node name="Camera3D" parent="Cameras/CameraRoot2/Camera_rig" index="0"]
-transform = Transform3D(0.899367, 0, -0.437194, 0, 1, 0, 0.437194, 0, 0.899367, -0.598677, 28.5981, 16.5033)
+transform = Transform3D(0.899367, 0, -0.437194, 0, 1, 0, 0.437194, 0, 0.899367, -0.598678, 19.2837, 16.5033)
 
 [node name="CameraRoot" parent="Cameras" index="1"]
 transform = Transform3D(-0.998726, 0, -0.0504536, 0, 1, 0, 0.0504536, 0, -0.998726, -15.0475, 0, 0)
 
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_o110u")]
+transform = Transform3D(0.0797988, 0, 0.996811, 0, 1, 0, -0.996811, 0, 0.0797988, -22.1962, -1.22419, -1.3676)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(0.259475, -0.156803, 0.952935, -0.00831336, 0.986332, 0.164562, -0.965714, -0.0506219, 0.254625, 6.68837, 1, -5.65447)
+transform = Transform3D(-0.983787, -0.145954, -0.104223, -0.176031, 0.897031, 0.4054, 0.0343212, 0.417173, -0.908179, -1.06423, 15.9222, -25.9116)
+
+[node name="Camera_rig2" parent="Cameras" index="2" instance=ExtResource("2_o110u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5249, 12.907, -0.146581)
+
+[node name="Camera3D" parent="Cameras/Camera_rig2" index="0"]
+transform = Transform3D(0.011292, 0, 0.999936, 0, 1, 0, -0.999936, 0, 0.011292, 7.93004, 8.64969, 0)
+fov = 90.0
+
+[node name="MeshInstance3D" parent="Cameras/Camera_rig2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.46355, 0)
 
 [node name="scene_template01" parent="Assets" index="0"]
 visible = false
@@ -1118,15 +1130,21 @@ tint_color = Color(0.616667, 0, 1, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.56305)
 
 [node name="Cambiocamera" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig") instance=ExtResource("6_qfw3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4046, 0.393598, 5.03369)
-camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+transform = Transform3D(0.0109081, 0, -0.999941, 0, 1, 0, 0.999941, 0, 0.0109081, 3.39642, 0.393598, 0.208085)
+camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
 
 [node name="Cambiocamera2" parent="Interactive/CameraTriggers" index="1" node_paths=PackedStringArray("camera_rig") instance=ExtResource("6_qfw3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4147, 0.393598, 3.26876)
-camera_rig = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
+transform = Transform3D(0.0322306, 0, -0.99948, 0, 1, 0, 0.99948, 0, 0.0322306, 10.641, 0.393598, -0.218486)
+camera_rig = NodePath("../../../Cameras/CameraRoot/Camera_rig")
+
+[node name="ZonaZoom" parent="Interactive/CameraTriggers" index="2" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("249_m1axd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8877, 12.3596, -0.402272)
+camera_rig_zoomed = NodePath("../../../Cameras/Camera_rig2")
+camera_rig_esterno = NodePath("../../../Cameras/CameraRoot2/Camera_rig")
 
 [editable path="Cameras/CameraRoot2/Camera_rig"]
 [editable path="Cameras/CameraRoot/Camera_rig"]
+[editable path="Cameras/Camera_rig2"]
 [editable path="Interactive/Actionables/Kalyani"]
 [editable path="Interactive/Portals/Portal0_lobby"]
 [editable path="Interactive/Portals/Portal1_josh"]
