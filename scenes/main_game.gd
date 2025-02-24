@@ -63,6 +63,7 @@ func _process(delta):
 			Global.startfinale = false
 
 	if Global.startinizio:
+		Global.dialogue_playing = true
 		$"Control/ColorRect/Control/De-address".modulate = Color(1,1,1,0)
 		await get_tree().create_timer(2).timeout
 		$"Control/ColorRect/Control/De-address".modulate = Color(1,1,1,fade_generic_timer)
@@ -75,6 +76,7 @@ func _process(delta):
 			Global.startinizio = false
 			$Control.visible = false
 			$"Control/ColorRect/Control/De-address".visible = false
+			Global.dialogue_playing = false
 func load_rooms():
 	for i in current_loaded_rooms.size():
 			current_loaded_rooms[i].spawn_room() #poi riattiva la stanza
