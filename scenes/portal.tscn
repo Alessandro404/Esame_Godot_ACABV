@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://7773o71d41k5"]
+[gd_scene load_steps=82 format=3 uid="uid://7773o71d41k5"]
 
 [ext_resource type="Script" path="res://scenes/portal.gd" id="1_unklt"]
 [ext_resource type="Texture2D" uid="uid://0svdyifaqp1n" path="res://assets/ZZZportal/Portale01.webp" id="2_0idfl"]
@@ -74,7 +74,9 @@
 [ext_resource type="Texture2D" uid="uid://cjg0g6ny6o6qn" path="res://assets/ZZZportal/Portale72.webp" id="74_2xuh1"]
 [ext_resource type="Script" path="res://scenes/flickeringLight.gd" id="75_ahin7"]
 [ext_resource type="Texture2D" uid="uid://d2kmo0x4ila4e" path="res://assets/ZZZportal/Portale73.webp" id="75_g0dqg"]
+[ext_resource type="AudioStream" uid="uid://veduox0q6tdb" path="res://entratauscitaportale.wav" id="76_5ko4i"]
 [ext_resource type="Texture2D" uid="uid://btmxaifj0dn53" path="res://assets/ZZZportal/Portale74.webp" id="76_xth53"]
+[ext_resource type="AudioStream" uid="uid://dl5f3vantpnoj" path="res://energy-hum-29083.mp3" id="77_06s7r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ynul5"]
 size = Vector3(7, 3, 0.569641)
@@ -346,5 +348,15 @@ mesh = SubResource("TextMesh_ps6ks")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 light_energy = 2.0
 script = ExtResource("75_ahin7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("76_5ko4i")
+doppler_tracking = 2
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("77_06s7r")
+volume_db = -5.0
+autoplay = true
+max_distance = 5.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

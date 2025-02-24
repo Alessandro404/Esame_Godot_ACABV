@@ -27,6 +27,9 @@ var is_camera_motion
 
 var old_raw_input := Vector2.ZERO
 
+@onready var footstep_audio : Node3D = $AudioStreamPlayer3D
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -126,6 +129,9 @@ func _physics_process(delta: float) -> void:
 			var ground_speed := velocity.length()
 			if ground_speed > 0.0:
 				_skin.move()
+				if !footstep_audio.playing:
+					footstep_audio.pitch_scale = randf_range(.8, 1.2)
+					footstep_audio.play()
 				#TODO fixare nomi animazioni...
 				#_skin.Armature|armature|Run()
 			else:
@@ -135,3 +141,9 @@ func _physics_process(delta: float) -> void:
 		move_direction = Vector3.ZERO
 		velocity = Vector3.ZERO
 		_skin.idle()
+		
+#if velocity.length() != 0:
+	# if the footstep audio isn't playing, play the audio
+#	if !footstep_audio.playing:
+#		footstep_audio.pitch_scale = randf_range(.8, 1.2)
+#		footstep_audio.play()
