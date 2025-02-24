@@ -133,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7424, 0.51148, -7.93669)
 [node name="MeshInstance3D" parent="Interactive/Actionables/BiblicallyAccurate" index="0"]
 visible = false
 
+[node name="Actionable" parent="Interactive/Actionables/BiblicallyAccurate" index="2"]
+dialogue_start = "startbaccurate"
+
 [node name="CollisionShape3D" parent="Interactive/Actionables/BiblicallyAccurate/StaticBody3D" index="0"]
 shape = SubResource("CylinderShape3D_7b2a3")
 
@@ -145,6 +148,7 @@ transform = Transform3D(0.999687, 0, 0.02503, 0, 1, 0, -0.02503, 0, 0.999687, 0,
 libraries = {
 "": SubResource("AnimationLibrary_qqno0")
 }
+autoplay = "EmptyAction"
 
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_ggwv8")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -15.6728, 0.3, 0.967749)

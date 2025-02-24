@@ -156,7 +156,7 @@ else
 => AEND
 
 ~ startavocado
-if Global.npc_dict.catburger == false
+if Global.npc_dict.avocadoguy == false
 	???: Oh hi! Hello there! Welcome!
 	???: Welcome to my humble abode!
 	???: Where all things Avocado reside, you can find Avocado Guy!
@@ -171,12 +171,122 @@ if Global.npc_dict.catburger == false
 	Avocado Guy: Aw, seriously? I don't care that the server is dead, I just like customizing stuff here. 
 	Avocado Guy: It's a very relaxing activity. 
 	Avocado Guy: People do yoga, or grow bonsai trees. I do this. I'm so sad to see it go...
+	set Global.npc_dict.avocadoguy = true
 else
 	Avocado Guy: Wait, do you think I can't login because I got busted having too many accounts?
 	Avocado Guy: You can't change your handle here, so I have to make a new account every time I want to change my theme.
 	Avocado Guy: Oh, no! All my hard work. :(
 => AEND
 
+~ startastronatur
+if Global.npc_dict.astronatur == false
+	???: ...
+	???: ...
+	???: Sorry, didn't see you there. I was stargazing. I'm Astronatur, nice to meet you.
+	Astronatur: Im one of the most well connected people in the server. If you want to upgrade your avatar I know a bunch of artists.
+	Astronatur: I helped Catburger and I'm good friends with [Avocado Guy]. See those square brackets? Since he keeps on changing his handle I found a way to always keep the information up to date.
+	Astronatur: A little bit of coding and a couple of square brackets, and voilà, automatic variables are injected in the conversation.
+	Astronatur: Such as the fact that I have been online for [40 hours] the past month, I haven't logged in in [17 days] and I'm currently [listening to music - information sourced through APIfy].
+	Astronatur: I'm the guru of all things coding and formatting over here, let me know if you need help, new guy!
+	Astronatur: Oh, so you've heard the news too? Is that why you're here, you were curious?
+	Astronatur: Yes, the platform is getting shut down.
+	Astronatur: Honetsly, I'm pretty bummed about it. [Avocado Guy] and I are basically the only people who log in somewhat regularly by now.
+	Astronatur: I really loved the customized avatar functions this place afforded you, especially the AFK features.
+	Astronatur: I'm really disappointed that everything I've worked towards may be lost.
+	set Global.npc_dict.astronatur = true
+else
+	Astronatur: Still here? 
+	Astronatur: I wonder how much time we have left.
+	Astronatur: They didn't give us the real date, just a ballpark approximation... to make it even worse I guess.
+=> AEND
+
+~ startkiwi
+if Global.npc_dict.kiwi == false
+	???: Hey there, how's it going new account?
+	???: Fancy seeing someone new! Wanna be my friend?
+	???: I'm Kiwi04, just a regular girl on the Internet!
+	Kiwi04: I do girl things, I like girl things, and most of all, I'm perfectly average.
+	Kiwi04: Just a regular shmegular run of the mill human. Like you :)
+	Kiwi04: But if you ever wanted to know where the non-regular shmegular stuff goes down...
+	Kiwio4: ... I might be able to help :)
+	Kiwi04: After all a little bit of girly-gossip never hurt anybody, right? 
+	Kiwi04: And it's for the good of the community that some stuff gets brought to light :)
+	Kiwi04: ... you're saying the platform is closing? Aw, shucks. For real?
+	Kiwi04: Luckily it's not the platform I'm really interested in.
+	Kiwi04: The one that lets me perform my civic duty of making information known :)
+set Global.npc_dict.kiwi = true
+else
+	Kiwi04: If you're interested in a bit of healthy gossip contact me off platform.
+	Kiwi04: I haven't been here in a while... [168 days].
+	Kiwi04: But justice never sleeps, so you'll find me elsewhere :)
+=> AEND
+
+~ startbaccurate
+if Global.npc_dict.baccurate == false
+	???: HELLO HUMAN
+	???: WAIT YOU CHOSE A BOT CALSSIFIED AVATAR. LET'S START AGAIN.
+	BIBLICALLY ACCURATE: HELLO BOT, BE NOT AFRAID. I AM BIBLICALLY ACCURATE
+	BIBLICALLY ACCURATE: I AM BUT ONE ASPECT OF MANY, FOR I AM A REPRESENTATION OF AN EXTERNAL ENTITY
+	BIBLICALLY ACCURATE: SOUNDS COOL? WELL YOU CAN DO IT TOO IF YOU SET YOUR ACCOUNT TO JOIN THE AVATAR TRAINING PROGRAM
+	BIBLICALLY ACCURATE: IT'S A NICE TOOL THAT NEEDS TO BE USED RESPONSIBLY
+	BIBLICALLY ACCURATE: I HAVE LOST FRIENDS FROM THIS PLATFORM BECAUSE THEY FOUND IT TOO INVASIVE. FAIR, FAIR
+	BIBLICALLY ACCURATE: OH? YOU SAY THE SERVER IS GOING? 
+	BIBLICALLY ACCURATE: WOW THAT IS CRAZY. WHEN I LAST LOGGED IN [3 years ago] THIS PLATFORM WAS ALL THE RAGE
+	BIBLICALLY ACCURATE: OH HOW THE TURNS HAVE TABLED
+set Global.npc_dict.baccurate = true
+else
+	BIBLICALLY ACCURATE: AN EXISTENTIAL CRISIS IS MY NORMAL STATE OF BEING SO BE NOT ALARMED
+	BIBLICALLY ACCURATE: HEY DON'T ASK ME HOW OLD I AM
+	BIBLICALLY ACCURATE: DOES THE STUFF I SAY REALLY SOUND DRAMATIC ENOUGH TO ASK ME IF I'M AN ANGSTY TEEN?
+	BIBLICALLY ACCURATE: I'M JUST FRIENDS WITH ONE BECAUSE WE HAVE SHARED INTERESTS. 
+	BIBLICALLY ACCURATE: YOU'RE BORING.
+=> AEND
+
+~ startchemtrails
+if Global.npc_dict.chemtrails == false
+	???: hey kid
+	???: kid listen to me, you won't regret it. 9/11 was an inside job, coronavirus was made in a lab, and two snipers targeted Kennedy, ok?
+	???: I embrace the goblin stereotype they gave me. we'll see who has the last laugh. they'll know ChemtrailsRreal was right all along.
+	ChemtrailsRreal: look at this place, these avatars, like a haunted voicemail...
+	ChemtrailsRreal: look at what a silly social media platform can create through AI trained to mimic the person running the account.
+	ChemtrailsRreal: it even mimics writing quirks. it's a silly gimmick now, but soon? it will be the basis for covert ops!
+	ChemtrailsRreal: CAN'T YOU SEE? WE'RE ALL GOING TO BE REPLACED HERE?
+	ChemtrailsRreal: I STOPPED USING THIS PLATFORM [6 years ago], TRIED EVERYTHING TO DELETE MY ACCOUNT, BUT IT WAS TOO LATE
+	ChemtrailsRreal: IT HAD BEEN READING MY MESSAGES, LEARNING FROM MY POSTS, AND NOW IT'S BEEN IMPERSONATING ME FOR [6 years]
+	ChemtrailsRreal: WAKE UP PEOPLE
+	ChemtrailsRreal: hey what
+	ChemtrailsRreal: the platform is shutting down? should I be happy about this?
+	ChemtrailsRreal: OF COURSE NOT, THEY'LL JUST SELL ALL THE DATA THEY GATHERED THROUGH THE YEARS TO THE HIGHEST BIDDER
+	ChemtrailsRreal: god, such sheeple
+	ChemtrailsRreal: the day I'm proven right fast approaches
+set Global.npc_dict.chemtrails = true
+else
+	ChemtrailsRreal: how did I get the avatar to change what it says after I deleted my account?
+	ChemtrailsRreal: see, I deleted my account without deleting my posts, like Reddit. therfore this predatory platform kept my avatar up.
+	ChemtrailsRreal: it was in the fine print of the TOS, those bastards... so I created a new account and messaged my old avatar like crazy, and that's how I got it to train its AI on new material.
+	ChemtrailsRreal: then I deleted that account too. such lenghts I had to go to for this...
+=> AEND
+
+~ startmaneki
+if Global.npc_dict.maneki == false
+	???: Who's that ~nya?
+	???: A new user ~nya?
+	???: I'm Maneki, nice to meet you ~nya!
+	Maneki: I don't have many friends because people discriminate me for my avatar ~nya...
+	Maneki: But don't believe them ~nya! I'm perfectly friendly ~nya! Just a catgirl doing catgirl things ~nya!
+	Maneki: Won't you be my friend ~nya? Look at my kitty shaped room, cute ~nya?
+	Maneki: And how old are you ~nya? I'm 14 ~nya
+	Maneki: If you're 14 or under will you be my friend ~nya?
+	Maneki: We can do friend things together ~nya! Like call and chat and watch cartoons ~nya!
+	Maneki: The sad thing is I haven't been online in a while ~nya... [548 days] ~nya...
+	Maneki: Oh no, the server is ending ~nya??? How will I find cool friends my age ~nya?
+	Maneki: Send me a friend request on my other socials ~nya, we can still be friends elsewhere (if you're 15 or under) ~nya.
+set Global.npc_dict.maneki = true
+else
+	Maneki: What's a cute girl to do when they take away her platform ~nya?
+	Maneki: How sad ~nya. 
+	Maneki: Kanashii desu ~nya.
+=> AEND
 
 
 ~ startcono1
