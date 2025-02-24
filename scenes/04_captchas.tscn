@@ -103,6 +103,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2477)
 [node name="MeshInstance3D" parent="Interactive/Actionables/IpAssCapTchas" index="0"]
 visible = false
 
+[node name="Actionable" parent="Interactive/Actionables/IpAssCapTchas" index="2"]
+dialogue_start = "startcaptchas"
+
 [node name="ipasscaptchas" parent="Interactive/Actionables/IpAssCapTchas" index="4" instance=ExtResource("5_in8mj")]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
 

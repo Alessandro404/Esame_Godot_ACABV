@@ -211,7 +211,7 @@ autoplay = "ArmatureAction_001"
 visible = false
 
 [node name="Actionable" parent="Interactive/Actionables/avocadoguy" index="3"]
-dialogue_start = "startavocado1"
+dialogue_start = "startavocado"
 
 [node name="CollisionShape3D" parent="Interactive/Actionables/avocadoguy/Actionable" index="0"]
 shape = SubResource("SphereShape3D_hjy37")

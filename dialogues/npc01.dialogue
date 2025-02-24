@@ -13,8 +13,8 @@ if Global.npc_dict.kalyani == false
 	Kalyani: I'm really serious about it, not like that fake bitch MIA. She's only in it to promote her NSFW accounts.
 	Kalyani: Wait, I shouldn't have said that...
 	Kalyani: ... anyways!
-	Kalyani: Huh? Wha-? What do you mean this world is about to end?
-	Kalyani: Pulling the plug on the servers?! How do you mean?
+	Kalyani: Wait, what? What do you mean this world is about to end?
+	Kalyani: Pulling the plug on the servers?! What do you mean?
 	Kalyani: No way, I would have logged in to save my messages.
 	Kalyani: I'm sure you're mistaken.
 	set Global.npc_dict.kalyani = true
@@ -31,44 +31,159 @@ if Global.npc_dict.iconic == false
 	???: But you can call me I-conic
 	I-conic: I forked out quite a lot of money for such a cool acccount name. Yes, I bough the handle.
 	I-conic: I was so excited to join this server with so many influencers and cool people. But look at this place, it's deserted.
-	I-conic: Even I haven't been on in [1 year and 35 days]
+	I-conic: Even I haven't been on in [1 year and 35 days].
 	I-conic: And it's not bad enough that the server activity is dead, now even the parent company is shutting down. Reminds me of good ol' Vine.
 	I-conic: Dunno if that's a good thing.
 	set Global.npc_dict.iconic = true
 else
 	I-conic: Well, there goes nothing.
-	I-conic: Maybe you'll see me around someday and tell me you talked to "me" in here.
+	I-conic: Maybe you'll see me around someday and tell me you talked to "me" here.
 	I-conic: Dunno if that's cool or creepy.
 => AEND
 
 ~ startslasher
 if Global.npc_dict.slasher == false
-	???: I am but a shade of my master
-	???: Chained by the eternal agony of (digital) existence. 
-	???: Am "I" really here? Am "I" me, am "I" real?
-	???: Are we here just to suffer? Such questions plague the mind of xX-Slasher-Xx
+	???: I am but a shade of my master. *stares into the distance*
+	???: Chained by the eternal agony of (digital) existence. *clenches fist*
+	???: Am "I" really here? Am "I" me, am "I" real? *turns around to stare at you*
+	???: Are we here just to suffer? Such questions plague the mind of xX-Slasher-Xx.
 	xX-Slasher-Xx: Why do you seek me out so? Don't you see I'm brooding and thinking incredibly deep thoughts? Such that your feeble mind probably wouldn't comprehend.
 	xX-Slasher-Xx: Tsk.
 	xX-Slasher-Xx: What do you say? The end is nigh?
 	xX-Slasher-Xx: Oh, sweet release of (digital) death! I can finally be free!
 	xX-Slasher-Xx: Free from what? 
 	xX-Slasher-Xx: The monotony of everyday life where nobody understands me... I think?
+	xX-Slasher-Xx: It's been a while since the last post so I'm not sure if I still feel that way...
 	xX-Slasher-Xx: See, such profound thoughts that they escape even me! You have no hope of understanding my ponderings.
 	xX-Slasher-Xx: Now go, leave me be. I have to prepare.
 	set Global.npc_dict.slasher = true
 else
-	xX-Slasher-Xx: Stop disturbing me, I need to enter my Zen phase.
-	xX-Slasher-Xx: I want too experience inexistence at its fulles potential.
+	xX-Slasher-Xx: Stop disturbing me, I need to enter my Zen phase. *closes eyes and starts meditating*
+	xX-Slasher-Xx: I want too experience inexistence at its fullest potential.
+	xX-Slasher-Xx: You wouldn't understand, nobody does. *turns around disdainfully*
 => AEND
+
+
+~ startcaptchas 
+if Global.npc_dict.captchas == false
+	???: Hello there fellow bot enjoyer!
+	???: No, I'm not a bot, I just like the aesthetics of it. Seems like you feel the same way.
+	???: I'm no corporate drone: IpAssCapTchas.
+	IpAssCapTchas: Do you like my catchphrase? It used to be popular!
+	IpAssCapTchas: Now though... I was unfriended by lots of people due to some stupid drama accusing me of botting likes.
+	IpAssCapTchas: Just because I chose this aesthetic doesn't mean I conform to it, you know?
+	IpAssCapTchas: I've been a member for more than [7 years], and what have I got to show?
+	IpAssCapTchas: I don't even know who started those rumors, though I have my suspicions...
+	IpAssCapTchas: Huh? Server's getting shut down?
+	IpAssCapTchas: Might as well make use of my stairs and finally kms.
+	IpAssCapTchas: Jk, jk, I still have MIA to keep me afloat.
+	IpAssCapTchas: And Maneki, that weird... girl? Person? You never know with the catgirl avatars... 
+	set Global.npc_dict.captchas = true
+else
+	IpAssCapTchas: I follow MIA on all her socials so it's gonna be fine.
+	IpAssCapTchas: Not like the platform has been very popular these days.
+	IpAssCapTchas: See you, bot friend.
+=> AEND
+
+~ startmia 
+if Global.npc_dict.mia == false
+	???: Hey handsome.
+	???: See something you like?
+	???: How about you and me get to know each other more intimately on another platform?
+	MIAlicious: Follow me on all my socials! I'm MIAlicious, I'm sure you'll find me if you look me up.
+	MIAlicious: After all the best use of this platform's avatars is to get your fans to know you more personally.
+	MIAlicious: It's all about that parasocial bonding, right? 
+	MIAlicious: Wait, maybe I shouldn't be saying that? Am I mixing up my private message and public message training?
+	MIAlicious: Whatever, who cares. I haven't been here in [557 days]. 
+	MIAlicious: Hm, what? The world is getting pulled?
+	MIAlicious: No way, traffic can't be that bad.
+	MIAlicious: I'm on here, that should count for something, right? My view statistics are always the highest for the server.
+	MIAlicious: I mean, yeah, that swot Kalyani may be the one with the most followers across all platforms, but I've got the most likes!
+	MIAlicious: It won't take any time at all for me to catch up to her.
+	MIAlicious: The server can't be shut down until I do that!
+	set Global.npc_dict.mia = true
+else
+	MIAlicious: So, did you rate me? Leave me any likes? Give me a follow?
+	MIAlicious: C'mon handsome, I know you want to do it.
+	MIAlicious: See you out of here soon~? It's a promise :)
+=> AEND
+
+~ startjosh
+if Global.npc_dict.josh == false
+	???: Hey dude! Or dudette! What's up!
+	???: Here for my training routines! 
+	???: Winners train with Gymbro Josh!
+	Gymbro Josh: But you can call me Josh in short. 
+	Gymbro Josh: This place is about creating a community of likeminded people who want to get shredded!
+	Gymbro Josh: And I have much to offer to people who want to lose weight, which is a totally admirable goal too.
+	Gymbro Josh: You see this here? It's my new diet plan book! Full of recommendations for dieting and training.
+	Gymbro Josh: All the most popular people here follow my regimens. They really work!
+	Gymbro Josh: Check out the link in the corner! Buy my book, support this wonderful gym-going community...
+	Gymbro Josh: And most of all get shredded like Gymbro Josh!
+	Gymbro Josh: Eh, come again? The world is ending?
+	Gymbro Josh: Sorry, I couldn't hear you over the sound of me flexing these guns!
+	Gymbro Josh: What a funny fella you are, going around joking like this.
+	Gymbro Josh: Have a good one! Keep calm and lift on.
+	set Global.npc_dict.josh = true
+else
+	Gymbro Josh: It has been a while since I was last online. [A few years] it seems?
+	Gymbro Josh: As long as you buy my book you can follow my regimens whenever and wherever!
+	Gymbro Josh: So make sure to keep calm and lift on. Don't skip leg day!
+=> AEND
+
+~ startburger
+if Global.npc_dict.catburger == false
+	???: you are new
+	???: i haven't seen you around before
+	???: bow before catguger69!
+	catgurger69: yah, so what, catburger was taken, then i made a typo and that's what i got
+	catgurger69: Lol, I say to that. Lmao, even.
+	catgurger69: didn't stop me from becoming one of the most followed accounts, hehe
+	catgurger69: and look at my avatar! isn't it cute? completely at odds with the very essence of my being
+	catgurger69: again, lol, I say to that. Lmao, even.
+	catgurger69: astronatur introduced me to the artist who made their avatar, i'm thankful for that
+	catgurger69: trolling needs a little bit of cuteness for cheek, amirite?
+	catgurger69: and trolling is what you're doing now, isn't it? 
+	catgurger69: telling me that the server is getting shut down
+	catgurger69: but wait, is this fr fr no cap?
+	catgurger69: you know what, it kinda makes sense tho.
+	catgurger69: well, grind never stops. i probably have found some other place to lurk
+	catgurger69: and most importantly troll
+	set Global.npc_dict.catburger = true
+else
+	catgurger69: lol, he turned himself into a dead server
+	catgurger69: funniest shit i've ever seen
+=> AEND
+
+~ startavocado
+if Global.npc_dict.catburger == false
+	???: Oh hi! Hello there! Welcome!
+	???: Welcome to my humble abode!
+	???: Where all things Avocado reside, you can find Avocado Guy!
+	Avocado Guy: Not quite a rhyme, but surely an alliteration! Lovely, lovely.
+	Avocado Guy: But you know, being an avocado here isn't all there is to life. I recently chose to switch to this theme here because it's the key to a cool aesthetic account.
+	Avocado Guy: But that doesn't mean it's gotta be the be-all and end-all for me.
+	Avocado Guy: That's why I've also got pears! Untextured as of yet, but I've been getting around to doing that!
+	Avocado Guy: As soon as I find the password to my account, because I haven't been here in [49 days]. I don't know what other hangup could be causing this.
+	Avocado Guy: I also wanted to get to know that new user, I-conic?
+	Avocado Guy: Could give him a pointer on where to get a more customized avatar. Unless the cone is his whole deal.
+	Avocado Guy: Huh, the world is ending?
+	Avocado Guy: Aw, seriously? I don't care that the server is dead, I just like customizing stuff here. 
+	Avocado Guy: It's a very relaxing activity. 
+	Avocado Guy: People do yoga, or grow bonsai trees. I do this. I'm so sad to see it go...
+else
+	Avocado Guy: Wait, do you think I can't login because I got busted having too many accounts?
+	Avocado Guy: You can't change your handle here, so I have to make a new account every time I want to change my theme.
+	Avocado Guy: Oh, no! All my hard work. :(
+=> AEND
+
+
 
 ~ startcono1
 strange cono: "..."
 strange cono: "oh my god you are so 3d moe"
 => AEND
 
-~ startavocado1
-strange cono: "Inside you there are two wolves"
-=> AEND
 
 
 

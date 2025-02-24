@@ -79,6 +79,9 @@ autoplay = "Burger mascot character catAction_001"
 [node name="MeshInstance3D" parent="Interactive/Actionables/NpcTemplate" index="1"]
 visible = false
 
+[node name="Actionable" parent="Interactive/Actionables/NpcTemplate" index="3"]
+dialogue_start = "startburger"
+
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_hyd61")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.02288, 0.3, -6.91882)
 

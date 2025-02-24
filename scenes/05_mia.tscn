@@ -123,6 +123,9 @@ shape = SubResource("BoxShape3D_pqhhi")
 [node name="Npc2DTemplate" parent="Interactive/Actionables" index="0" instance=ExtResource("5_yiu11")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.9087)
 
+[node name="Actionable" parent="Interactive/Actionables/Npc2DTemplate" index="2"]
+dialogue_start = "startmia"
+
 [node name="AnimatedSprite3D" parent="Interactive/Actionables/Npc2DTemplate" index="4"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.8, 0, 0)
 sprite_frames = SubResource("SpriteFrames_eakhh")
