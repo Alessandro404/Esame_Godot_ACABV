@@ -339,6 +339,7 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerSpawn"]
 transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
+visible = false
 mesh = SubResource("TextMesh_ps6ks")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

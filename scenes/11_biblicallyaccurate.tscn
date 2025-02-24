@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://deqqieudpm884"]
+[gd_scene load_steps=17 format=3 uid="uid://deqqieudpm884"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_33q4p"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_a6nhv"]
@@ -23,9 +23,14 @@ size = Vector3(1, 20.1014, 81.0596)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k43li"]
 size = Vector3(34.9026, 1, 17.209)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_7b2a3"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_atdlq"]
+resource_local_to_scene = true
+radius = 2.3741
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y2crc"]
+resource_local_to_scene = true
 height = 1.6
-radius = 0.691038
+radius = 2.34928
 
 [sub_resource type="Animation" id="Animation_u3hxh"]
 resource_name = "EmptyAction"
@@ -56,10 +61,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1076, 0, 0)
 transform = Transform3D(-0.999981, -0.00263865, 0.00566377, 0, 0.906455, 0.422302, -0.00624827, 0.422294, -0.906438, -3.56659, 5.97279, -8.5016)
 
 [node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_baf75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4071, 0, -8.63533)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4071, 0.85507, -8.63533)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig2" index="0"]
-transform = Transform3D(0.610297, 0, -0.792172, 0, 1, 0, 0.792172, 0, 0.610297, -3.33649, 1.00547, 3.01605)
+transform = Transform3D(0.610297, -0.166351, -0.774509, -2.98023e-08, 0.977703, -0.209994, 0.792172, 0.128159, 0.596689, -7.47478, 1.70356, 5.86076)
 
 [node name="Lights" type="Node3D" parent="Lights" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 5)
@@ -127,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07214, 2.30077, -0.307617)
 shape = SubResource("BoxShape3D_k43li")
 
 [node name="BiblicallyAccurate" parent="Interactive/Actionables" index="0" instance=ExtResource("5_in6ql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.7424, 0.51148, -7.93669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7424, 0.51148, -6.93669)
 
 [node name="MeshInstance3D" parent="Interactive/Actionables/BiblicallyAccurate" index="0"]
 visible = false
@@ -135,13 +140,17 @@ visible = false
 [node name="Actionable" parent="Interactive/Actionables/BiblicallyAccurate" index="2"]
 dialogue_start = "startbaccurate"
 
+[node name="CollisionShape3D" parent="Interactive/Actionables/BiblicallyAccurate/Actionable" index="0"]
+shape = SubResource("SphereShape3D_atdlq")
+
 [node name="CollisionShape3D" parent="Interactive/Actionables/BiblicallyAccurate/StaticBody3D" index="0"]
-shape = SubResource("CylinderShape3D_7b2a3")
+shape = SubResource("CylinderShape3D_y2crc")
 
 [node name="BiblicallyAccurate" parent="Interactive/Actionables/BiblicallyAccurate" index="4" instance=ExtResource("6_xj4nx")]
+transform = Transform3D(3.91204, 0, 0, 0, 3.91204, 0, 0, 0, 3.91204, 0, 0.592232, 0)
 
 [node name="Empty" parent="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate" index="1"]
-transform = Transform3D(0.999687, 0, 0.02503, 0, 1, 0, -0.02503, 0, 0.999687, 0, 0.540102, 0)
+transform = Transform3D(0.991151, 0.00401678, -0.132675, -0.0514367, 0.933065, -0.35601, 0.122365, 0.359684, 0.925016, 0, 0.72585, 0)
 
 [node name="AnimationPlayer" parent="Interactive/Actionables/BiblicallyAccurate/BiblicallyAccurate" index="2"]
 libraries = {
@@ -210,7 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115997, 0.539307, 0.610291)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.90886)
 
 [node name="ZonaZoom" parent="Interactive/CameraTriggers" index="0" node_paths=PackedStringArray("camera_rig_zoomed", "camera_rig_esterno") instance=ExtResource("8_ii6lv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.336, 0, -8.24183)
+transform = Transform3D(1.44049, 0, 0, 0, 1.44049, 0, 0, 0, 1.44049, 29.8138, 0, -6.76236)
 camera_rig_zoomed = NodePath("../../../Cameras/CameraRoot/Camera_rig2")
 camera_rig_esterno = NodePath("../../../Cameras/CameraRoot/Camera_rig")
 

@@ -42,7 +42,7 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.645, 0, -7.0113)
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(0.728455, 0.596134, -0.337606, 0, 0.492788, 0.870149, 0.685094, -0.633864, 0.358974, -8.08557, 28.8567, 11.3635)
+transform = Transform3D(0.728455, 0.596134, -0.337606, 0, 0.492788, 0.870149, 0.685094, -0.633864, 0.358974, -11.341, 26.042, 7.903)
 
 [node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("3_sow2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0579, 0, -10.4897)

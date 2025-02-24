@@ -37,7 +37,7 @@ _data = {
 [node name="Camera_rig" parent="Cameras/CameraRoot" index="0" instance=ExtResource("2_0r3mt")]
 
 [node name="Camera3D" parent="Cameras/CameraRoot/Camera_rig" index="0"]
-transform = Transform3D(-0.641048, -0.425041, 0.63906, 0, 0.832651, 0.553799, -0.767501, 0.355011, -0.533769, 13.6486, 17.4055, -8.40981)
+transform = Transform3D(-0.641048, -0.425041, 0.63906, 0, 0.832651, 0.553799, -0.767501, 0.355011, -0.533769, 13.649, 10.646, -8.41)
 
 [node name="Camera_rig2" parent="Cameras/CameraRoot" index="1" instance=ExtResource("2_0r3mt")]
 
