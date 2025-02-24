@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgt3fwvn8ru0o"]
+[gd_scene load_steps=7 format=3 uid="uid://cgt3fwvn8ru0o"]
 
 [ext_resource type="Script" path="res://scenes/main_game.gd" id="1_24h1i"]
 [ext_resource type="PackedScene" uid="uid://dq0ktqp4py7l" path="res://Personaggi/Player.tscn" id="1_dnq5r"]
 [ext_resource type="Material" uid="uid://bqqax1eym67ah" path="res://scenes/ProceduralSkytramonto.tres" id="2_by1xo"]
 [ext_resource type="Environment" uid="uid://dp3q6sdg40w2j" path="res://scenes/Tramonto.tres" id="2_wwbup"]
+[ext_resource type="AudioStream" uid="uid://cr3336tw6m4lc" path="res://darkambientsound.mp3" id="6_5obhi"]
 [ext_resource type="PackedScene" uid="uid://dj7m02njp2sdi" path="res://scenes/room_spawner.tscn" id="6_xos5l"]
 
 [node name="MainGame" type="Node3D"]
@@ -96,3 +97,17 @@ neighbors = Array[NodePath]([NodePath("../RoomSpawner00"), NodePath("../RoomSpaw
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.867, 2.58524, 185.858)
 res_room = "res://scenes/13_maneki.tscn"
 neighbors = Array[NodePath]([NodePath("../RoomSpawner00"), NodePath("../RoomSpawner01"), NodePath("../RoomSpawner04")])
+
+[node name="Container" type="Container" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_5obhi")
+attenuation_model = 3
+volume_db = -25.904
+autoplay = true
