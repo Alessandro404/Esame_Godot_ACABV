@@ -5,7 +5,7 @@ extends Node
 
 ##Variabili Antonia una per personaggio
 @onready var pres_slasher : bool = false
-@onready var npc_dict = {"slasher" = false, "maneki" = false}
+@onready var npc_dict = {"kalyani" = false, "iconic" = false, "slasher" = false, "captchas" = false, "mia" = false, "josh" = false, "catburger" = false, "avocadoguy" = false, "astronatur" = false, "kiwi" = false, "baccurate" = false, "chemtrails" = false, "maneki" = false}
 ##@onready var npc_array = [pres_slasher] #TODO 
 ##funzione per creare array per controllare se abbiamo parlato
 ##con tutti alla fine del mondo

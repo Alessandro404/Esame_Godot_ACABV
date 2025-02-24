@@ -82,7 +82,7 @@ autoplay = "ArmatureAction"
 visible = false
 
 [node name="Actionable" parent="Interactive/Actionables/iConic" index="4"]
-dialogue_start = "startcono1"
+dialogue_start = "starticonic"
 
 [node name="Portal_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("5_42ic1")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.92857, 0.463637, -9.57195)

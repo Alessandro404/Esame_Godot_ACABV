@@ -1,9 +1,9 @@
 [remap]
 
-importer="3d_texture"
-type="CompressedTexture3D"
+importer="texture"
+type="CompressedTexture2D"
 uid="uid://cw63dovlna0mm"
-path.s3tc="res://.godot/imported/vishnu smaller200.webp-a0186589891b5ccfb222c2569a26b2c7.s3tc.ctex3d"
+path.s3tc="res://.godot/imported/vishnu smaller200.webp-a0186589891b5ccfb222c2569a26b2c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,7 +12,7 @@ metadata={
 [deps]
 
 source_file="res://assets/kalyani/vishnu smaller200.webp"
-dest_files=["res://.godot/imported/vishnu smaller200.webp-a0186589891b5ccfb222c2569a26b2c7.s3tc.ctex3d"]
+dest_files=["res://.godot/imported/vishnu smaller200.webp-a0186589891b5ccfb222c2569a26b2c7.s3tc.ctex"]
 
 [params]
 
@@ -20,8 +20,16 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-slices/horizontal=8
-slices/vertical=8
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

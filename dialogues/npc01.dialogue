@@ -4,6 +4,63 @@ strange dafault npc: "Still no gameplay uh?"
 strange default npc: "ecce finale!"
 => AEND
 
+~ startkalyani
+if Global.npc_dict.kalyani == false
+	???: Hello everyone, your favorite makeup reviewer will be here in a jiffy.
+	???: I haven't been here in [1634] days.
+	???: Did you come here for my makeup reviews? 
+	Kalyani: You don't know who I am? I'm Kalyani, a rising star in the online makeup scene.
+	Kalyani: I'm really serious about it, not like that fake bitch MIA. She's only in it to promote her NSFW accounts.
+	Kalyani: Wait, I shouldn't have said that...
+	Kalyani: ... anyways!
+	Kalyani: Huh? Wha-? What do you mean this world is about to end?
+	Kalyani: Pulling the plug on the servers?! How do you mean?
+	Kalyani: No way, I would have logged in to save my messages.
+	Kalyani: I'm sure you're mistaken.
+	set Global.npc_dict.kalyani = true
+else
+	Kalyani: Check out my other socials for my makeup affiliate links.
+	Kalyani: And check out my video reviews!
+	Kalyani: Come back to visit me soon, I'll be sure to be here to greet you.
+=> AEND
+
+~ starticonic
+if Global.npc_dict.iconic == false
+	???: Hey, what's up.
+	???: I'm your friendly neighbourhood cone
+	???: But you can call me I-conic
+	I-conic: I forked out quite a lot of money for such a cool acccount name. Yes, I bough the handle.
+	I-conic: I was so excited to join this server with so many influencers and cool people. But look at this place, it's deserted.
+	I-conic: Even I haven't been on in [1 year and 35 days]
+	I-conic: And it's not bad enough that the server activity is dead, now even the parent company is shutting down. Reminds me of good ol' Vine.
+	I-conic: Dunno if that's a good thing.
+	set Global.npc_dict.iconic = true
+else
+	I-conic: Well, there goes nothing.
+	I-conic: Maybe you'll see me around someday and tell me you talked to "me" in here.
+	I-conic: Dunno if that's cool or creepy.
+=> AEND
+
+~ startslasher
+if Global.npc_dict.slasher == false
+	???: I am but a shade of my master
+	???: Chained by the eternal agony of (digital) existence. 
+	???: Am "I" really here? Am "I" me, am "I" real?
+	???: Are we here just to suffer? Such questions plague the mind of xX-Slasher-Xx
+	xX-Slasher-Xx: Why do you seek me out so? Don't you see I'm brooding and thinking incredibly deep thoughts? Such that your feeble mind probably wouldn't comprehend.
+	xX-Slasher-Xx: Tsk.
+	xX-Slasher-Xx: What do you say? The end is nigh?
+	xX-Slasher-Xx: Oh, sweet release of (digital) death! I can finally be free!
+	xX-Slasher-Xx: Free from what? 
+	xX-Slasher-Xx: The monotony of everyday life where nobody understands me... I think?
+	xX-Slasher-Xx: See, such profound thoughts that they escape even me! You have no hope of understanding my ponderings.
+	xX-Slasher-Xx: Now go, leave me be. I have to prepare.
+	set Global.npc_dict.slasher = true
+else
+	xX-Slasher-Xx: Stop disturbing me, I need to enter my Zen phase.
+	xX-Slasher-Xx: I want too experience inexistence at its fulles potential.
+=> AEND
+
 ~ startcono1
 strange cono: "..."
 strange cono: "oh my god you are so 3d moe"
@@ -13,13 +70,7 @@ strange cono: "oh my god you are so 3d moe"
 strange cono: "Inside you there are two wolves"
 => AEND
 
-~ startslasher
-if Global.npc_dict.slasher == false
-	superslasherXXX8l004: "Salve sono Nico"
-	set Global.npc_dict.slasher = true
-else
-	superslasherXXX8l004: "Ci siamo già sentiti"
-=> AEND
+
 
 ~ AEND
 set Global.dialogue_playing = false
