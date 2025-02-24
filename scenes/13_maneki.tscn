@@ -1,13 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://bihq7wgn4gr4k"]
+[gd_scene load_steps=25 format=3 uid="uid://bihq7wgn4gr4k"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_vpf3x"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_dgsav"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="3_l1lof"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="3_utr3k"]
 [ext_resource type="PackedScene" uid="uid://3fuxwt18oexx" path="res://blender/maneki_room.blend" id="4_3rior"]
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="5_0opbm"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="5_vnops"]
+[ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="6_3cem7"]
+[ext_resource type="Texture2D" uid="uid://c8s1aaw773o8u" path="res://assets/miscTextures/anime1.png" id="7_3xovk"]
 [ext_resource type="SpriteFrames" uid="uid://c12lbqm7r7avg" path="res://Personaggi/spritesheet.tres" id="7_nfaw2"]
+[ext_resource type="Texture2D" uid="uid://blnee3bcl8ygb" path="res://assets/miscTextures/anime4.png" id="8_ldj6i"]
+[ext_resource type="Texture2D" uid="uid://cqtl5u2pcuw3g" path="res://assets/miscTextures/anime5.png" id="9_7b5mq"]
 [ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="9_pm7hx"]
+[ext_resource type="Texture2D" uid="uid://chl3ooa5i5qxu" path="res://assets/miscTextures/anime3.png" id="10_vkug8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -67,6 +73,9 @@ _data = {
 "fog_noise_animation": SubResource("Animation_sbded")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ggw5r"]
+radius = 1.46281
+
 [node name="Room00" instance=ExtResource("1_vpf3x")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -106,6 +115,45 @@ libraries = {
 
 [node name="maneki_room" parent="Assets" index="4" instance=ExtResource("4_3rior")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93, 0)
+
+[node name="Anime" type="Node3D" parent="Assets" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83755, -1.14932, 3.39248)
+
+[node name="Actionable" parent="Assets/Anime" index="0" instance=ExtResource("5_0opbm")]
+dialogue_resource = ExtResource("6_3cem7")
+dialogue_start = "startanime"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/Anime/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 1.75741, 0.831208)
+shape = SubResource("SphereShape3D_ggw5r")
+
+[node name="animePost" type="Node3D" parent="Assets" index="6"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8.12081, -1.6, 8.31368)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/animePost" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5.31017, 0)
+texture = ExtResource("7_3xovk")
+
+[node name="animePost3" type="Node3D" parent="Assets" index="7"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -4.32643, -1.6, 8.28092)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/animePost3" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5.31017, 0)
+texture = ExtResource("8_ldj6i")
+
+[node name="animePost4" type="Node3D" parent="Assets" index="8"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.29237, -1.6, 1.91035)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/animePost4" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5.31017, 0)
+texture = ExtResource("9_7b5mq")
+
+[node name="animePost2" type="Node3D" parent="Assets" index="9"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.2773, -1.6, 1.76996)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/animePost2" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5.31017, 0)
+texture = ExtResource("10_vkug8")
 
 [node name="Maneki" parent="Interactive/Actionables" index="0" instance=ExtResource("5_vnops")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11085, 0.0473118, -9.23118)

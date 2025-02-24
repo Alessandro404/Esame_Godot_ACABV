@@ -1,10 +1,11 @@
-[gd_scene load_steps=62 format=3 uid="uid://bb5oopo8m36ch"]
+[gd_scene load_steps=63 format=3 uid="uid://bb5oopo8m36ch"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_yao8f"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_4138h"]
 [ext_resource type="PackedScene" uid="uid://btrywf15khorb" path="res://blender/xXSlasherXxroom.blend" id="2_qr51i"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="3_iugmj"]
 [ext_resource type="Texture2D" uid="uid://nelb5il2cssb" path="res://assets/Edgelord/edgelord00.webp" id="4_fymlf"]
+[ext_resource type="Texture2D" uid="uid://b5ffnls3g355u" path="res://assets/miscTextures/loneWolf.png" id="4_taemq"]
 [ext_resource type="Texture2D" uid="uid://dgyf6iws2q82k" path="res://assets/Edgelord/edgelord01.webp" id="5_g2t1l"]
 [ext_resource type="Texture2D" uid="uid://6cw24y4l4exq" path="res://assets/Edgelord/edgelord02.webp" id="6_bu8oa"]
 [ext_resource type="Texture2D" uid="uid://b8ijjirr8xoav" path="res://assets/Edgelord/edgelord03.webp" id="7_efd44"]
@@ -283,6 +284,12 @@ mesh = SubResource("BoxMesh_mmlno")
 
 [node name="xXSlasherXxroom" parent="Assets" index="3" instance=ExtResource("2_qr51i")]
 transform = Transform3D(-0.6, 0, 9.05975e-08, 0, 0.6, 0, -9.05975e-08, 0, -0.6, -4.66244, 5.412, 4)
+
+[node name="wolfPost" type="Node3D" parent="Assets" index="4"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/wolfPost" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.1882, 6.22328, 13.0561)
+texture = ExtResource("4_taemq")
 
 [node name="xX-Slasher-Xx" parent="Interactive/Actionables" index="0" instance=ExtResource("3_iugmj")]
 transform = Transform3D(-0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, -0.642788, -52.5239, 0, 27.2899)

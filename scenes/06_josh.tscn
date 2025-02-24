@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://0oxim1gicisj"]
+[gd_scene load_steps=66 format=3 uid="uid://0oxim1gicisj"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_gwhlf"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_m6rm0"]
@@ -56,7 +56,10 @@
 [ext_resource type="Texture2D" uid="uid://dd2woxg6siary" path="res://assets/GymbroJosh/gymbroJosh47.webp" id="53_jx4jd"]
 [ext_resource type="Texture2D" uid="uid://p3yl3rvxq1p5" path="res://assets/GymbroJosh/gymbroJosh48.webp" id="54_62ljs"]
 [ext_resource type="Texture2D" uid="uid://cmbg78il0gv0y" path="res://assets/GymbroJosh/gymbroJosh49.webp" id="55_t6n8w"]
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="56_6rxoo"]
+[ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="57_3ca8q"]
 [ext_resource type="PackedScene" uid="uid://ncgxbjng434n" path="res://scenes/zona_zoom.tscn" id="57_ljuip"]
+[ext_resource type="Texture2D" uid="uid://bmrpybsni18ub" path="res://assets/miscTextures/post_currently_unavailable.png" id="57_ot15a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -227,6 +230,9 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7j2o"]
+size = Vector3(5.30951, 1, 0.834106)
+
 [node name="Room00" instance=ExtResource("1_gwhlf")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -260,7 +266,7 @@ mesh = SubResource("SphereMesh_k4crk")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 3)
 
 [node name="josh" parent="Interactive/Actionables" index="0" instance=ExtResource("5_56k0m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50681, 0, 1.48402)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.50681, 0, 1.48402)
 
 [node name="Actionable" parent="Interactive/Actionables/josh" index="2"]
 dialogue_start = "startjosh"
@@ -272,6 +278,21 @@ shape = SubResource("BoxShape3D_d6v8p")
 [node name="AnimatedSprite3D" parent="Interactive/Actionables/josh" index="4"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.632373, 0, 0)
 sprite_frames = SubResource("SpriteFrames_mgo3m")
+
+[node name="brokenLink" type="Node3D" parent="Interactive/Actionables" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9928, 0, -3.86767)
+
+[node name="Actionable" parent="Interactive/Actionables/brokenLink" index="0" instance=ExtResource("56_6rxoo")]
+dialogue_resource = ExtResource("57_3ca8q")
+dialogue_start = "startdiet"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactive/Actionables/brokenLink/Actionable" index="0"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0.191339, 0.427192, 0.831208)
+shape = SubResource("BoxShape3D_l7j2o")
+
+[node name="Sprite3D" type="Sprite3D" parent="Interactive/Actionables/brokenLink" index="1"]
+transform = Transform3D(0.259808, 0, -0.15, 0, 0.3, 0, 0.15, 0, 0.259808, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("57_ot15a")
 
 [node name="Portal0_lobby" parent="Interactive/Portals" index="0" instance=ExtResource("3_yib27")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 14.7602, 0.3, 5.61783)

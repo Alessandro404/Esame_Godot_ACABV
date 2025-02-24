@@ -294,8 +294,29 @@ strange cono: "..."
 strange cono: "oh my god you are so 3d moe"
 => AEND
 
+~ startdiet
+Link: Exlclusive_Diet_Plan_With_Josh_pamphlet.pdf not found
+Link: error 404
+=> AEND
 
+~ startmakeup
+Link: makeup_recommendations.html not found
+Link: error 404
+=> AEND
 
+~ startanime
+PC: It's playing nyan cat on loop.
+=> AEND
+
+~ startserverna
+Connection: Impossible to establish connection
+Connection: North American Servers unavailable
+=> AEND
+
+~ startserverasian
+Connection: Impossible to establish connection
+Connection: Asian Servers unavailable
+=> AEND
 
 ~ AEND
 set Global.dialogue_playing = false

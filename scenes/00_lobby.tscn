@@ -1,9 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://2t7h4xroxfjx"]
+[gd_scene load_steps=25 format=3 uid="uid://2t7h4xroxfjx"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_p1x8e"]
 [ext_resource type="Environment" uid="uid://bgkn5xn8y4oba" path="res://scenes/environmentstandard.tres" id="2_ld84j"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="2_y1ug0"]
+[ext_resource type="Texture2D" uid="uid://mhvyq3bgn15x" path="res://assets/miscTextures/ServerInfo.png" id="4_4c13q"]
 [ext_resource type="PackedScene" uid="uid://bbrih18hf8u05" path="res://blender/main_square.blend" id="4_i3tm3"]
+[ext_resource type="Texture2D" uid="uid://cr23jttbwqih8" path="res://assets/miscTextures/USER_MOST_FOLLOWERS.png" id="5_od3l3"]
+[ext_resource type="Texture2D" uid="uid://tafe6g6tvcuq" path="res://assets/miscTextures/USER_NEWEST.png" id="6_3b0vf"]
+[ext_resource type="Texture2D" uid="uid://c7y1oeajx8i6i" path="res://assets/miscTextures/USER_MOST_HOURS.png" id="7_aqdh1"]
+[ext_resource type="Texture2D" uid="uid://bkvhxvpyv7nr" path="res://assets/miscTextures/USER_RANDOMLY_SELECTED.png" id="8_dop1r"]
+[ext_resource type="Texture2D" uid="uid://da7wbqy113v23" path="res://assets/miscTextures/USER_MOST_LIKES.png" id="9_2aoxa"]
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="10_7c2vj"]
+[ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="11_c5t8k"]
+[ext_resource type="Texture2D" uid="uid://bf3ej2g1slfp" path="res://assets/miscTextures/ServerConnectNA.png" id="12_hfarc"]
+[ext_resource type="Texture2D" uid="uid://7r5kxs6hcq6j" path="res://assets/miscTextures/ServerConnectAsia.png" id="13_b7s4i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7e4p"]
 albedo_color = Color(1, 1, 0, 1)
@@ -63,6 +73,9 @@ _data = {
 "fog_noise_animation": SubResource("Animation_sbded")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_t3lf2"]
+radius = 2.29244
+
 [node name="Room00" instance=ExtResource("1_p1x8e")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
@@ -89,6 +102,78 @@ libraries = {
 
 [node name="main_square" parent="Assets" index="4" instance=ExtResource("4_i3tm3")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.161982, -0.498675, -1.90015)
+
+[node name="infoPost" type="Node3D" parent="Assets" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 12)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/infoPost" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("4_4c13q")
+
+[node name="mostFollowed" type="Node3D" parent="Assets" index="6"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 8.58005, 0.0858741, 14.3691)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/mostFollowed" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+texture = ExtResource("5_od3l3")
+
+[node name="mostNew" type="Node3D" parent="Assets" index="7"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 4.2052, 0.0858742, 17.8999)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/mostNew" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+texture = ExtResource("6_3b0vf")
+
+[node name="mostHours" type="Node3D" parent="Assets" index="8"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, 0.243139, 0.0858744, 15.5165)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/mostHours" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+texture = ExtResource("7_aqdh1")
+
+[node name="randomlySelected" type="Node3D" parent="Assets" index="9"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.41028, 0.0858746, 13.801)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/randomlySelected" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+texture = ExtResource("8_dop1r")
+
+[node name="mostLikes" type="Node3D" parent="Assets" index="10"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.41028, 0.0858746, 13.801)
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/mostLikes" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.16965e-10, 5.18785, -0.0164022)
+texture = ExtResource("9_2aoxa")
+
+[node name="ServerNA" type="Node3D" parent="Assets" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2623, 7.26674, -26.4254)
+
+[node name="Actionable" parent="Assets/ServerNA" index="0" instance=ExtResource("10_7c2vj")]
+dialogue_resource = ExtResource("11_c5t8k")
+dialogue_start = "startserverna"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/ServerNA/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 0.427192, 0.831208)
+shape = SubResource("SphereShape3D_t3lf2")
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/ServerNA" index="1"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, 0.212132, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("12_hfarc")
+
+[node name="ServerAsia" type="Node3D" parent="Assets" index="12"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.2696, -8.24426, -25.3731)
+
+[node name="Actionable" parent="Assets/ServerAsia" index="0" instance=ExtResource("10_7c2vj")]
+dialogue_resource = ExtResource("11_c5t8k")
+dialogue_start = "startserverasian"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/ServerAsia/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 0.427192, 0.831208)
+shape = SubResource("SphereShape3D_t3lf2")
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/ServerAsia" index="1"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, 0.212132, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("13_b7s4i")
 
 [node name="Portal" parent="Interactive/Portals" index="0" instance=ExtResource("2_y1ug0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00955814, 0.3, -9.09928)

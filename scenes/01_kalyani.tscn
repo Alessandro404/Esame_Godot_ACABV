@@ -1,17 +1,22 @@
-[gd_scene load_steps=256 format=3 uid="uid://tmcb5337qjau"]
+[gd_scene load_steps=262 format=3 uid="uid://tmcb5337qjau"]
 
 [ext_resource type="PackedScene" uid="uid://bvwvevq7y7m7d" path="res://scenes/room_template.tscn" id="1_pcurv"]
 [ext_resource type="PackedScene" uid="uid://cklmg5nrbqapm" path="res://Personaggi/camera_fissa.tscn" id="2_o110u"]
 [ext_resource type="PackedScene" uid="uid://mumasxpn6x17" path="res://blender/scene_template01.blend" id="3_5c23p"]
 [ext_resource type="Texture2D" uid="uid://bfv7jd2nlm2un" path="res://icon.svg" id="4_xgf1c"]
 [ext_resource type="PackedScene" uid="uid://7773o71d41k5" path="res://scenes/portal.tscn" id="5_nllir"]
+[ext_resource type="PackedScene" uid="uid://davvwvv5l12fo" path="res://scenes/actionable.tscn" id="6_bonwn"]
 [ext_resource type="PackedScene" uid="uid://dv2b2r5xi1lr8" path="res://Personaggi/npc_2d_template.tscn" id="6_lp768"]
 [ext_resource type="PackedScene" uid="uid://dnr237yqvm0ht" path="res://Personaggi/cambiocamera.tscn" id="6_qfw3a"]
 [ext_resource type="Texture2D" uid="uid://dl2o1ndc0f30j" path="res://assets/kalyani/vishnu smaller000.webp" id="7_cluoe"]
 [ext_resource type="PackedScene" uid="uid://b0jgbbsxfr6nq" path="res://blender/kalyaniroom.blend" id="7_gnfub"]
+[ext_resource type="Resource" uid="uid://oqxuog4rftui" path="res://dialogues/npc01.dialogue" id="7_qrel6"]
 [ext_resource type="Texture2D" uid="uid://i8hjp6746pqb" path="res://assets/kalyani/vishnu smaller001.webp" id="8_5nmab"]
+[ext_resource type="Texture2D" uid="uid://dfhdsqya4y5s5" path="res://assets/miscTextures/makeupLipstick.png" id="8_lwxei"]
 [ext_resource type="Texture2D" uid="uid://ds8fr2ftaq4kd" path="res://assets/kalyani/vishnu smaller002.webp" id="9_hi0oa"]
+[ext_resource type="Texture2D" uid="uid://f4lcokg7t7ed" path="res://assets/miscTextures/makeupPowder.png" id="9_xixfh"]
 [ext_resource type="Texture2D" uid="uid://csbvnpvnqnnc7" path="res://assets/kalyani/vishnu smaller003.webp" id="10_4fo3a"]
+[ext_resource type="Texture2D" uid="uid://cc3wnqmhrfm1b" path="res://assets/miscTextures/makeupPolish.png" id="10_34lfn"]
 [ext_resource type="Texture2D" uid="uid://cvo23uyaxqj45" path="res://assets/kalyani/vishnu smaller004.webp" id="11_gux7w"]
 [ext_resource type="Texture2D" uid="uid://cmc7d765xv2iq" path="res://assets/kalyani/vishnu smaller005.webp" id="12_wgdia"]
 [ext_resource type="Texture2D" uid="uid://dsxtmnajupb4d" path="res://assets/kalyani/vishnu smaller006.webp" id="13_irouu"]
@@ -261,6 +266,9 @@ albedo_texture = ExtResource("4_xgf1c")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s8kx1"]
 material = SubResource("StandardMaterial3D_s8ojx")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svru0"]
+size = Vector3(5.30951, 1, 0.834106)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkr17"]
 size = Vector3(1, 5.7027, 2.84692)
@@ -1046,6 +1054,51 @@ mesh = SubResource("PlaneMesh_s8kx1")
 
 [node name="kalyaniroom" parent="Assets" index="5" instance=ExtResource("7_gnfub")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0, -0.738, -1.03296)
+
+[node name="brokenLink1" type="Node3D" parent="Assets" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30543, 10.4066, -30.5842)
+
+[node name="Actionable" parent="Assets/brokenLink1" index="0" instance=ExtResource("6_bonwn")]
+dialogue_resource = ExtResource("7_qrel6")
+dialogue_start = "startmakeup"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/brokenLink1/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 0.427192, 0.831208)
+shape = SubResource("BoxShape3D_svru0")
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/brokenLink1" index="1"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, 0.212132, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("8_lwxei")
+
+[node name="brokenLink3" type="Node3D" parent="Assets" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5458, 10.4066, 27.2333)
+
+[node name="Actionable" parent="Assets/brokenLink3" index="0" instance=ExtResource("6_bonwn")]
+dialogue_resource = ExtResource("7_qrel6")
+dialogue_start = "startmakeup"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/brokenLink3/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 0.427192, 0.831208)
+shape = SubResource("BoxShape3D_svru0")
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/brokenLink3" index="1"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, 0.212132, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("9_xixfh")
+
+[node name="brokenLink2" type="Node3D" parent="Assets" index="8"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.1339, 10.4066, -29.6585)
+
+[node name="Actionable" parent="Assets/brokenLink2" index="0" instance=ExtResource("6_bonwn")]
+dialogue_resource = ExtResource("7_qrel6")
+dialogue_start = "startmakeup"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Assets/brokenLink2/Actionable" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.191339, 0.427192, 0.831208)
+shape = SubResource("BoxShape3D_svru0")
+
+[node name="Sprite3D" type="Sprite3D" parent="Assets/brokenLink2" index="1"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, 0.212132, 0.178473, 3.04707, 0.688394)
+texture = ExtResource("10_34lfn")
 
 [node name="Kalyani" parent="Interactive/Actionables" index="0" instance=ExtResource("6_lp768")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.6559, 12.7048, -0.118872)
