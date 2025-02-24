@@ -92,13 +92,10 @@ func _physics_process(delta: float) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if Input.is_action_just_pressed("jump"):
 			if actionables.size() >0 :
+				Global.dialogue_counter()
 				actionables[0].action()
-				print(Global.npc_dict.slasher)
-				#TODO ## orribile da togliere appena possibile
-				for element in Global.npc_dict : 
-					var value = Global.npc_dict[element]
-					if value == false :
-						print("Non hai ancora finito.")
+				
+					
 				return
 			elif is_on_floor():
 				#TOLTO SALTO EHEH (servono entrambi con il pezzo sotto
@@ -141,7 +138,9 @@ func _physics_process(delta: float) -> void:
 		move_direction = Vector3.ZERO
 		velocity = Vector3.ZERO
 		_skin.idle()
-		
+
+
+	
 #if velocity.length() != 0:
 	# if the footstep audio isn't playing, play the audio
 #	if !footstep_audio.playing:

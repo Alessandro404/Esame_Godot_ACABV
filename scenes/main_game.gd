@@ -49,7 +49,18 @@ func _process(delta):
 			fade_in_timer = fade_speed
 			
 	if Global.startfinale:   #TODO orribile, poi toglilo
+		$AudioListener3D.make_current()
+		if $AudioStreamPlayer3D2.playing == false:
+			$AudioStreamPlayer3D2.play()
+		$Control.visible = true
+		$Control/ColorRect.visible = true
+		$Control/ColorRect.color = Color(0,0,0,1)
+		await get_tree().create_timer(5).timeout
+		$Control.visible = false
 		EndCamera.set_current(true)
+		$Areafinale.visible = true
+		remove_child($LevelsRoot)
+		await get_tree().create_timer(2).timeout
 		
 		if $DirectionalLight3D.rotation_degrees.x <= -20:
 			$DirectionalLight3D.rotation_degrees.x += 0.05
@@ -60,6 +71,11 @@ func _process(delta):
 		if proc_sky.sky_curve > 0.002:
 			proc_sky.sky_curve -=0.0002
 		if $DirectionalLight3D.rotation_degrees.x >= 0:
+			$Control.visible = true
+			$Control/ColorRect/Control/TitoliDiCoda.visible = true
+			await get_tree().create_timer(10).timeout
+			$AudioStreamPlayer3D.stop()
+			$Control/ColorRect/Control/TitoliDiCoda.visible = false
 			Global.startfinale = false
 
 	if Global.startinizio:

@@ -13,7 +13,8 @@ extends Node3D
 
 func _on_area_3d_body_entered(_body):
 	get_tree().current_scene.teleport(destination_room_id,destination_portal_id)
-	audio_portal.play()
+	if audio_portal.playing == false:
+		audio_portal.play()
 
 func _ready():
 	portal_sprites.modulate = tint_color
